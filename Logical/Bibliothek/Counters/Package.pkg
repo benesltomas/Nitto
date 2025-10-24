@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.0.18.71 SP?>
-<Package xmlns="http://br-automation.co.at/AS/Package">
-  <Objects>
-    <Object Type="File">FB_Counter.st</Object>
-    <Object Type="File">FB_Counters.st</Object>
-    <Object Type="File">FB_SprayCtrl.st</Object>
-  </Objects>
-</Package>
