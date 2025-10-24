@@ -1,0 +1,25 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: UtilTyp
+ * File: UtilTyp.var
+ * Author: schoenefeldr
+ * Created: July 09, 2012
+ ********************************************************************
+ * Constants of library UtilTyp
+ ********************************************************************)
+(*Global constants*)
+VAR CONSTANT
+	MATH_PI : REAL := 3.141593; (*Constant value PI*)
+END_VAR
+(*Definitions for configuration constants*)
+VAR CONSTANT
+	CONTACT_IS_OPENER : USINT := 0; (*Opener contact at input*)
+END_VAR
+(*Return codes*)
+VAR CONSTANT
+	ERR_OK : UINT := 0; (*No error*)
+	ERR_DIVISION_BY_ZERO : UINT := 65534; (*Division by zero*)
+	ERR_INT_OVERFLOW : UINT := 65533; (*Integer overflow, value higher than positive integer range*)
+	ERR_INT_UNDERFLOW : UINT := 65532; (*Integer underflow, value lower than negaitive integer range or < 0*)
+END_VAR

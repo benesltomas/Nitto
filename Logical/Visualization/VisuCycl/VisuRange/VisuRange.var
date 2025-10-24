@@ -1,0 +1,84 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: VisuRange
+ * File: VisuRange.var
+ * Author: schoenefeldr
+ * Created: July 16, 2012
+ ********************************************************************
+ * Local variables of program VisuRange
+ ********************************************************************)
+VAR
+	But_cut1_entkoppeln : BOOL;
+	But_cut1_koppeln : BOOL;
+	But_cut2_entkoppeln : BOOL;
+	But_cut2_koppeln : BOOL;
+	But_move_cut2_pos : BOOL;
+	But_move_cut1_pos : BOOL;
+	But_move_cut2_rueck : BOOL;
+	But_move_cut1_rueck : BOOL;
+	CmdAutoSpeed_neg : BOOL;
+	CmdAutoSpeed_pos : BOOL;
+END_VAR
+(*Analogue inputs*)
+VAR
+	DiamAct : MachineStatusDiam_Type; (*Actual diameters*)
+	DoReference : BOOL;
+	oldMasterActPos : REAL;
+	newMasterActPos : REAL;
+	DriveEnableLED : USINT;
+	driveSelect : USINT;
+	homingOK : BOOL;
+	UmfangCut3 : REAL;
+	UmfangCut2 : REAL;
+	UmfangCut1 : REAL;
+	jogBack : BOOL;
+END_VAR
+(*Axis variables*)
+VAR
+	jogFwd : BOOL;
+	jogOverride : REAL;
+	JogSpeedHigh : BOOL;
+	JogSpeedLow : BOOL;
+	LogicDrivesPowerOn : BOOL;
+	LogicOutOn : BOOL;
+	numPkg : UDINT; (*Input number of Packages for movement [1]*)
+	masterActPos : REAL;
+	masterActVelo : REAL;
+	masterCmdPos : REAL; (*Input distance for relative movement [µm]*)
+	masterCmdVelo : REAL;
+	OpModeAct : OpModeEnum_Type;
+	OpModeSet : OpModeEnum_Type;
+	ReleaseSafeOut : BOOL;
+	ResetError : BOOL;
+	startAdd : BOOL; (*Start additive movement over distance or a number of packages*)
+	ResetTotalMeter : BOOL; (*Reset total meter counter*)
+	ResetInputs : BOOL; (*Reset inputs for distance and number of packages*)
+	startGen : BOOL;
+	StatusLED : USINT;
+	stopGen : BOOL; (*stop movement*)
+	VentAbort : BOOL; (*Set 0.0 V to ventil*)
+END_VAR
+(*Analogue outputs*)
+VAR
+	VentVoltSet : VentAout_Type; (*Setting the proportional ventils output voltage [V]*)
+END_VAR
+(*Show Registration mark arrays and additional values*)
+VAR
+	sizeStep1 : USINT; (*size value for copying step 1*)
+	sizeStep2 : USINT; (*size value for copying step 2*)
+	RmArrayPtr1 : USINT; (*Pointer on current write position of RM data array 1*)
+	RmArrayPtr2 : USINT; (*Pointer on current write position of RM data array 2*)
+	VisuRegMarkArray : ARRAY[0..MAX_RM_SENSORS_INDEX] OF RmIfStatusActVal_Type; (*Data array for visualisation, current data at the first entry*)
+	VisuTempRegMarkArray : ARRAY[0..MAX_RM_SENSORS_INDEX] OF RmIfStatusActVal_Type; (*Temporary arrays with unsorted data*)
+	ActRegMarkPosError1 : REAL; (*Current setpoint error for registration mark 1*)
+	ActRegMarkPosError2 : REAL; (*Current setpoint error for registration mark 2*)
+END_VAR
+(*Show messages*)
+VAR
+	MessageReferenceControl : USINT; (*Message reference cut unit visible / invisible*)
+	offsetMasterActPos : REAL;
+	MessageSupportSpikesControl : USINT; (*Message close support spikes visible / invisible*)
+	MessageBatchControl : USINT; (*Message Batch visible / invisible*)
+	BatchStatus : emu_Batch_Acknowledge;
+END_VAR

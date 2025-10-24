@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.22.47 SP?>
+<Library Version="1.06.0" Description="Spilker specific function blocks" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">UserSpilke.typ</File>
+    <File Description="Exported constants">UserSpilke.var</File>
+    <File Description="Exported functions and function blocks">UserSpilke.fun</File>
+    <File Description="Hydraulic lever (e.g. of the unwinder)">SPR_HydLever.st</File>
+    <File Description="Control of prop. valve for winder clutch">SPR_WinderClutch.st</File>
+    <File Description="Checks if a textgroup index exists">SPR_CheckTextIndexValid.st</File>
+    <File Description="Counts length periods on an axis">SPR_MeterCounter.st</File>
+    <File Description="Scales a tool circumference to a whole number that is divisible without remainder by the number of tool segments">SPR_ScaleCircumference.st</File>
+    <File Description="Monitors the status of all drives">SPR_DrivesGlobal.st</File>
+    <File Description="Detects overflow e,g, of a periodic position">SPR_OverflowDetection.st</File>
+    <File Description="Starts a movement of the master axis">SPR_MoveMaster.st</File>
+    <File Description="Controls an unwinder with a magnet particle brake">SPR_UnwinderCtrl.st</File>
+    <File Description="Hydraulic lever (e.g. of the unwinder)">SPR_PneumLever.st</File>
+    <File Description="Gear in and update the gear ratio as long as the Jog input is set">SPR_JogGear.st</File>
+    <File Description="Cam automat configuration for labeling unit">SPR_LabelerAut.st</File>
+    <File Description="Cam automat configuration for an &quot;ideal&quot; labeler (no label position correction)">SPR_LabelerAutVax.st</File>
+    <File Description="Implements the punch operation in automatic mode">SPR_Punch.st</File>
+    <File>FB_LaminateCTRL.st</File>
+    <File>FB_AxisCtlr.st</File>
+    <File>FB_MainCtrl.st</File>
+    <File>FB_MainHW.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsMath" />
+    <Dependency ObjectName="Acp10_MC" />
+  </Dependencies>
+</Library>

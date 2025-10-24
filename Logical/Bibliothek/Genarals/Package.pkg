@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_Lamp.st</Object>
+    <Object Type="File">FB_Clk.st</Object>
+    <Object Type="File">FB_KeyLamp.st</Object>
+    <Object Type="File">FB_Ampel.st</Object>
+    <Object Type="File">FB_ModulStatus.st</Object>
+    <Object Type="File">FB_UnitChkStatus.st</Object>
+    <Object Type="File">FB_ClkPulse.st</Object>
+    <Object Type="File">FB_ErrorHdl.st</Object>
+    <Object Type="File">FB_Panel.st</Object>
+    <Object Type="File">FB_PullBreakClampToggle.st</Object>
+    <Object Type="File">FB_Safety.st</Object>
+    <Object Type="File">FB_PowerBridge.st</Object>
+    <Object Type="File">FB_MessageInstance.st</Object>
+    <Object Type="File">FB_limitswitch.st</Object>
+    <Object Type="File">FB_Hydraulic.st</Object>
+    <Object Type="File">FB_TurnGrWinKeysbox.st</Object>
+    <Object Type="File">FB_WebGuiding.st</Object>
+    <Object Type="File">FB_StartStopbox.st</Object>
+    <Object Type="File">FB_SummeryStarStop.st</Object>
+    <Object Type="File">FB_SetCutOffset.st</Object>
+    <Object Type="File">FB_SetGearRatio.st</Object>
+    <Object Type="File">FB_Alarme.st</Object>
+    <Object Type="File">FB_Liftcrtl.st</Object>
+    <Object Type="File">FB_MachineSpeed.st</Object>
+    <Object Type="File">FB_KeysWebbuffer.st</Object>
+    <Object Type="File">FB_SwitchCabinet.st</Object>
+  </Objects>
+</Package>

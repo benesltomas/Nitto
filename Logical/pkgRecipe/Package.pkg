@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC" Description="copy recipes from CF to USB">save2USB</Object>
+    <Object Type="Program" Language="IEC" Description="file handling">csv_hdl</Object>
+    <Object Type="Program" Language="IEC" Description="file handling">tool_hdl</Object>
+    <Object Type="Program" Language="IEC" Description="alarm handling">al_hdl</Object>
+    <Object Type="Program" Language="IEC">picctrl</Object>
+  </Objects>
+</Package>

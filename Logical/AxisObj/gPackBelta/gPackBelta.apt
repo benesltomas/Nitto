@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<AcoposParameterTable>
+  <Root Name="Parameters">
+    <Parameter Name="PCTRL_S_ACT_PARID" ID="230" Value="PCTRL_S_SET" />
+    <Parameter Name="SERVO_V_MAX_OUTPUT" ID="64201" Value="546116,666666667" Unit="Units/s" Description="Servo drive adjustment: Velocity at maximum output value" />
+    <Parameter Name="SGEN_SW_END_IGNORE" ID="128" Value="3" Description="Limit values: Ignore SW end positions" />
+  </Root>
+</AcoposParameterTable>

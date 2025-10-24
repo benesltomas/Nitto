@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.22.47 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_WinderData.st</Object>
+    <Object Type="File">FB_MASTERMODUL_DATA.st</Object>
+    <Object Type="File">FB_TENSIONMEASUREDATA.st</Object>
+    <Object Type="File">FB_CONVEYOR_DATA.st</Object>
+    <Object Type="File">FB_WinderMachData.st</Object>
+    <Object Type="File">FB_WinderRecipeData.st</Object>
+    <Object Type="File">FB_ScalingPerimeter.st</Object>
+    <Object Type="File">FB_CUTTINGUNIT_STATUS.st</Object>
+    <Object Type="File">FB_CROSSCUTPAR.st</Object>
+    <Object Type="File">FB_PACKBELT_DATA.st</Object>
+  </Objects>
+</Package>

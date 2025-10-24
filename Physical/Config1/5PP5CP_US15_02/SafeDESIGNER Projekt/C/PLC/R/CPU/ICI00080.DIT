@@ -1,0 +1,178 @@
+(*
+T: PROGRAM Main
+FW: NO
+CI#: 80
+QSL: 28
+QVE: 28
+QVPC: 28
+QPar: 0
+QFBI: 14
+*)
+@V 1 2 0
+TON_S_Drive_Enable_Buffer	1	VAR	@FB:44
+		     
+
+;
+
+@V 1 4 0
+EmcyStopGeneral	2	VAR	@TYP:43
+		     
+
+;
+
+@V 1 5 0
+EmcyStopAxis	3	VAR	@TYP:43
+		     
+
+;
+
+@V 1 6 0
+SF_SafeMC_BR_V2_00_1	4	VAR	@FB:81
+		     
+
+;
+
+@V 1 7 0
+SF_SafeMC_BR_V2_00_2	5	VAR	@FB:81
+		     
+
+;
+
+@V 1 8 0
+SF_SafeMC_BR_V2_00_3	6	VAR	@FB:81
+		     
+
+;
+
+@V 1 9 0
+EmcyDoorGeneral	7	VAR	@TYP:43
+		     
+
+;
+
+@V 1 10 0
+EmcyDoorBuffer	8	VAR	@TYP:43
+		     
+
+;
+
+@V 1 11 0
+Error_gCut1	9	VAR	@TYP:1
+		     
+
+;
+
+@V 1 12 0
+Error_gLongCut	10	VAR	@TYP:1
+		     
+
+;
+
+@V 1 13 0
+ActiveSS1_gCut1	11	VAR	@TYP:43
+		     
+
+;
+
+@V 1 14 0
+ActiveSS1_gLongCut	12	VAR	@TYP:43
+		     
+
+;
+
+@V 1 15 0
+TON_S_24VDC_direct	13	VAR	@FB:44
+		     
+
+;
+
+@V 1 16 0
+TON_S_24VDC_delayed	14	VAR	@FB:44
+		     
+
+;
+
+@V 1 17 0
+TON_S_Drive_Enable	15	VAR	@FB:44
+		     
+
+;
+
+@V 1 18 0
+TON_S_EmcyStop_ToNitto	16	VAR	@FB:44
+		     
+
+;
+
+@V 1 19 0
+SF_EmergencyStop_V1_00_1	17	VAR	@FB:82
+		     
+
+;
+
+@V 1 20 0
+SF_EmergencyStop_V1_00_2	18	VAR	@FB:82
+		     
+
+;
+
+@V 1 21 0
+SF_EmergencyStop_V1_00_3	19	VAR	@FB:82
+		     
+
+;
+
+@V 1 22 0
+Error_EmergencyStop_1	20	VAR	@TYP:1
+		     
+
+;
+
+@V 1 23 0
+Error_EmergencyStop_2	21	VAR	@TYP:1
+		     
+
+;
+
+@V 1 24 0
+DiagCode_EmergencyStop_1	22	VAR	@TYP:18
+		     
+
+;
+
+@V 1 25 0
+DiagCode_EmergencyStop_2	23	VAR	@TYP:18
+		     
+
+;
+
+@V 1 26 0
+SF_SafeMC_BR_V2_00_4	24	VAR	@FB:81
+		     
+
+;
+
+@V 1 27 0
+ActiveSS1_gCut2	25	VAR	@TYP:43
+		     
+
+;
+
+@V 1 28 0
+ActiveSS1_gGridFeeder	26	VAR	@TYP:43
+		     
+
+;
+
+@V 1 29 0
+RS_S_1	27	VAR	@FB:41
+		     
+
+;
+
+@V 1 30 0
+TOF_S_DriveEnableBuffer	28	VAR	@FB:43
+		     
+
+;
+

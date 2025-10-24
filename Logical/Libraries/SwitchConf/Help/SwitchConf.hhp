@@ -1,0 +1,36 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=LibSwitchConf.chm
+Contents file=SwitchConf.hhc
+Default Window=main
+Default topic=SwitchConf.html
+Display compile progress=No
+Full-text search=Yes
+Index file=SwitchConf.hhk
+Language=0x409 Englisch (USA)
+Title=SwitchConf Library
+
+[WINDOWS]
+main=,"SwitchConf.hhc","SwitchConf.hhk","SwitchConf.html","SwitchConf.html",,,,,0x23520,222,0x1046,[10,10,780,560],0xb0000,,,,,,0
+
+
+[FILES]
+styles.css
+SwitchConf.html
+Data types and constants\Constants.html
+Data types and constants\Data types and constants.html
+Data types and constants\Data types\Data types.html
+Data types and constants\Data types\ParameterList_typ.html
+Data types and constants\Data types\SwitchConfiguration_typ.html
+Data types and constants\Data types\SwitchesACPm_typ.html
+General information\C-Informations.html
+General information\General information.html
+General information\Requirements.html
+General information\History.html
+General information\Status Numbers.html
+FBKs\SwitchConfiguration.html
+FBKs\FBKs.html
+
+[INFOTYPES]
+

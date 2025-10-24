@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_LayerMarkPoint">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="6"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="96513" Value="mode:"/>
+    <Text ID="96514" Value="max. period index:"/>
+    <Text ID="96521" Value="mode 1"/>
+    <Text ID="96522" Value="mode 2"/>
+    <Text ID="96523" Value="mode 3"/>
+    <Text ID="96524" Value="mode 4"/>
+    <Text ID="97822" Value=""/>
+    <Text ID="97823" Value=""/>
+    <Text ID="97824" Value="marks:"/>
+    <Text ID="97825" Value="periods:"/>
+    <Text ID="97826" Value="position correction:"/>
+    <Text ID="265629" Value="enable"/>
+    <Text ID="265630" Value="disable"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="96513" Value="Betriebsart:"/>
+    <Text ID="96514" Value="max. Periodenindex:"/>
+    <Text ID="96521" Value="Betriebsart 1"/>
+    <Text ID="96522" Value="Betriebsart 2"/>
+    <Text ID="96523" Value="Betriebsart 3"/>
+    <Text ID="96524" Value="Betriebsart 4"/>
+    <Text ID="97822" Value=""/>
+    <Text ID="97823" Value="Virtuelle Periodenlänge:"/>
+    <Text ID="97824" Value="Marken:"/>
+    <Text ID="97825" Value="Perioden:"/>
+    <Text ID="97826" Value="Positionskorrektur:"/>
+    <Text ID="265629" Value="Eingeschaltet"/>
+    <Text ID="265630" Value="Ausgeschaltet"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="96513" Value="Mode"/>
+    <Text ID="96514" Value="Max. Periode index:"/>
+    <Text ID="96521" Value="Mode 1"/>
+    <Text ID="96522" Value="Mode 2"/>
+    <Text ID="96523" Value="Mode 3"/>
+    <Text ID="96524" Value="Mode 4"/>
+    <Text ID="97822" Value=""/>
+    <Text ID="97823" Value="Virtuele periodelengte"/>
+    <Text ID="97824" Value="Detectie:"/>
+    <Text ID="97825" Value="Periodes"/>
+    <Text ID="97826" Value="Positie vorrectie"/>
+    <Text ID="265629" Value="Ingeschakeld"/>
+    <Text ID="265630" Value="Uitgeschakeld"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="96513" Value="0"/>
+    <Index ID="96514" Value="1"/>
+    <Index ID="96521" Value="10"/>
+    <Index ID="96522" Value="11"/>
+    <Index ID="96523" Value="12"/>
+    <Index ID="96524" Value="13"/>
+    <Index ID="97822" Value="6"/>
+    <Index ID="97823" Value="5"/>
+    <Index ID="97824" Value="4"/>
+    <Index ID="97825" Value="3"/>
+    <Index ID="97826" Value="2"/>
+    <Index ID="265629" Value="8"/>
+    <Index ID="265630" Value="7"/>
+  </IndexMap>
+</TextGroup>

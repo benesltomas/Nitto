@@ -1,0 +1,27 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: HlpStr
+ * File: TRIM.ab
+ * Author: beutert
+ * Created: April 08, 2011
+ ********************************************************************
+ * Implementation of library HlpStr
+ ********************************************************************
+ Function: delete blanks at beginning and end of string
+ 	
+    input:  pointer to string (UDINT)
+   output:  status
+ ********************************************************************) 
+
+FUNCTION TRIM
+	if (enable = true) then
+		status = RTRIM(enable, pString);
+		if (status = 0) then
+			status = LTRIM(enable, pString);
+		endif;
+	else
+		status = 65534;
+	endif;
+	TRIM = status;
+END_FUNCTION

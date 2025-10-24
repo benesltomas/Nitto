@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_Batch">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="20"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="180278" Value="batch almost complete"/>
+    <Text ID="180279" Value="batch complete"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="180278" Value="Auftrag fast erreicht!"/>
+    <Text ID="180279" Value="Auftrag erreicht!"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="180278" Value="Order bijna bereikt"/>
+    <Text ID="180279" Value="Order compleet"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="180278" Value="0"/>
+    <Index ID="180279" Value="1"/>
+  </IndexMap>
+</TextGroup>

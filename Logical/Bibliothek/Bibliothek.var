@@ -1,0 +1,19 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: Bibliothek
+ * Datei: Bibliothek.var
+ * Autor: Awalz
+ * Erstellt: 31. März 2014
+ ********************************************************************
+ * Konstanten der Library Bibliothek
+ ********************************************************************)
+VAR CONSTANT
+(*	MANUAL:			INT := 0;
+	AUTOMATIC:		INT := 1;
+	PRODUCTION:		INT := 2;
+	SAFETYSTOP:		INT := 7;
+	RESET:			INT := 8;
+	EMERGENCYSTOP:	INT := 9;*)
+
+END_VAR

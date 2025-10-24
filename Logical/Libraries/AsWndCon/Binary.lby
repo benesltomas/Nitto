@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library Version="1.11.6" Description="Winder control library." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported functions and function blocks">AsWndCon.fun</File>
+    <File Description="Exported constants">AsWndCon.var</File>
+    <File Description="Exported data types">AsWndCon.typ</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="Sys_lib" />
+    <Dependency ObjectName="brsystem" />
+    <Dependency ObjectName="sys_lib" FromVersion="0.00.0" />
+  </Dependencies>
+</Library>

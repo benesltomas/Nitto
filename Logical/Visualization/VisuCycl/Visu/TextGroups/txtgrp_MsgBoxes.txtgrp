@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_MsgBoxes">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="7"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="87619" Value="yes"/>
+    <Text ID="87620" Value="no"/>
+    <Text ID="87621" Value="File already exists. Overwrite ?"/>
+    <Text ID="87622" Value="New recipe"/>
+    <Text ID="87623" Value="Please enter a recipe name"/>
+    <Text ID="87710" Value="Delete file. Are you sure ?"/>
+    <Text ID="87806" Value="Value was changed. Save file ?"/>
+    <Text ID="96221" Value="ok"/>
+    <Text ID="96222" Value="error while writing to usb device"/>
+    <Text ID="96223" Value="Error"/>
+    <Text ID="96781" Value="backup to USB"/>
+    <Text ID="96782" Value="Copying finished."/>
+    <Text ID="97458" Value="Please enter a tool name"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="87619" Value="ja"/>
+    <Text ID="87620" Value="nein"/>
+    <Text ID="87621" Value="Datei existiert bereits. Überschreiben ?"/>
+    <Text ID="87622" Value="Neues Rezept"/>
+    <Text ID="87623" Value="Bitte einen Rezeptnamen eingeben"/>
+    <Text ID="87710" Value="Datei löschen. Sind Sie sicher ?"/>
+    <Text ID="87806" Value="Wert wurde geändert. Speichern ?"/>
+    <Text ID="96221" Value="ok"/>
+    <Text ID="96222" Value="Fehler beim Schreiben auf USB Gerät."/>
+    <Text ID="96223" Value="Fehler"/>
+    <Text ID="96781" Value="Sichern auf USB"/>
+    <Text ID="96782" Value="Kopieren beendet."/>
+    <Text ID="97458" Value="Bitte einen Werkzeugnamen eingeben"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="87619" Value="Ja"/>
+    <Text ID="87620" Value="Nee"/>
+    <Text ID="87621" Value="Bestand bestaat reeds, overschrijven?"/>
+    <Text ID="87622" Value="Nieuw recept"/>
+    <Text ID="87623" Value="Geef een receptnaam in"/>
+    <Text ID="87710" Value="Verwijder recept, ben je zeker?"/>
+    <Text ID="87806" Value="Waarde is aangepast, opslaan?"/>
+    <Text ID="96221" Value="Ok"/>
+    <Text ID="96222" Value="Fout bij opslaan op USB "/>
+    <Text ID="96223" Value="Fout"/>
+    <Text ID="96781" Value="Opslaan op USB"/>
+    <Text ID="96782" Value="Copieren gedaan"/>
+    <Text ID="97458" Value="Geef een toolnaam in"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="87619" Value="0"/>
+    <Index ID="87620" Value="1"/>
+    <Index ID="87621" Value="3"/>
+    <Index ID="87622" Value="4"/>
+    <Index ID="87623" Value="5"/>
+    <Index ID="87710" Value="6"/>
+    <Index ID="87806" Value="7"/>
+    <Index ID="96221" Value="2"/>
+    <Index ID="96222" Value="9"/>
+    <Index ID="96223" Value="8"/>
+    <Index ID="96781" Value="10"/>
+    <Index ID="96782" Value="11"/>
+    <Index ID="97458" Value="12"/>
+  </IndexMap>
+</TextGroup>

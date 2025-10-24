@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Cpu xmlns="http://br-automation.co.at/AS/Cpu">
+  <Objects>
+    <Object Type="File" Description="Software Konfiguration">Cpu.sw</Object>
+    <Object Type="File" Description="Permanente Variablen">Cpu.per</Object>
+    <Object Type="File" Description="I/O Zuordnung">IoMap.iom</Object>
+    <Object Type="File" Description="PV Zuordnung">PvMap.vvm</Object>
+    <Object Type="File" Description="SafeDESIGNER Projekt">SafeDESIGNER Projekt.swt</Object>
+    <Object Type="Package">Motion</Object>
+    <Object Type="Package">VC</Object>
+    <Object Type="File">gCut2.br</Object>
+    <Object Type="File">gCut1.br</Object>
+    <Object Type="Package">UnitSystem</Object>
+    <Object Type="File">Cpu1.sw</Object>
+    <Object Type="File">Cpu2.sw</Object>
+  </Objects>
+  <Configuration>
+    <AutomationRuntime Version="G4.06" />
+    <Build GccVersion="4.1.2" />
+    <DefaultTargetMemory Tasks="UserROM" />
+    <Safety SafetyRelease="1.5" />
+    <Transfer DownloadMode="Copy" />
+    <OnlineConfiguration Name="5PC510.SX01-00" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=3" ConnectionParameters="/RT=1000 /AM=* /DAIP=192.168.1.10 /REPO=11159 /ANSL=1" Description="" />
+  </Configuration>
+</Cpu>

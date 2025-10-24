@@ -1,0 +1,90 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: csv_hdl
+ * File: csv_hdl.var
+ * Author: beutert
+ * Created: August 28, 2012
+ ********************************************************************
+ * Local variables of program csv_hdl
+ ********************************************************************)
+VAR
+	ProgParaIndexSearchDirection : USINT;
+	VCHandle : UDINT;
+END_VAR
+VAR CONSTANT
+	TXT_GRP_PROGPARASECTIONS : UDINT := 13;
+END_VAR
+VAR
+	DirCreate_0 : DirCreate;
+	CSV_Header : CSV_Header_typ;
+	CSV_Hndl : CSVHndl_typ;
+	CSV_InitVariable : CSV_Init;
+	CSV_ListCSVFile : CSV_ListFile;
+	CSV_ReadCSVFile : CSV_ReadFile;
+	CSV_SearchData : CSV_Search;
+	CSV_SearchFile : SearchFileName;
+	CSV_WriteCSVFile : CSV_WriteFile;
+	CSVCheckFileVersion : CSV_CheckFile;
+	CSVInitCheckFileVersion : CSV_InitCheckFile;
+	DevLink_0 : DevLink;
+	DevUnlink_0 : DevUnlink;
+	Dyn_Usint : REFERENCE TO USINT;
+	Error : UINT;
+	FileDelete_0 : FileDelete;
+	FileNameOld : STRING[80];
+	FileNamesRead : ARRAY[0..99] OF STRING[46];
+	i : INT;
+	ii : USINT;
+END_VAR
+VAR CONSTANT
+	INVISIBLE : USINT := 1;
+END_VAR
+VAR
+	OldListBoxIdx : UINT;
+	pNames : ARRAY[0..4] OF UDINT;
+	SaveUserData : USINT;
+	Sort_0 : Sort;
+END_VAR
+VAR CONSTANT
+	ST_ASK_FOR_DELETE_FILE : UINT := 7;
+	ST_ASK_FOR_OVERWRITE_FILE : UINT := 11;
+	ST_CHECK_VERSION : UINT := 6;
+	ST_COMMAND : UINT := 0;
+	ST_DELETE_FILE : UINT := 8;
+	ST_ERROR : UINT := 255;
+	ST_LINK_DEVICE : UINT := 16;
+	ST_LIST_FILE : UINT := 1;
+	ST_LIST_FILE_SORT : UINT := 2;
+	ST_READ_FILE : UINT := 5;
+	ST_REPLACE_WRONG_CHARS : UINT := 13;
+	ST_SEARCH_DATA : UINT := 3;
+	ST_SEARCH_FILE_ON_USB : UINT := 12;
+	ST_SORT_FILE_NAMES : UINT := 9;
+	ST_UNLINK_DEVICE : UINT := 15;
+	ST_WRITE_FILE : UINT := 4;
+END_VAR
+VAR
+	Step : UINT;
+	StepOld : UINT;
+	StructSizes : ARRAY[0..4] OF UDINT;
+	szDevLinkPara : STRING[80];
+	szFileDevice : STRING[80];
+	tmpChar : STRING[1];
+	tmpRecipe : rcp_prog_typ := (0);
+	tmpRecipeOld : rcp_prog_typ := (0);
+	tmpString : STRING[50];
+END_VAR
+VAR CONSTANT
+	VISIBLE : USINT := 0;
+END_VAR
+VAR
+	xSorted : BOOL;
+	Layer_Password : BOOL;
+	HWString : STRING[20];
+	HWInfo_0 : HWInfo;
+	InputPassword : STRING[8];
+	Show_Layer_password : INT;
+	Level_Passwort : INT := 10;
+	SPR_CheckTextIndexValid_0 : SPR_CheckTextIndexValid;
+END_VAR

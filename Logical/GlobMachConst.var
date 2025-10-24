@@ -1,0 +1,81 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * File: GlobMachConst.var
+ * Author: schoenefeldr
+ * Created: August 01, 2012
+ ********************************************************************
+ * Global variables of project 120801_hp_004
+ ********************************************************************)
+(*======================================================================================================================================*)
+(*MACHINE CONSTANTS*)
+(*======================================================================================================================================*)
+VAR CONSTANT
+	MACHINE_WINDCORE_MAXSENSOR : REAL := 995.0; (*995.0 mm maximum sensor value*)
+	MACHINE_WINDCORE_MINSENSOR : REAL := 5.0; (*5.0 mm minimum sensor value*)
+	MACHINE_WINDCORE_DIAM : REAL := 76.0; (*76 mm diameter winding core*)
+	MACHINE_LENGTH_PER_TOOTH : REAL := 3175.0; (*3.175 mm per tooth [µm]*)
+	MACHINE_UNITS_PER_METER : REAL := 1000000.0; (*conversion between m and unit, here µm*)
+	
+END_VAR
+(*Helping constants for linearisation of distance sensors (offline calculated during first setup)*)
+VAR CONSTANT
+	DIAM_SENSOR_LINEAR_CORR_GAIN : REAL := 0.88105; (*Gain for linear correction of value [1]*)
+	DIAM_SENSOR_LINEAR_CORR_OFFSET : REAL := 104.0; (*Offset for linear correction of value [mm]*)
+
+END_VAR
+(*Configuration constants*)
+VAR CONSTANT
+	CFG_FLENGE_DMS_AIN : USINT := 10; (*Binary 1010 for 1000 samples per second*)
+END_VAR
+(*======================================================================================================================================*)
+(*MOVEMENT RELATED MACHINE CONSTANTS*)
+(*======================================================================================================================================*)
+(*Diese Konstantendefinitionen evtl. verschieben*)
+VAR CONSTANT
+	GEAR_RATIO_CUT1 : UINT := 5; (*gear ratio of cutting unit gearbox*)
+	VELOCITY_LIMIT_OVER_MAX : REAL := 4000000.0; (*Maximum velocity incl. reserve, e.g. 4.000.000 = 240 m/min*)
+	MASTER_VELOCITY_INCREMENT : REAL := (1000000.0/60.0); (*default increment/decrement = 1 m/min*)
+	MASTER_VELOCITY_HOLD_THRESHOLD : REAL := (1.2*1000000.0/60.0); (*additive velo setpoint for hold/inc cmd (avoid deceleration)*)
+	MASTER_VELOCITY_DEC_THRESHOLD : REAL := (0.8*1000000.0/60.0); (*additive velo setpoint for decrement cmd*)
+	DEFAULT_MASTER_MAX_VELO : REAL := 1000000.0; (*default maximum velocity e.g. 1.000.000 = 60 m/min*)
+	DEFAULT_MASTER_AUTO_MODE_ACC : REAL := (1000000.0/60.0); (*default acceleration e.g. 16666 = 1 (m/min)/s*)
+	EMCY_STOP_MASTER_DEC : REAL := 2800000.0; (*master deceleration in case of emergency stop [units/s^2]*)
+	EMCY_DOORS_MASTER_DEC : REAL := 1200000.0; (*master deceleration in case of emergency doors opened [units/s^2]*)
+	SLS_MASTER_VELO : REAL := 66666.67; (*master velocity in case of Safe Limited Speed [units/s]*)
+	DEFAULT_NUMERATOR_DINT : DINT := 10000; (*Default numerator for electronic gear (CAM or Gear)*)
+	DEFAULT_DENOMINATOR_UDINT : UDINT := 10000; (*Default denominator for electronic gear (CAM or Gear)*)
+	DEFAULT_NUMERATOR_REAL : REAL := DEFAULT_NUMERATOR_DINT; (*Default numerator for electronic gear (CAM or Gear)*)
+	DEFAULT_DENOMINATOR_REAL : REAL := DEFAULT_DENOMINATOR_UDINT; (*Default denominator for electronic gear (CAM or Gear)*)
+	MAX_VELO_REL_10_PERCENT : REAL := 10.0; (*maximum relative value [%], 100 = 100 %*)
+	GEAR_RATIO_TOP_TWIND : REAL := 3600.0/484.0; (*gear ratio of top tandem winder from toothbelt gear*)
+	GEAR_RATIO_BOT_TWIND : REAL := 3600.0/484.0; (*gear ratio of bottom tandem winder from toothbelt gear*)
+	GEAR_RATIO_UNWINDER : REAL := 8.0;
+	MAX_CORRECTION : REAL := 3000.0;
+END_VAR
+(*======================================================================================================================================*)
+(*DEFAULT RECIPE VALUES (MACHINE AND APPLICATION)*)
+(*======================================================================================================================================*)
+VAR CONSTANT
+	DEFAULT_TWIND_WARN_DIAM : REAL := 500.0; (*Default warning diameter tandem winder [mm]*)
+	DEFAULT_TWIND_STOP_DIAM : REAL := 600.0; (*Default stop diameter tandem winder [mm]*)
+	DEFAULT_TOP_TWIND_FRICT_COMP : REAL := 0.25; (*Default friction compensation top tandem winder [Nm] (on motor side)*)
+	DEFAULT_BOT_TWIND_FRICT_COMP : REAL := 0.25; (*Default friction compensation bottom tandem winder [Nm] (on motor side)*)
+	DEFAULT_LOAD_UNITS_80 : UDINT := 50800000; (*Default encoder_if - scaling - load units for number of teeth = 80*)
+	DEFAULT_LOAD_REV_MOTOR_200 : UDINT := 1000; (*Default encoder_if - scaling - load - motor_rev for number of teeth = 200*)
+	DEFAULT_COG_SUPP_SPINDLE : UINT := 160; (*Default number of teeth of cog support spindle*)
+	DEFAULT_COG_TOOL_SEGMENTS : USINT := 1; (*Default number of teeth of cog cutting*)
+	DEFAULT_COG_CUTTING : UINT := 96; (*Default number of teeth of cog cutting*)
+	DEFAULT_TWIND_MIN_DIAM_FORCE : REAL := 10.0; (*Default winder force (tandem winder) at low diameter*)
+	DEFAULT_TWIND_MAX_DIAM_FORCE : REAL := 5.0; (*Default winder force (tandem winder) at stop diameter*)
+	DEFAULT_TWIND_MIN_DIAM_VAL : REAL := 100000.0; (*Default value for low diameter [µm]*)
+END_VAR
+(*======================================================================================================================================*)
+(*OTHER CONSTANTS*)
+(*======================================================================================================================================*)
+(*Time delay values*)
+VAR CONSTANT
+	DELAY_DRIVE_ENABLE : TIME := T#15s; (*Delay [ms] until the drives are enabled by software*)
+	DELAY_REQUEST_STO : TIME := T#1s850ms; (*Delay [ms] until the drives have to be disabled if STO is requested*)
+	TIMEOUT_START : UINT := 1000; (*Timeout [ms] for checking if the active drive ar in the proper axis state (PLCopen)*)
+END_VAR

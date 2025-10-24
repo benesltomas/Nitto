@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_LayerSpender">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="12"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="98810" Value="mode:"/>
+    <Text ID="98811" Value="reverse:"/>
+    <Text ID="98812" Value="Move label to start position"/>
+    <Text ID="98813" Value="Step label to start position"/>
+    <Text ID="98814" Value="Label dispenser"/>
+    <Text ID="98815" Value="mode 1"/>
+    <Text ID="98816" Value="mode 2"/>
+    <Text ID="98817" Value="mode 3"/>
+    <Text ID="98818" Value="mode 4"/>
+    <Text ID="98819" Value="mode 5"/>
+    <Text ID="98820" Value="Label dispenser unwinder"/>
+    <Text ID="98821" Value="Label dispenser rewinder"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="98810" Value="Betriebsart:"/>
+    <Text ID="98811" Value="Drehrichtungsumkehr:"/>
+    <Text ID="98812" Value="Label zur Startposition vorrücken"/>
+    <Text ID="98813" Value="Label vortippen"/>
+    <Text ID="98814" Value="Spender"/>
+    <Text ID="98815" Value="Betriebsart 1"/>
+    <Text ID="98816" Value="Betriebsart 2"/>
+    <Text ID="98817" Value="Betriebsart 3"/>
+    <Text ID="98818" Value="Betriebsart 4"/>
+    <Text ID="98819" Value="Betriebsart 5"/>
+    <Text ID="98820" Value="Spender Abwickler"/>
+    <Text ID="98821" Value="Spender Aufwickler"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="98810" Value="Mode"/>
+    <Text ID="98811" Value="Inverkeren draairichting"/>
+    <Text ID="98812" Value=""/>
+    <Text ID="98813" Value=""/>
+    <Text ID="98814" Value=""/>
+    <Text ID="98815" Value="Mode 1"/>
+    <Text ID="98816" Value="Mode 2"/>
+    <Text ID="98817" Value="Mode 3"/>
+    <Text ID="98818" Value="Mode 4"/>
+    <Text ID="98819" Value="Mode 5"/>
+    <Text ID="98820" Value=""/>
+    <Text ID="98821" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="98810" Value="0"/>
+    <Index ID="98811" Value="1"/>
+    <Index ID="98812" Value="2"/>
+    <Index ID="98813" Value="3"/>
+    <Index ID="98814" Value="6"/>
+    <Index ID="98815" Value="10"/>
+    <Index ID="98816" Value="11"/>
+    <Index ID="98817" Value="12"/>
+    <Index ID="98818" Value="13"/>
+    <Index ID="98819" Value="14"/>
+    <Index ID="98820" Value="5"/>
+    <Index ID="98821" Value="4"/>
+  </IndexMap>
+</TextGroup>

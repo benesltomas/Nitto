@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<NcMapping NcSwId="Acp10">
+  <NcObject Name="gUnwOp" ModuleId="8BVI0110HWD0.000-1_Hauptabrollung1und2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gunwopi" AcoposParameter="gunwa" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" Description="Operator side" />
+  <NcObject Name="gUnwDrv" ModuleId="8BVI0110HWD0.000-1_Hauptabrollung1und2" Type="ncAXIS" Channel="2" AcoposSimulation="Off" InitParameter="gunwdrvi" AcoposParameter="gunwa" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" Description="Drive side" />
+  <NcObject Name="gCut2" ModuleId="8BVI0330HWSS.000-1_Stanzstation2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gcut2i" AcoposParameter="gsafetya" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gGridFeeder" ModuleId="8BVI0110HWSS.000-1_GitterDrehfunktion" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="ggridfeedi" AcoposParameter="gsafetya" AdditionalData="PLCopen_ModPos=&quot;360000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gCut1" ModuleId="8BVI0330HWSS.000-1_Stanzstation1" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gcut1i" AcoposParameter="gsafetya" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gLongCut" ModuleId="8BVI0014HWSS.000-1_Laengsschneider" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="glongcuti" AcoposParameter="gsafetya" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gPBS1" ModuleId="8BVI0110HWD0.000-1_Bahnpuffer_Zugstation1" Type="ncAXIS" Channel="2" AcoposSimulation="Off" InitParameter="gpbs1i" AcoposParameter="gpbs2a" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gPBS2" ModuleId="8BVI0055HWD0.000-1_Zugband_Auslageband" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gpbs2i" AcoposParameter="gpbs2a" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gGridRight" ModuleId="8BVI0110HWD0.000-1_Gitteraufrollung1und2" Type="ncAXIS" Channel="2" AcoposSimulation="Off" InitParameter="ggrid2i" AcoposParameter="ggrida" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gGridLeft" ModuleId="8BVI0110HWD0.000-1_Gitteraufrollung1und2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="ggrid1i" AcoposParameter="ggrida" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gConvBelt" ModuleId="8BVI0055HWD0.000-1_Zugband_Auslageband" Type="ncAXIS" Channel="2" AcoposSimulation="Off" InitParameter="gconvbi" AcoposParameter="gconvbelta" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gCatchBelt" ModuleId="8BVI0014HWD0.000-1_Fangband" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gcatchbi" AcoposParameter="gcatchba" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gBuffer" ModuleId="8BVI0110HWD0.000-1_Bahnpuffer_Zugstation1" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gbufferi" AcoposParameter="gbuffera" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWSS.000-1_ncV_AXIS1" ModuleId="8BVI0014HWSS.000-1_Laengsschneider" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWD0.000-1_ncV_AXIS1" ModuleId="8BVI0014HWD0.000-1_Fangband" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWSS.000-1_ncV_AXIS1" ModuleId="8BVI0110HWSS.000-1_GitterDrehfunktion" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWSS.000-1_ncV_AXIS2" ModuleId="8BVI0014HWSS.000-1_Laengsschneider" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWSS.000-1_ncV_AXIS2" ModuleId="8BVI0110HWSS.000-1_GitterDrehfunktion" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWSS.000-1_ncAXIS2" ModuleId="8BVI0014HWSS.000-1_Laengsschneider" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWD0.000-1_ncAXIS2" ModuleId="8BVI0014HWD0.000-1_Fangband" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0055HWD0.000-1_ncV_AXIS1" ModuleId="8BVI0055HWD0.000-1_Zugband_Auslageband" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWSS.000-1_ncAXIS2" ModuleId="8BVI0110HWSS.000-1_GitterDrehfunktion" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1b_ncV_AXIS2" ModuleId="8BVI0110HWD0.000-1_Gitteraufrollung1und2" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1b_ncV_AXIS1" ModuleId="8BVI0110HWD0.000-1_Gitteraufrollung1und2" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1a_ncV_AXIS2" ModuleId="8BVI0110HWD0.000-1_Bahnpuffer_Zugstation1" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1a_ncV_AXIS1" ModuleId="8BVI0110HWD0.000-1_Bahnpuffer_Zugstation1" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0014HWD0.000-1_ncV_AXIS2" ModuleId="8BVI0014HWD0.000-1_Fangband" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1_ncV_AXIS2" ModuleId="8BVI0110HWD0.000-1_Hauptabrollung1und2" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0110HWD0.000-1_ncV_AXIS1" ModuleId="8BVI0110HWD0.000-1_Hauptabrollung1und2" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1a_ncAXIS2" ModuleId="8BVI0330HWSS.000-1_Stanzstation2" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1a_ncAXIS2" ModuleId="8B0P0440HW00.000-1_Versorgung2" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1a_ncV_AXIS2" ModuleId="8BVI0330HWSS.000-1_Stanzstation2" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1_ncV_AXIS1" ModuleId="8BVI0330HWSS.000-1_Stanzstation1" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1_ncV_AXIS2" ModuleId="8BVI0330HWSS.000-1_Stanzstation1" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1a_ncV_AXIS1" ModuleId="8BVI0330HWSS.000-1_Stanzstation2" Type="ncV_AXIS" Channel="1" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1_ncAXIS1" ModuleId="8B0P0440HW00.000-1_Versorgung1" Type="ncAXIS" Channel="1" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1a_ncV_AXIS2" ModuleId="8B0P0440HW00.000-1_Versorgung2" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1_ncV_AXIS2" ModuleId="8B0P0440HW00.000-1_Versorgung1" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0055HWD0.000-1_ncV_AXIS2" ModuleId="8BVI0055HWD0.000-1_Zugband_Auslageband" Type="ncV_AXIS" Channel="2" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1_ncAXIS2" ModuleId="8B0P0440HW00.000-1_Versorgung1" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="gMaster1" ModuleId="8B0P0440HW00.000-1_Versorgung1" Type="ncV_AXIS" Channel="1" InitParameter="gmasteri" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1a_ncV_AXIS1" ModuleId="8B0P0440HW00.000-1_Versorgung2" Type="ncV_AXIS" Channel="1" InitParameter="gmasteri" AdditionalData="PLCopen_ModPos=&quot;1000000,1&quot;" Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="8BVI0330HWSS.000-1_ncAXIS2" ModuleId="8BVI0330HWSS.000-1_Stanzstation1" Type="ncAXIS" Channel="2" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="8B0P0440HW00.000-1a_ncAXIS1" ModuleId="8B0P0440HW00.000-1_Versorgung2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" Disabled="TRUE" ModuleDisabled="FALSE" />
+  <NcObject Name="gUnwFeeder" ModuleId="8I64xxxxxxx.00x-1" ModuleAddress="SDC_IF1.ST1" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gunwfeedi" AcoposParameter="gunwfeeda" AdditionalData="PLCopen_ModPos=&quot;118000,83&quot; " Disabled="FALSE" ModuleDisabled="FALSE" />
+  <NcObject Name="gPackBelt" ModuleId="8I64xxxxxxx.00x-1a" ModuleAddress="SDC_IF1.ST2" Type="ncAXIS" Channel="1" AcoposSimulation="Off" InitParameter="gPackBelti" AcoposParameter="gPackBelta" AdditionalData="PLCopen_ModPos=&quot;118000,83&quot; " Disabled="FALSE" ModuleDisabled="FALSE" />
+</NcMapping>

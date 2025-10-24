@@ -1,0 +1,257 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML DIR=LTR>
+ <HEAD>
+  <META NAME="generator" CONTENT="Microsoft FrontPage 6.0">
+  <META ORDER=1>
+  <TITLE>SwitchConfiguration</TITLE>
+  <LINK REL="StyleSheet" HREF="../styles.css">
+<!--NavHead-->
+<!-- $Id: NavHead.tpl 30 2004-11-24 12:27:17Z erlingerg $ -->
+  <link rel="stylesheet" type="text/css" href="../navigate.css">
+<!--/NavHead-->
+ </head>
+<BODY>
+  <H1> SwitchConf - SwitchConfiguration()</H1>
+
+  <p>This function block configures end-switches and reference switch for APCm.</p>
+
+  <p class="tips"><b>HINT:<br>
+	</b><br>
+  Modules were switches are connected must be in the POWERLINK network.<br>
+	<br>
+	If you don't set a device name for the switch it is skipped.</p>
+
+  <H2> Parameters:</H2>
+
+  <CENTER>
+   <TABLE BORDER="1" class="parameter_tab">
+    <TR>
+     <th class="parameter_tab">      <P ALIGN="CENTER"> <B>I/O</B></P>
+     </th><th class="parameter_tab">      <P> <B>Parameter</B></P>
+     </th><th class="parameter_tab">      <P> <B>Data Type</B></P>
+     </th><th class="parameter_tab">      <P> <B>Description</B></P>
+     </th>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      Axis</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      axis reference</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      Execute</TD>
+
+     <TD class="parameter_tab">
+      BOOL</TD>
+
+     <TD class="parameter_tab">
+      start initialization at rising edge</TD>
+    </TR>
+
+    <tr>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      posEndSwitchDeviceName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      device name of module where positive end switch is connected</TD>
+    </tr>
+
+    <tr>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      posEndSwitchChannelName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      channel name of i/o where positive end switch is connected</TD>
+    </tr>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      negEndSwitchDeviceName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      device name of module where negative end switch is connected</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      nedEndSwitchChannelName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      channel name of i/o where negative end switch is connected</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      refSwitchDeviceName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      device name of module where reference switch is connected</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      IN</TD>
+
+     <TD class="parameter_tab">
+      refSwitchChannelName</TD>
+
+     <TD class="parameter_tab">
+      UDINT</TD>
+
+     <TD class="parameter_tab">
+      channel name of i/o where reference switch is connected</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      OUT</TD>
+
+     <TD class="parameter_tab">
+      Done</TD>
+
+     <TD class="parameter_tab">
+      BOOL</TD>
+
+     <TD class="parameter_tab">
+      initialization complete</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      OUT</TD>
+
+     <TD class="parameter_tab">
+      Busy</TD>
+
+     <TD class="parameter_tab">
+      BOOL</TD>
+
+     <TD class="parameter_tab">
+      initialization active</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      OUT</TD>
+
+     <TD class="parameter_tab">
+      Error</TD>
+
+     <TD class="parameter_tab">
+      BOOL</TD>
+
+     <TD class="parameter_tab">
+      error occured in FB</TD>
+    </TR>
+
+    <TR>
+     <TD class="parameter_tab">
+      OUT</TD>
+
+     <TD class="parameter_tab">
+      ErrorID</TD>
+
+     <TD class="parameter_tab">
+      ErrorNumbers_typ</TD>
+
+     <TD class="parameter_tab">
+      <a href="../General%20information/Status%20Numbers.html">error number</a></TD>
+    </TR>
+   </TABLE>
+  </CENTER>
+
+  <h2>
+  Call Syntax (Structured Text):</h2>
+  <p class="pSourceCode">SwitchConfiguration_Lift1.Axis := <font color="#0000FF">
+	ADR</font>(g211A1);<br>
+	SwitchConfiguration_Lift1.Execute := <font color="#0000FF">TRUE</font>;<br>
+	SwitchConfiguration_Lift1.posEndSwitchDeviceName := <font color="#0000FF">
+	ADR</font> (<font color="#FF00FF">'IF6.ST15.IF1.ST7'</font>);<br>
+	SwitchConfiguration_Lift1.posEndSwitchChannelName := <font color="#0000FF">
+	ADR</font> (<font color="#FF00FF">'DigitalInput02')</font>;<br>
+	SwitchConfiguration_Lift1.negEndSwitchDeviceName := <font color="#0000FF">
+	ADR</font> (<font color="#FF00FF">'IF6.ST15.IF1.ST7'</font>);<br>
+	SwitchConfiguration_Lift1.negEndSwitchChannelName := <font color="#0000FF">
+	ADR</font> (<font color="#FF00FF">'DigitalInput01'</font>);<br>
+	SwitchConfiguration_Lift1.refSwitchDeviceName := 0;<br>
+	SwitchConfiguration_Lift1.refSwitchChannelName := 0;<br>
+	SwitchConfiguration_Lift1();</p>
+<!--NavBottom-->
+  <div class="DoNotPrintNavItems" id="NavBottom_8">
+  <br>
+  <table class="Nav" width="100%" cellspacing="2" cellpadding="0">
+   <tr class="Nav">
+    <td rowspan="2" class="Nav" valign="top" width="45%">
+     <p class="Nav">
+      &lt;<!---->&lt; P<!---->r<!---->e<!---->v<!---->i<!---->o<!---->u<!---->s T<!---->o<!---->p<!---->i<!---->c<br>
+      <a class="Nav" href="FBKs.html">F<!---->u<!---->n<!---->c<!---->t<!---->i<!---->o<!---->n<!---->s a<!---->n<!---->d F<!---->u<!---->n<!---->c<!---->t<!---->i<!---->o<!---->n B<!---->l<!---->o<!---->c<!---->k<!---->s</a>
+     </p>
+    </td>
+    <td class="Nav" width="10%" valign="top" nowrap>
+     <p class="NavCenter">
+      &nbsp; <a class="Nav" href="../SwitchConf.html">S<!---->t<!---->a<!---->r<!---->t<!---->&nbsp;<!---->P<!---->a<!---->g<!---->e</a> &nbsp;
+     </p>
+    </td>
+    <td rowspan="2" class="Nav" valign="top" width="45%">
+     <p class="NavRight">
+      N<!---->e<!---->x<!---->t T<!---->o<!---->p<!---->i<!---->c &gt;<!---->&gt;<br>
+      <a class="Nav" href="../Data types and constants/Data types and constants.html">D<!---->a<!---->t<!---->a t<!---->y<!---->p<!---->e<!---->s a<!---->n<!---->d c<!---->o<!---->n<!---->s<!---->t<!---->a<!---->n<!---->t<!---->s</a>
+     </p>
+    </td>
+   </tr>
+   <tr class="Nav">
+    <td class="Nav" width="10%" valign="top" nowrap>
+     <p class="NavCenter">
+      &nbsp; <a class="Nav" href="FBKs.html">S<!---->t<!---->a<!---->r<!---->t<!---->&nbsp;<!---->o<!---->f<!---->&nbsp;<!---->C<!---->h<!---->a<!---->p<!---->t<!---->e<!---->r</a> &nbsp;
+     </p>
+    </td>
+   </tr>
+  </table>
+  </div>
+<!--/NavBottom-->
+ </body>
+</HTML>

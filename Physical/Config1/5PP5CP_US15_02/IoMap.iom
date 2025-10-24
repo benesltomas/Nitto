@@ -1,0 +1,243 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Datei: IoMap.iom
+ * Autor: okrebs
+ * Erstellt: 22. Mai 2014
+ ********************************************************************
+ * IO-Rangierungsdatei
+ ********************************************************************)
+VAR_CONFIG
+	MAIN:machine.safety.ResetStartupInhibit AT %QX."X20SL8010_9A1".BOOL102;
+	MAIN:machine.safety.ResetSafeMC AT %QX."X20SL8010_9A1".BOOL101;
+	MAIN:machine.safety.ResetStartupInhibit AT %QX."X20SL8010_9A1".BOOL103;
+	MAIN:machine.IOs.controlOn AT %QX."X20SL8010_9A1".BOOL104;
+	MAIN:machine.safety.Control_OFF AT %QX."X20SL8010_9A1".BOOL105;
+	MAIN:machine.safety.RequestSTO AT %IX."X20SL8010_9A1".BOOL001;
+	MAIN:machine.safety.RequestSLS AT %IX."X20SL8010_9A1".BOOL002;
+	MAIN:machine.safety.Request_ONdelay AT %IX."X20SL8010_9A1".BOOL003;
+	MAIN:machine.panel.LDTControlON.LDT.button AT %IX."X20DI9371_10A6".DigitalInput01 INVERSE;
+	MAIN:machine.panel.LDTControlOFF.LDT.button AT %IX."X20DI9371_10A6".DigitalInput02 INVERSE;
+	MAIN:machine.panel.LDTAutomatic.LDT.button AT %IX."X20DI9371_10A6".DigitalInput03;
+	MAIN:machine.panel.LDTStop.LDT.button AT %IX."X20DI9371_10A6".DigitalInput04;
+	MAIN:machine.panel.LDTRESET.LDT.button AT %IX."X20DI9371_10A6".DigitalInput05;
+	MAIN:machine.panel.LDTJOG.LDT.button AT %IX."X20DI9371_10A6".DigitalInput06;
+	MAIN.machine.panel.LDTControlON.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput01;
+	MAIN.machine.panel.LDTControlOFF.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput02;
+	MAIN:machine.panel.LDTAutomatic.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput03;
+	MAIN.machine.panel.LDTStop.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput04;
+	MAIN:machine.panel.LDTRESET.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput05;
+	MAIN:machine.panel.LDTJOG.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput06;
+	MAIN:machine.IOs.ampel.Gruen.led AT %QX."X20DO9322_10A10".DigitalOutput09; (*MAIN.machine.IOs.ampel.Gruen.Value.ActOut*)
+	MAIN:machine.IOs.ampel.Gelb.led AT %QX."X20DO9322_10A10".DigitalOutput10; (*MAIN.machine.IOs.ampel.Gelb.Value.ActOut*)
+	MAIN:machine.IOs.ampel.Rot.led AT %QX."X20DO9322_10A10".DigitalOutput11; (*MAIN.machine.IOs.ampel.Rot.Value.ActOut*)
+	MAIN.machine.safety.valid AT %IX."X20SO4110_10A3".PhysicalStateChannel1;
+	MAIN:machine.UnwinderUnit.unwinderDrv.lift.go_up AT %QX."X20DO4332_102A8".DigitalOutput01; (*MAIN.machine.UnwinderUnit.unwinderOp.lift.go_up*)
+	MAIN:machine.UnwinderUnit.unwinderOp.lift.go_up AT %QX."X20DO4332_102A8".DigitalOutput02;
+	MAIN.machine.UnwinderUnit.unwinderDrv.lift.commonValve AT %QX."X20DO4332_102A8".DigitalOutput03; (*MAIN.machine.UnwinderUnit.unwinderDrv.lift.commonValve*)
+	MAIN.machine.UnwinderUnit.unwinderOp.lift.commonValve AT %QX."X20DO4332_102A8".DigitalOutput04; (*MAIN.machine.UnwinderUnit.unwinderDrv.lift.commonValve*)
+	MAIN.machine.UnwinderUnit.unwinderOp.lift.buttonUp AT %IX."X20DI9371_102A2".DigitalInput07; (*MAIN.machine.UnwinderUnit.unwinderOp.lift.buttonUp*)
+	MAIN.machine.UnwinderUnit.unwinderOp.lift.buttonDown AT %IX."X20DI9371_102A2".DigitalInput08; (*MAIN.machine.UnwinderUnit.unwinderOp.lift.buttonDown*)
+	MAIN.machine.UnwinderUnit.unwinderOp.lift.limitswitch AT %IX."X20DI9371_102A2".DigitalInput09; (*MAIN.machine.UnwinderUnit.unwinderOp.lift.limitswitch*)
+	MAIN.machine.UnwinderUnit.unwinderDrv.lift.buttonUp AT %IX."X20DI9371_102A2".DigitalInput10; (*MAIN.machine.UnwinderUnit.unwinderDrv.lift.buttonUp*)
+	MAIN.machine.UnwinderUnit.unwinderDrv.lift.buttonDown AT %IX."X20DI9371_102A2".DigitalInput11; (*MAIN.machine.UnwinderUnit.unwinderDrv.lift.buttonDown*)
+	MAIN.machine.UnwinderUnit.unwinderDrv.lift.limitswitch AT %IX."X20DI9371_102A2".DigitalInput12; (*MAIN.machine.UnwinderUnit.unwinderDrv.lift.limitswitch*)
+	MAIN:machine.IOs.hydraulicPump AT %QX."X20DO9322_10A8".DigitalOutput07;
+	MAIN:machine.turngridwinder.TurnGrWinKeysbox.feederturnkey.LDT.button AT %IX."X20DI9371_202A3".DigitalInput05;
+	MAIN.machine.turngridwinder.TurnGrWinKeysbox.GridWinrightkey.buttonDown.LDT.button AT %IX."X20DI9371_202A3".DigitalInput03;
+	MAIN.machine.turngridwinder.TurnGrWinKeysbox.GridWinleftkey.buttonDown.LDT.button AT %IX."X20DI9371_202A3".DigitalInput04;
+	MAIN.machine.turngridwinder.TurnGrWinKeysbox.GridWinrightkey.buttonDown.LDT.led AT %QX."X20DO9322_202A6".DigitalOutput09;
+	MAIN.machine.turngridwinder.TurnGrWinKeysbox.GridWinleftkey.buttonDown.LDT.led AT %QX."X20DO9322_202A6".DigitalOutput10;
+	MAIN:machine.ctrl.valveterminal AT %QB."X20DS4387_101A2".DataOut01_01;
+	MAIN:machine.UnwinderUnit.unwinderOp.clamp.buttonDown.LDT.button AT %IX."X20DI9371_102A3".DigitalInput06;
+	MAIN:machine.UnwinderUnit.unwinderOp.clamp.buttonDown.LDT.led AT %QX."X20DO9322_102A5".DigitalOutput10;
+	MAIN:machine.UnwinderUnit.clamp.buttonDown.LDT.led AT %QX."X20DO9322_102A5".DigitalOutput11;
+	MAIN:machine.UnwinderUnit.unwinderDrv.clamp.buttonDown.LDT.led AT %QX."X20DO9322_102A5".DigitalOutput12;
+	MAIN:machine.UnwinderUnit.unwinderDrv.clamp.buttonDown.LDT.button AT %IX."X20DI9371_102A3".DigitalInput08;
+	MAIN:machine.UnwinderUnit.clamp.buttonDown.LDT.button AT %IX."X20DI9371_102A3".DigitalInput07;
+	MAIN:machine.UnwinderUnit.feederCtrl.LimitSwitchRight AT %IX."X20DI9371_102A3".DigitalInput04;
+	MAIN:machine.UnwinderUnit.feederCtrl.LimitSwitchLeft AT %IX."X20DI9371_102A3".DigitalInput05; (*MAIN:machine.UnwinderUnit.feederCtrl.LimitSwitchLeft*)
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRequestOpSide.LDT.button AT %IX."X20DI9371_102A3".DigitalInput01;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonLeftOpSide.LDT.button AT %IX."X20DI9371_102A3".DigitalInput02;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRightOpSide.LDT.button AT %IX."X20DI9371_102A3".DigitalInput03;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRequestDrvSide.LDT.button AT %IX."X20DI9371_102A4".DigitalInput01;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRightDrvSide.LDT.button AT %IX."X20DI9371_102A4".DigitalInput02;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonLeftDrvSide.LDT.button AT %IX."X20DI9371_102A4".DigitalInput03;
+	Cyclic#1.gUnwFeeder_DrvIf.iDrvOK AT %IX."8I64xxxxxxx.00x-1".ETAD_Input_Bool_02;
+	Cyclic#1.gUnwFeeder_DiDoIf.iDriveReady AT %IX."8I64xxxxxxx.00x-1".ETAD_Input_Bool_02;
+	Cyclic#1.gUnwFeeder_ModuleOk AT %IX."8I64xxxxxxx.00x-1".ModuleOk;
+	Cyclic#1.gUnwFeeder_DrvIf.iLifeCnt AT %IB."8I64xxxxxxx.00x-1".SDC_LifeCnt;
+	Cyclic#1.gUnwFeeder_DiDoIf.iLifeCntDriveEnable AT %IB."8I64xxxxxxx.00x-1".SDC_LifeCnt;
+	Cyclic#1.gUnwFeeder_DiDoIf.iLifeCntDriveReady AT %IB."8I64xxxxxxx.00x-1".SDC_LifeCnt;
+	Cyclic#1.gUnwFeeder_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1".CMDD_Output_Bool_00;
+	Cyclic#1.gUnwFeeder_ModuleOk AT %QX."8I64xxxxxxx.00x-1".CMDD_Output_Bool_01;
+	Cyclic#1.gUnwFeeder_ModuleOk AT %QX."8I64xxxxxxx.00x-1".CMDD_Output_Bool_02;
+	Cyclic#1.gUnwFeeder_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1".CMDD_Output_Bool_03;
+	Cyclic#1.gUnwFeeder_DrvIf.oSetPos AT %QW."8I64xxxxxxx.00x-1".LFRD_Output;
+	Cyclic#1.gUnwFeeder_DrvIf.oSetTime AT %QW."8I64xxxxxxx.00x-1".SDC_SetTime;
+	Cyclic#1.gUnwFeeder_DrvIf.oBrake AT %QX."8I64xxxxxxx.00x-1".DigitalOutput01;
+	MAIN:machine.turngridwinder.TurnGrWinKeysbox.feederturnkey.LDT.led AT %QX."X20DO9322_202A6".DigitalOutput11;
+	::MAIN:machine.UnwinderUnit.splicetable.clampAfter.buttonDown.LDT.button AT %IX."X20DI9371_102A3".DigitalInput09; (*MAIN:machine.UnwinderUnit.splicetable.clampBefore.buttonDown.LDT.button*)
+	::MAIN:machine.UnwinderUnit.splicetable.clampBefore.buttonDown.LDT.button AT %IX."X20DI9371_102A4".DigitalInput08; (*MAIN:machine.UnwinderUnit.splicetable.clampAfter.buttonDown.LDT.button*)
+	MAIN:machine.UnwinderUnit.unwinderOp.lift.LED_is_up AT %QX."X20DO9322_102A5".DigitalOutput05;
+	MAIN:machine.UnwinderUnit.unwinderOp.lift.go_up AT %QX."X20DO9322_102A5".DigitalOutput06;
+	MAIN:machine.UnwinderUnit.unwinderDrv.lift.LED_is_up AT %QX."X20DO9322_102A5".DigitalOutput07;
+	MAIN:machine.UnwinderUnit.unwinderDrv.lift.go_up AT %QX."X20DO9322_102A5".DigitalOutput08;
+	::MAIN:machine.UnwinderUnit.splicetable.clampAfter.buttonDown.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput01;
+	MAIN:machine.pullbreak.clamp.buttonDown.LDT.button AT %IX."X20DI9371_102A3".DigitalInput11;
+	::MAIN:machine.UnwinderUnit.splicetable.clampBefore.buttonDown.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput06;
+	MAIN:machine.safety.manuelmode AT %QX."X20SL8010_9A1".BOOL106;
+	MAIN:machine.webguidingbuffer.active AT %QX."X20DO9322_10A9".DigitalOutput01;
+	MAIN:machine.webguidingbuffer.handSelect AT %QX."X20DO9322_10A9".DigitalOutput02;
+	MAIN:machine.webguidingbuffer.neutral AT %QX."X20DO9322_10A9".DigitalOutput03;
+	MAIN:machine.webguidingbuffer.automatic AT %QX."X20DO9322_10A9".DigitalOutput04;
+	MAIN:machine.webguidingbuffer.arrowLeft AT %QX."X20DO9322_10A9".DigitalOutput05;
+	MAIN:machine.webguidingbuffer.arrowRight AT %QX."X20DO9322_10A9".DigitalOutput06;
+	MAIN:machine.webguiding.active AT %QX."X20DO9322_10A9".DigitalOutput07;
+	MAIN:machine.webguiding.manual AT %QX."X20DO9322_10A9".DigitalOutput08;
+	MAIN:machine.webguiding.neutral AT %QX."X20DO9322_10A9".DigitalOutput09;
+	MAIN:machine.webguiding.automatic AT %QX."X20DO9322_10A9".DigitalOutput10;
+	MAIN:machine.webguiding.arrowLeft AT %QX."X20DO9322_10A9".DigitalOutput11;
+	MAIN:machine.webguiding.arrowRight AT %QX."X20DO9322_10A9".DigitalOutput12;
+	MAIN:machine.summerystartstop.boxunwinder.start.LDT.button AT %IX."X20DI9371_102A2".DigitalInput01;
+	MAIN:machine.summerystartstop.boxunwinder.stop.LDT.button AT %IX."X20DI9371_102A2".DigitalInput02;
+	MAIN:machine.summerystartstop.boxunwinder.jog.LDT.button AT %IX."X20DI9371_102A2".DigitalInput03;
+	MAIN:machine.summerystartstop.boxwebbuffer.start.LDT.button AT %IX."X20DI9371_102A2".DigitalInput04;
+	MAIN:machine.summerystartstop.boxwebbuffer.stop.LDT.button AT %IX."X20DI9371_102A2".DigitalInput05;
+	MAIN:machine.summerystartstop.boxwebbuffer.jog.LDT.button AT %IX."X20DI9371_102A2".DigitalInput06;
+	MAIN:machine.summerystartstop.boxcutting1.start.LDT.button AT %IX."X20DI9371_202A2".DigitalInput01;
+	MAIN:machine.summerystartstop.boxcutting1.stop.LDT.button AT %IX."X20DI9371_202A2".DigitalInput02;
+	MAIN:machine.summerystartstop.boxcutting1.jog.LDT.button AT %IX."X20DI9371_202A2".DigitalInput03;
+	MAIN:machine.cuttingunit1.powerbridge.bridgedownbutton.buttonDown.LDT.button AT %IX."X20DI9371_202A2".DigitalInput07;
+	MAIN:machine.cuttingunit2.powerbridge.bridgedownbutton.buttonDown.LDT.button AT %IX."X20DI9371_202A2".DigitalInput11;
+	MAIN:machine.longcutter.cutterUp.buttomToggle.LDT.button AT %IX."X20DI9371_202A3".DigitalInput09; (*MAIN:machine.longcutter.cutterUp.buttomToggle.LDT.button*)
+	MAIN:machine.longcutter.discmovesupp.buttonDown.LDT.button AT %IX."X20DI9371_202A3".DigitalInput10; (*MAIN:machine.longcutter.discmovesupp.buttonDown.LDT.button*)
+	MAIN:machine.pullbreakSt.hubctrl.buttomToggle2.LDT.button AT %IX."X20DI9371_202A4".DigitalInput04; (*MAIN:machine.pullbreakSt.hubctrl.buttomToggle2.LDT.button*)
+	MAIN:machine.summerystartstop.boxconveyor.start.LDT.button AT %IX."X20DI9371_202A5".DigitalInput03;
+	MAIN:machine.summerystartstop.boxconveyor.stop.LDT.button AT %IX."X20DI9371_202A5".DigitalInput04;
+	MAIN:machine.summerystartstop.boxconveyor.jog.LDT.button AT %IX."X20DI9371_202A5".DigitalInput05;
+	MAIN:machine.summerystartstop.boxlongcutter.jog.LDT.button AT %IX."X20DI9371_202A3".DigitalInput11; (*MAIN:machine.longcutter.movebutton.LDT.button*)
+	MAIN:machine.cuttingunit2.powerbridge.movebutton.LDT.button AT %IX."X20DI9371_202A2".DigitalInput12;
+	MAIN:machine.cuttingunit1.powerbridge.movebutton.LDT.button AT %IX."X20DI9371_202A2".DigitalInput08;
+	MAIN:machine.cuttingunit1.axis.refSwitchConfig.HomeSwitch AT %IX."X20DI9371_202A2".DigitalInput09 INVERSE;
+	MAIN:machine.cuttingunit2.axis.refSwitchConfig.HomeSwitch AT %IX."X20DI9371_202A3".DigitalInput01 INVERSE;
+	MAIN:machine.IOs.ValveAirON AT %QX."X20DO9322_202A11".DigitalOutput01;
+	MAIN:machine.pullbreak.clamp.buttonDown.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput02;
+	MAIN:machine.ctrl.valveterminal2 AT %QB."X20DS4387_101A2".DataOut02_01;
+	MAIN:machine.ctrl.valveterminal22 AT %QB."X20DS4387_101A2".DataOut02_02;
+	MAIN:machine.cuttingunit1.powerbridge.bridgedownbutton.buttonDown.LDT.led AT %QX."X20DO9322_202A6".DigitalOutput05;
+	MAIN:machine.cuttingunit2.powerbridge.bridgedownbutton.buttonDown.LDT.led AT %QX."X20DO9322_202A6".DigitalOutput07;
+	MAIN:machine.longcutter.cutterUp.buttomToggle.LDT.ledinv AT %QX."X20DO9322_202A6".DigitalOutput12;
+	MAIN:machine.pullbreakSt.hubctrl.buttomToggle.LDT.button AT %IX."X20DI9371_202A4".DigitalInput05; (*MAIN:machine.pullbreakSt.hubctrl.buttomToggle.LDT.button*)
+	MAIN:machine.longcutter.discmovesupp.buttonDown.LDT.led AT %QX."X20DO9322_202A7".DigitalOutput01;
+	MAIN:machine.longcutter.cutterUp.isup AT %IX."X20DI9371_202A3".DigitalInput07;
+	MAIN:machine.pullbreakSt.hubctrl.isdown AT %IX."X20DI9371_202A4".DigitalInput01; (*MAIN:machine.pullbreakSt.hubctrl.isdown*)
+	MAIN:machine.pullbreakSt.hubctrl.isup AT %IX."X20DI9371_202A3".DigitalInput12; (*MAIN:machine.pullbreakSt.hubctrl.isup*)
+	Cyclic#1.gUnwFeeder_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1".CMDD_Output_Bool_07;
+	MAIN:machine.webbuffer.axis.refSwitchConfig.NegHWSwitch AT %IX."X20DI9371_102A4".DigitalInput07 INVERSE;
+	MAIN:machine.webbuffer.axis.refSwitchConfig.PosHWSwitch AT %IX."X20DI9371_102A4".DigitalInput06 INVERSE;
+	MAIN:machine.ctrl.valveterminal23 AT %QB."X20DS4387_101A2".DataOut02_03;
+	MAIN:machine.switchcabinet.EMCY_Buttons.EMCY_Button1 AT %IX."X20SI4100_10A1".SafeEquivalentInput0102; (*Schaltschrank*)
+	MAIN:machine.panel.EMCY_Button AT %IX."X20SI4100_10A1".SafeEquivalentInput0304; (*Panel*)
+	MAIN:machine.cuttingunit1.powerbridge.pressuredrvside AT %IW."X20AI4622_202A8".AnalogInput01;
+	MAIN:machine.cuttingunit1.powerbridge.pressureOperside AT %IW."X20AI4622_202A8".AnalogInput02;
+	MAIN:machine.cuttingunit2.powerbridge.pressuredrvside AT %IW."X20AI4622_202A8".AnalogInput03; (*MAIN:machine.cuttingunit2.powerbridge.pressureOperside*)
+	MAIN:machine.cuttingunit2.powerbridge.pressureOperside AT %IW."X20AI4622_202A8".AnalogInput04;
+	MAIN:machine.UnwinderUnit.emcy_inputs.EMCY_Button1 AT %IX."X20SI9100_101A3".SafeTwoChannelInput0102;
+	MAIN:machine.emcy_inputs.EMCY_Button1 AT %IX."X20SI9100_101A3".SafeTwoChannelInput0304;
+	MAIN:machine.UnwinderUnit.emcy_inputs.EMCY_Button2 AT %IX."X20SI9100_101A3".SafeTwoChannelInput0506;
+	MAIN:machine.emcy_inputs.EMCY_pullwireOPs AT %IX."X20SI9100_101A3".SafeTwoChannelInput0708;
+	MAIN:machine.emcy_inputs.EMCY_pullwireDVRs AT %IX."X20SI9100_101A3".SafeTwoChannelInput0910;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door1 AT %IX."X20SI9100_101A3".SafeTwoChannelInput1112;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door2 AT %IX."X20SI9100_101A3".SafeTwoChannelInput1516;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door6 AT %IX."X20SI9100_101A3".SafeTwoChannelInput1718;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door3 AT %IX."X20SI9100_101A3".SafeTwoChannelInput1920;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door4 AT %IX."X20SI9100_101A4".SafeTwoChannelInput0102;
+	MAIN:machine.webbuffer.emcy_inputs.EMCY_Door5 AT %IX."X20SI9100_101A4".SafeTwoChannelInput0304;
+	MAIN:machine.pullbreak.emcy_inputs.EMCY_Door1 AT %IX."X20SI9100_101A4".SafeTwoChannelInput0910;
+	MAIN:machine.emcy_inputs.EMCY_Button2 AT %IX."X20SI9100_201A2".SafeTwoChannelInput0102;
+	MAIN:machine.emcy_inputs.EMCY_Button4 AT %IX."X20SI9100_201A2".SafeTwoChannelInput0304;
+	MAIN:machine.emcy_inputs.EMCY_Button3 AT %IX."X20SI9100_201A2".SafeTwoChannelInput0506;
+	MAIN:machine.cuttingunit1.emcy_inputs.EMCY_Door1 AT %IX."X20SI9100_201A2".SafeTwoChannelInput0708;
+	MAIN:machine.cuttingunit1.emcy_inputs.EMCY_Door2 AT %IX."X20SI9100_201A2".SafeTwoChannelInput0910;
+	MAIN:machine.cuttingunit2.emcy_inputs.EMCY_Door1 AT %IX."X20SI9100_201A2".SafeTwoChannelInput1112;
+	MAIN:machine.cuttingunit2.emcy_inputs.EMCY_Door2 AT %IX."X20SI9100_201A2".SafeTwoChannelInput1314;
+	MAIN:machine.longcutter.emcy_inputs.EMCY_Door1 AT %IX."X20SI9100_201A2".SafeTwoChannelInput1516;
+	MAIN:machine.conveyor.emcy_inputs.EMCY_Button2 AT %IX."X20SI9100_201A2".SafeTwoChannelInput1718;
+	MAIN:machine.conveyor.emcy_inputs.EMCY_Button1 AT %IX."X20SI9100_201A2".SafeTwoChannelInput1920;
+	MAIN:machine.pullbreakSt.hubctrl.limiterSwitchDrvSide AT %IX."X20DI9371_202A4".DigitalInput03; (*MAIN:machine.pullbreakSt.hubctrl.limiterSwitchDrvSide*)
+	MAIN:machine.pullbreakSt.hubctrl.limiterSwitchOpSide AT %IX."X20DI9371_202A5".DigitalInput08;
+	MAIN:machine.longcutter.cutterUp.enable AT %IX."X20DI9371_202A3".DigitalInput06 INVERSE;
+	MAIN:machine.conveyor.counters.counter1.triggerInput AT %IX."X20DI9371_202A4".DigitalInput06;
+	MAIN:machine.conveyor.counters.counter2.triggerInput AT %IX."X20DI9371_202A4".DigitalInput07;
+	MAIN:machine.conveyor.counters.counter3.triggerInput AT %IX."X20DI9371_202A4".DigitalInput08;
+	MAIN:machine.conveyor.counters.counter4.triggerInput AT %IX."X20DI9371_202A4".DigitalInput09;
+	MAIN:machine.conveyor.counters.counter5.triggerInput AT %IX."X20DI9371_202A4".DigitalInput10;
+	MAIN:machine.conveyor.counters.counter6.triggerInput AT %IX."X20DI9371_202A4".DigitalInput11;
+	MAIN:machine.conveyor.counters.counter7.triggerInput AT %IX."X20DI9371_202A4".DigitalInput12;
+	MAIN:machine.conveyor.counters.counter8.triggerInput AT %IX."X20DI9371_202A5".DigitalInput01;
+	MAIN:machine.conveyor.counters.counter9.triggerInput AT %IX."X20DI9371_202A5".DigitalInput02;
+	MAIN:machine.conveyor.counters.reset AT %IX."X20DI9371_202A5".DigitalInput06;
+	MAIN:machine.switchcabinet.fusePlug1 AT %IX."X20DI9371_10A5".DigitalInput01;
+	MAIN:machine.switchcabinet.fusePlug2 AT %IX."X20DI9371_10A5".DigitalInput02;
+	MAIN:machine.switchcabinet.fusePlugCEE AT %IX."X20DI9371_10A5".DigitalInput03;
+	MAIN:machine.switchcabinet.aircond AT %IX."X20DI9371_10A5".DigitalInput04;
+	MAIN:machine.switchcabinet.fuseWebGuide1 AT %IX."X20DI9371_10A5".DigitalInput05;
+	MAIN:machine.webguidingbuffer.hardwareOK AT %IX."X20DI9371_10A5".DigitalInput06;
+	MAIN:machine.switchcabinet.fuseWebGuide2 AT %IX."X20DI9371_10A5".DigitalInput07;
+	MAIN:machine.webguiding.hardwareOK AT %IX."X20DI9371_10A5".DigitalInput08;
+	MAIN:machine.longcutter.webclamp.buttonDown.LDT.button AT %IX."X20DI9371_202A3".DigitalInput02;
+	MAIN:machine.longcutter.webclamp.toDown_o AT %QX."X20DO9322_202A7".DigitalOutput08;
+	MAIN:machine.webbuffer.keys.up.LDT.button AT %IX."X20DI9371_102A4".DigitalInput09;
+	MAIN:machine.webbuffer.keys.down.LDT.button AT %IX."X20DI9371_102A4".DigitalInput10;
+	MAIN:machine.webbuffer.keys.home.LDT.button AT %IX."X20DI9371_102A4".DigitalInput11;
+	MAIN:machine.webbuffer.keys.up.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput07;
+	MAIN:machine.webbuffer.keys.down.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput08;
+	MAIN:machine.webbuffer.keys.home.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput09;
+	MAIN:machine.masterModul.ctrl.handWheel.counterHandWheel AT %IW."X20DC1196_202A9".Encoder01;
+	MAIN:OutputGrinderON AT %QX."X20DO9322_10A8".DigitalOutput05;
+	MAIN:machine.IOs.ampel.horn_o AT %QX."X20DO9322_10A10".DigitalOutput12;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRequestOpSide.LDT.led AT %QX."X20DO9322_102A5".DigitalOutput09;
+	MAIN:machine.UnwinderUnit.feederCtrl.buttonRequestDrvSide.LDT.led AT %QX."X20DO9322_102A6".DigitalOutput05;
+	MAIN:machine.masterModul.ctrl.inlineVelocity.dancepos AT %IW."X20AI4622_101A5".AnalogInput01;
+	MAIN:machine.panel.LDTAutomatic.LDT.led AT %QX."X20DO9322_10A10".DigitalOutput07;
+	MAIN:machine.IOs.antistatik AT %QX."X20DO9322_10A8".DigitalOutput01;
+	MAIN:machine.IOs.inline AT %QX."X20DO9322_10A8".DigitalOutput08;
+	MAIN:machine.IOs.machineReady AT %QX."X20DO9322_10A8".DigitalOutput09;
+	MAIN:machine.masterModul.ctrl.inlineVelocity.ConveyerVelocity AT %IW."X20AI4622_10A12".AnalogInput01;
+	::MAIN:machine.webbuffer.dancer.FlengeDMS AT %QB."X20AI1744_101A6".ConfigOutput01;
+	::MAIN:machine.webbuffer.dancer.DMS_In AT %ID."X20AI1744_101A6".AnalogInput01;
+	::MAIN:machine.conveyor.counters.Nitto_Table_Full AT %QX."X20DO9322_202A11".DigitalOutput02;
+	::MAIN:machine.IOs.Unwinder_OP_Led AT %QX."X20DO9322_202A6".DigitalOutput03;
+	::MAIN:machine.IOs.Unwinder_Drv_Led AT %QX."X20DO9322_202A6".DigitalOutput04;
+	::MAIN:machine.IOs.Unwinder_Drv_Button AT %IX."X20DI9371_202A2".DigitalInput04;
+	::MAIN:machine.IOs.Unwinder_OP_Button AT %IX."X20DI9371_202A2".DigitalInput05;
+	::MAIN:machine.ctrl.tasktimerPos AT %QX."X20DO9322_10A8".DigitalOutput11;
+	::MAIN:machine.ctrl.tasktimerNeg AT %QX."X20DO9322_10A8".DigitalOutput12;
+	Cyclic#1.gPackBelt_DrvIf.iLifeCnt AT %IB."8I64xxxxxxx.00x-1a".SDC_LifeCnt;
+	Cyclic#1.gPackBelt_DrvIf.iDrvOK AT %IX."8I64xxxxxxx.00x-1a".ETAD_Input_Bool_02;
+	Cyclic#1.gPackBelt_DrvIf.oSetTime AT %QW."8I64xxxxxxx.00x-1a".SDC_SetTime;
+	Cyclic#1.gPackBelt_DrvIf.oSetPos AT %QW."8I64xxxxxxx.00x-1a".LFRD_Output;
+	Cyclic#1.gPackBelt_DiDoIf.iLifeCntDriveReady AT %IB."8I64xxxxxxx.00x-1a".SDC_LifeCnt;
+	Cyclic#1.gPackBelt_DiDoIf.iLifeCntDriveEnable AT %IB."8I64xxxxxxx.00x-1a".SDC_LifeCnt;
+	Cyclic#1.gPackBelt_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1a".CMDD_Output_Bool_00;
+	Cyclic#1.gPackBelt_ModuleOk AT %QX."8I64xxxxxxx.00x-1a".CMDD_Output_Bool_01;
+	Cyclic#1.gPackBelt_ModuleOk AT %QX."8I64xxxxxxx.00x-1a".CMDD_Output_Bool_02;
+	Cyclic#1.gPackBelt_ModuleOk AT %IX."8I64xxxxxxx.00x-1a".ModuleOk;
+	Cyclic#1.gPackBelt_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1a".CMDD_Output_Bool_03;
+	Cyclic#1.gPackBelt_DiDoIf.iDriveReady AT %IX."8I64xxxxxxx.00x-1a".ETAD_Input_Bool_02;
+	Cyclic#1.gPackBelt_DiDoIf.oDriveEnable AT %QX."8I64xxxxxxx.00x-1a".CMDD_Output_Bool_07;
+	Cyclic#1.gPackBelt_DrvIf.oBrake AT %QX."8I64xxxxxxx.00x-1a".DigitalOutput01;
+	MAIN:machine.turngridwinder.ctrl.refSwitchConfig.HomeSwitch AT %IX."X20DI9371_202A3".DigitalInput08;
+	::MAIN:machine.conveyor.emcy_inputs.EMCY_Button3 AT %IX."X20SI4100_201A3".SafeEquivalentInput0102;
+	MAIN:machine.packbelt.ctrl.switchAutomatic AT %IX."X20DI9371_202A5".DigitalInput10;
+	MAIN:machine.packbelt.ctrl.switchManual AT %IX."X20DI9371_202A5".DigitalInput11;
+	MAIN:machine.packbelt.ctrl.buttonStart AT %IX."X20DI9371_202A5".DigitalInput12;
+	MAIN:machine.packbelt.ctrl.sensorBoxesPresent AT %IX."X20DI9371_202A5".DigitalInput09;
+	MAIN:machine.packbelt.ctrl.sensorStop AT %IX."X20DI9371_202A2".DigitalInput06;
+	MAIN:machine.packbelt.ctrl.sensorLowerSpeed AT %IX."X20DI9371_202A2".DigitalInput10;
+	::MAIN:machine.conveyor.counters.GreenLampOut AT %QX."X20DO9322_202A11".DigitalOutput03;
+	::MAIN:machine.conveyor.counters.RedLampOut AT %QX."X20DO9322_202A11".DigitalOutput04;
+	::MAIN:machine.IOs.aIn.Dancer_position.Value.RawInt AT %IW."X20AI4622_101A5".AnalogInput02;
+	::gMachine.IO.DIn.Liner_detekce.Value.State AT %IX."X20DI9371_102A3".DigitalInput10;
+END_VAR

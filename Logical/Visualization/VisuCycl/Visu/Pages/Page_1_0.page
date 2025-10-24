@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<Page xmlns="http://br-automation.co.at/AS/VC/Project" Name="Page_1_0">
+  <Property Name="Description" Value=""/>
+  <Property Name="Height" Value="1024"/>
+  <Property Name="Index" Value="12"/>
+  <Property Name="MoveFocus" Value="Circular"/>
+  <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[default]"/>
+  <Property Name="Width" Value="1280"/>
+  <Layers>
+    <Layer Name="Default">
+      <Property Name="BackColor" Value="9"/>
+      <Property Name="Description" Value=""/>
+      <Property Name="EditingMode" Value="Normal"/>
+      <Property Name="Height" Value="1024"/>
+      <Property Name="Left" Value="0"/>
+      <Property Name="OutlineColor" Value="0"/>
+      <Property Name="OutlineDisplayControl" Value="False"/>
+      <Property Name="OutlineDisplayName" Value="True"/>
+      <Property Name="OutlineHatched" Value="False"/>
+      <Property Name="StatusDatapoint" Value="None"/>
+      <Property Name="Top" Value="0"/>
+      <Property Name="VisibilityMode" Value="Normal"/>
+      <Property Name="Width" Value="1280"/>
+      <Property Name="Z-Order" Value="0"/>
+      <TextGroup>
+        <TextLayer LanguageId="en">
+          <Text ID="238058" Value="Set count:"/>
+          <Text ID="238059" Value="part counter"/>
+          <Text ID="238062" Value="Set m:"/>
+          <Text ID="238063" Value="Batch"/>
+          <Text ID="238064" Value="m counter"/>
+        </TextLayer>
+        <TextLayer LanguageId="de">
+          <Text ID="238058" Value="Vorgabe Anzahl:"/>
+          <Text ID="238059" Value="Stückzahl"/>
+          <Text ID="238062" Value="Vorgabe m:"/>
+          <Text ID="238063" Value="Auftrag"/>
+          <Text ID="238064" Value="Gesamtmeter:"/>
+        </TextLayer>
+        <TextLayer LanguageId="nl-NL">
+          <Text ID="238058" Value="Setpunt teller:"/>
+          <Text ID="238059" Value="Stuksteller:"/>
+          <Text ID="238062" Value="Set m:"/>
+          <Text ID="238063" Value="Order"/>
+          <Text ID="238064" Value="Totale lengte"/>
+        </TextLayer>
+        <IndexMap>
+          <Index ID="238058" Value="3"/>
+          <Index ID="238059" Value="4"/>
+          <Index ID="238062" Value="7"/>
+          <Index ID="238063" Value="8"/>
+          <Index ID="238064" Value="9"/>
+        </IndexMap>
+      </TextGroup>
+      <Controls>
+        <Control ClassId="0x0000100D" Name="EmcyDoorCut1Outfeed">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="587"/>
+          <Property Name="EndY" Value="536"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="587"/>
+          <Property Name="StartY" Value="492"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.cuttingunit1.emcy_inputs.EMCY_Door2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="EmcyDoorCut1Infeed">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="545"/>
+          <Property Name="EndY" Value="538"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="545"/>
+          <Property Name="StartY" Value="494"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.cuttingunit1.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="EmcyDoorCut2Infeed">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="891"/>
+          <Property Name="EndY" Value="543"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="891"/>
+          <Property Name="StartY" Value="499"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.cuttingunit2.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="EmcyDoorCut2Outfeed">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="930"/>
+          <Property Name="EndY" Value="542"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="930"/>
+          <Property Name="StartY" Value="498"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.cuttingunit2.emcy_inputs.EMCY_Door2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="EmcyDoorWebbufferOpSide">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="360"/>
+          <Property Name="EndY" Value="471"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="360"/>
+          <Property Name="StartY" Value="543"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.webbuffer.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopUnwinderDrvSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="276"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.UnwinderUnit.emcy_inputs.EMCY_Button2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="409"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopUnwinderOpSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="183"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.UnwinderUnit.emcy_inputs.EMCY_Button1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="504"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopBST">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="398"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Button1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="480"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopLongcutDrvSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="703"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Button3_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="454"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopGridwinder">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="521"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Button2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="551"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopConveyorOpSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="1026"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.conveyor.emcy_inputs.EMCY_Button1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="517"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopConveyorDrvSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="1060"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.conveyor.emcy_inputs.EMCY_Button2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="424"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="Shape_9">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="951"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.SafeIn.EmcyStopPanel.StatusDatapoint]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="307"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopPanel">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="921"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.switchcabinet.EMCY_Buttons.EMCY_Button2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="305"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="EmcyDoorWebbufferDrvSide">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="372"/>
+          <Property Name="EndY" Value="409"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="372"/>
+          <Property Name="StartY" Value="491"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.webbuffer.emcy_inputs.EMCY_Door2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="Unwinder">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Transparent"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="57"/>
+          <Property Name="Left" Value="69"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.UnwinderUnit.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="327"/>
+          <Property Name="Width" Value="57"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="MaxDurchGitteraufwickler">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="201"/>
+          <Property Name="EndY" Value="271"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StartX" Value="201"/>
+          <Property Name="StartY" Value="343"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyDoorLongcut">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Transparent"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="48"/>
+          <Property Name="Left" Value="793"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.longcutter.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="460"/>
+          <Property Name="Width" Value="30"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_6">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="185"/>
+          <Property Name="EndY" Value="349"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="2"/>
+          <Property Name="StartX" Value="138"/>
+          <Property Name="StartY" Value="396"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_7">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="202"/>
+          <Property Name="EndY" Value="365"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="2"/>
+          <Property Name="StartX" Value="177"/>
+          <Property Name="StartY" Value="391"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_8">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="233"/>
+          <Property Name="EndY" Value="355"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="2"/>
+          <Property Name="StartX" Value="208"/>
+          <Property Name="StartY" Value="381"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="Zugstation1">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Transparent"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="48"/>
+          <Property Name="Left" Value="485"/>
+          <Property Name="LineWidth" Value="4"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.pullbreak.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="459"/>
+          <Property Name="Width" Value="30"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="TuerGestellVorne2">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="334"/>
+          <Property Name="EndY" Value="513"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="31"/>
+          <Property Name="StartX" Value="310"/>
+          <Property Name="StartY" Value="510"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Door2_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="TuerGestellVorne3">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="420"/>
+          <Property Name="EndY" Value="520"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="31"/>
+          <Property Name="StartX" Value="396"/>
+          <Property Name="StartY" Value="517"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Door3_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="TuerGestellVorne1">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="268"/>
+          <Property Name="EndY" Value="512"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="31"/>
+          <Property Name="StartX" Value="244"/>
+          <Property Name="StartY" Value="509"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Door1_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="TuerGestellHinten">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="420"/>
+          <Property Name="EndY" Value="432"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="31"/>
+          <Property Name="StartX" Value="396"/>
+          <Property Name="StartY" Value="429"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Door4_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="PullwireOpSide">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="937"/>
+          <Property Name="EndY" Value="437"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="2"/>
+          <Property Name="StartX" Value="264"/>
+          <Property Name="StartY" Value="391"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_pullwireOPs_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="PullwireDrvSide">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="967"/>
+          <Property Name="EndY" Value="412"/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="LineWidth" Value="2"/>
+          <Property Name="StartX" Value="294"/>
+          <Property Name="StartY" Value="366"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_pullwireDVRs_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="EmcyStopLongcutOpSide">
+          <Property Name="BackColor" Value="0"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="ForeColor" Value="51"/>
+          <Property Name="Height" Value="10"/>
+          <Property Name="Left" Value="660"/>
+          <Property Name="LineWidth" Value="3"/>
+          <Property Name="Shape" Value="Ellipse"/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.MainMachineCtrl.MAIN.machine.ctrl.emcy_inputs.EMCY_Button4_o]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="555"/>
+          <Property Name="Width" Value="10"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_36">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="BackColor" Value="48"/>
+          <Property Name="Border" Value="Source[local].Border[Flat_black]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Opaque"/>
+          <Property Name="Font" Value="Source[local].Font[Arial_16bold]"/>
+          <Property Name="Height" Value="50"/>
+          <Property Name="IndexDatapoint" Value="None"/>
+          <Property Name="Left" Value="124"/>
+          <Property Name="Multiline" Value="Manual"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Visualization.VisuCycl.VisuRange.MessageReferenceControl]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[txtgrp_LayerGeneral]"/>
+          <Property Name="TextIndexOffset" Value="4"/>
+          <Property Name="TextSource" Value="MultipleTexts"/>
+          <Property Name="Top" Value="207"/>
+          <Property Name="Width" Value="340"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_37">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="BackColor" Value="48"/>
+          <Property Name="Border" Value="Source[local].Border[Flat_black]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Opaque"/>
+          <Property Name="Font" Value="Source[local].Font[Arial_16bold]"/>
+          <Property Name="Height" Value="50"/>
+          <Property Name="IndexDatapoint" Value="None"/>
+          <Property Name="Left" Value="124"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Visualization.VisuCycl.VisuRange.MessageSupportSpikesControl]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[txtgrp_LayerGeneral]"/>
+          <Property Name="TextIndexOffset" Value="5"/>
+          <Property Name="TextSource" Value="MultipleTexts"/>
+          <Property Name="Top" Value="107"/>
+          <Property Name="Width" Value="340"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_38">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="BackColor" Value="48"/>
+          <Property Name="Border" Value="Source[local].Border[Flat_black]"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="FillStyle" Value="Opaque"/>
+          <Property Name="Font" Value="Source[local].Font[Arial_16bold]"/>
+          <Property Name="Height" Value="50"/>
+          <Property Name="IndexDatapoint" Value="Source[global].Variable[DataSource.Visualization.VisuCycl.VisuRange.BatchStatus]"/>
+          <Property Name="Left" Value="124"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StatusDatapoint" Value="Source[global].Variable[DataSource.Visualization.VisuCycl.VisuRange.MessageBatchControl]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[txtgrp_Batch]"/>
+          <Property Name="TextIndexOffset" Value="0"/>
+          <Property Name="TextSource" Value="MultipleTexts"/>
+          <Property Name="Top" Value="157"/>
+          <Property Name="Width" Value="340"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_32">
+          <Property Name="AlignmentHorizontal" Value="Right"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="544"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
+          <Property Name="TextIndexOffset" Value="3"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="214"/>
+          <Property Name="Width" Value="129"/>
+        </Control>
+        <Control ClassId="0x00001001" Name="Shape_1">
+          <Property Name="BackColor" Value="250"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="233"/>
+          <Property Name="Left" Value="530"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Shape]"/>
+          <Property Name="Top" Value="65"/>
+          <Property Name="Width" Value="383"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_28">
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="831"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
+          <Property Name="TextIndexOffset" Value="4"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="214"/>
+          <Property Name="Width" Value="89"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_10">
+          <Property Name="AddFractionDigits" Value="-1"/>
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="ForeColor" Value="0"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="742"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Drives.AxisIf.Para.numPackages]"/>
+          <Property Name="LockingLevel" Value="1"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="9999"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Output]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="173"/>
+          <Property Name="UnitText" Value="Abbreviation"/>
+          <Property Name="UnitTextAlignment" Value="Left"/>
+          <Property Name="UnitTextPosition" Value="Right"/>
+          <Property Name="UnitTextWidth" Value="0"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.gMeterCounter]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_11">
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="ForeColor" Value="0"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="742"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Drives.AllAxes.SPR_BatchProduction_Distance.SetProductCount]"/>
+          <Property Name="LockingLevel" Value="1"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Output]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="214"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.gProductCounter]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001002" Name="Button_2">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="BitmapIndexDatapoint" Value="None"/>
+          <Property Name="BitmapSource" Value="None"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EmbVirtualKey" Value="None"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="KeyMatrixOffset" Value="None"/>
+          <Property Name="Left" Value="742"/>
+          <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+          <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[BasicButton]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[txtgrp_Buttons]"/>
+          <Property Name="TextIndex" Value="17"/>
+          <Property Name="TextIndexDatapoint" Value="None"/>
+          <Property Name="TextSimulationValue" Value="0"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="256"/>
+          <Property Name="VirtualKey" Value="Source[local].VirtualKey[but_main_reset]"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_16">
+          <Property Name="AddFractionDigits" Value="-1"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="ForeColor" Value="0"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Input" Value="True"/>
+          <Property Name="InputCancel" Value="Lost Focus"/>
+          <Property Name="InputComma" Value="Explicit"/>
+          <Property Name="InputConfirm" Value="Enter"/>
+          <Property Name="InputMinus" Value="Normal"/>
+          <Property Name="InputNext" Value="Enter"/>
+          <Property Name="InputStart" Value="Any Key"/>
+          <Property Name="InputTouchpad" Value="Source[local].TouchPad[NumPad]"/>
+          <Property Name="InputUpDown" Value="Disabled"/>
+          <Property Name="Left" Value="651"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Drives.AxisIf.Para.numPackages]"/>
+          <Property Name="LockingLevel" Value="1"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="9999"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Output]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="173"/>
+          <Property Name="UnitText" Value="Abbreviation"/>
+          <Property Name="UnitTextAlignment" Value="Left"/>
+          <Property Name="UnitTextPosition" Value="Right"/>
+          <Property Name="UnitTextWidth" Value="0"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Drives.AxisIf.Para.MasterDistance]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_17">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="ForeColor" Value="0"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Input" Value="True"/>
+          <Property Name="InputCancel" Value="Lost Focus"/>
+          <Property Name="InputComma" Value="Explicit"/>
+          <Property Name="InputConfirm" Value="Enter"/>
+          <Property Name="InputMinus" Value="Normal"/>
+          <Property Name="InputNext" Value="Enter"/>
+          <Property Name="InputStart" Value="Any Key"/>
+          <Property Name="InputTouchpad" Value="Source[local].TouchPad[NumPad]"/>
+          <Property Name="InputUpDown" Value="Disabled"/>
+          <Property Name="Left" Value="651"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Drives.AllAxes.SPR_BatchProduction_Distance.SetProductCount]"/>
+          <Property Name="LockingLevel" Value="1"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Output]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="214"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.Drives.AxisIf.Para.numPackages]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_33">
+          <Property Name="AlignmentHorizontal" Value="Right"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="534"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
+          <Property Name="TextIndexOffset" Value="7"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="173"/>
+          <Property Name="Width" Value="108"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_29">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial14pxBold]"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="689"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
+          <Property Name="TextIndexOffset" Value="8"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="77"/>
+          <Property Name="Width" Value="106"/>
+        </Control>
+        <Control ClassId="0x00001007" Name="Numeric_22">
+          <Property Name="AddFractionDigits" Value="-1"/>
+          <Property Name="BackColor" Value="251"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="ForeColor" Value="0"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="651"/>
+          <Property Name="Locking" Value="Datapoint &gt;= Level"/>
+          <Property Name="LockingDatapoint" Value="Source[global].Variable[DataSource.Drives.AxisIf.Para.numPackages]"/>
+          <Property Name="LockingLevel" Value="1"/>
+          <Property Name="MaxDatapoint" Value="None"/>
+          <Property Name="MaxValue" Value="None"/>
+          <Property Name="MinDatapoint" Value="None"/>
+          <Property Name="MinValue" Value="None"/>
+          <Property Name="SimulationValue" Value="0"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Output]"/>
+          <Property Name="TeachDatapoint" Value="None"/>
+          <Property Name="Top" Value="121"/>
+          <Property Name="UnitText" Value="Abbreviation"/>
+          <Property Name="UnitTextAlignment" Value="Left"/>
+          <Property Name="UnitTextPosition" Value="Right"/>
+          <Property Name="UnitTextWidth" Value="0"/>
+          <Property Name="ValueDatapoint" Value="Source[global].Variable[DataSource.gMeterCounterTotal]"/>
+          <Property Name="ValueMode" Value="Standard"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x00001004" Name="Text_30">
+          <Property Name="AlignmentVertical" Value="Center"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="Font" Value="Source[local].Font[Arial12pxBold]"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="Left" Value="538"/>
+          <Property Name="SimulationIndex" Value="0"/>
+          <Property Name="SimulationValue" Value=""/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Text]"/>
+          <Property Name="TextGroup" Value="Source[embedded].TextGroup"/>
+          <Property Name="TextIndexOffset" Value="9"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="121"/>
+          <Property Name="Width" Value="113"/>
+        </Control>
+        <Control ClassId="0x00001002" Name="Button_3">
+          <Property Name="AlignmentHorizontal" Value="Center"/>
+          <Property Name="BitmapIndexDatapoint" Value="None"/>
+          <Property Name="BitmapSource" Value="None"/>
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EmbVirtualKey" Value="None"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="Height" Value="30"/>
+          <Property Name="KeyMatrixOffset" Value="None"/>
+          <Property Name="Left" Value="742"/>
+          <Property Name="PressedBitmapSource" Value="Source[embedded].Property[BitmapSource]"/>
+          <Property Name="PressedTextSource" Value="Source[embedded].Property[TextSource]"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[BasicButton]"/>
+          <Property Name="TextGroup" Value="Source[local].TextGroup[txtgrp_Buttons]"/>
+          <Property Name="TextIndex" Value="17"/>
+          <Property Name="TextIndexDatapoint" Value="None"/>
+          <Property Name="TextSimulationValue" Value="0"/>
+          <Property Name="TextSource" Value="SingleText"/>
+          <Property Name="Top" Value="122"/>
+          <Property Name="VirtualKey" Value="Source[local].VirtualKey[but_main_reset_total_meter]"/>
+          <Property Name="Width" Value="84"/>
+        </Control>
+        <Control ClassId="0x0000100D" Name="Line_1">
+          <Property Name="ControlID" Value="0"/>
+          <Property Name="Description" Value=""/>
+          <Property Name="EndX" Value="824"/>
+          <Property Name="EndY" Value="162"/>
+          <Property Name="GroupID" Value="1"/>
+          <Property Name="StartX" Value="558"/>
+          <Property Name="StartY" Value="162"/>
+          <Property Name="StyleClass" Value="Source[relative:StyleGroup].StyleClass[Line]"/>
+        </Control>
+      </Controls>
+      <KeyMapping/>
+    </Layer>
+  </Layers>
+  <MovementOrder>
+    <MovementEntry Control="Source[embedded].Layer[Default].Control[Numeric_16]">
+      <Property Name="Down" Value="Source[embedded].Layer[Default].Control[Numeric_17]"/>
+      <Property Name="Left" Value="Source[embedded].Layer[Default].Control[Numeric_17]"/>
+      <Property Name="Right" Value="Source[embedded].Layer[Default].Control[Numeric_17]"/>
+      <Property Name="Up" Value="Source[embedded].Layer[Default].Control[Numeric_17]"/>
+    </MovementEntry>
+    <MovementEntry Control="Source[embedded].Layer[Default].Control[Numeric_17]">
+      <Property Name="Down" Value="Source[embedded].Layer[Default].Control[Numeric_16]"/>
+      <Property Name="Left" Value="Source[embedded].Layer[Default].Control[Numeric_16]"/>
+      <Property Name="Right" Value="Source[embedded].Layer[Default].Control[Numeric_16]"/>
+      <Property Name="Up" Value="Source[embedded].Layer[Default].Control[Numeric_16]"/>
+    </MovementEntry>
+  </MovementOrder>
+  <TabSequence>
+    <TabSeqItem Index="0" Value="Source[embedded].Layer[Default].Control[Numeric_22]"/>
+    <TabSeqItem Index="1" Value="Source[embedded].Layer[Default].Control[Numeric_10]"/>
+    <TabSeqItem Index="2" Value="Source[embedded].Layer[Default].Control[Numeric_11]"/>
+    <TabSeqItem Index="3" Value="Source[embedded].Layer[Default].Control[Numeric_16]"/>
+    <TabSeqItem Index="4" Value="Source[embedded].Layer[Default].Control[Numeric_17]"/>
+  </TabSequence>
+</Page>

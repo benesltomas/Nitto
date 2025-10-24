@@ -1,0 +1,33 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: HlpStr
+ * File: findstr.ab
+ * Author: beutert
+ * Created: May 21, 2010
+ ********************************************************************
+ * Implementation of library HlpStr
+ ********************************************************************
+ Function: find a specified string in a given string
+ 	
+    input:  string (STRING[1000])
+            search string (STRING[80])
+            starting position (UINT)
+   output:  position of string (UINT)
+ ********************************************************************) 
+
+FUNCTION findstr
+	wStrLen = UINT(brsstrlen(adr(IN1)));		//length of string to be searched
+
+	if ((StartPos = 0) or (StartPos > wStrLen)) then
+		ReturnVal = 0;	//no starting position (=0) specified or starting position > length of string
+	else
+	Str2 = MID(IN1, wStrLen, StartPos);			//copy part of string starting from starting position
+	ReturnVal = FIND(Str2, IN2);						//and then search for string (IN2)
+	if (ReturnVal <> 0) then
+		ReturnVal = ReturnVal + StartPos - 1;	//if string is found, calculate position in original string
+	endif;
+  endif;
+	findstr = ReturnVal;
+
+END_FUNCTION

@@ -1,0 +1,23 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: VisuPages
+ * File: VisuPages.var
+ * Author: schoenefeldr
+ * Created: July 18, 2012
+ ********************************************************************
+ * Local variables of program VisuPages
+ ********************************************************************)
+VAR
+	Winder_activ : INT;
+	MenueJogSpeed : INT;
+	MenueAutoSpeed : INT;
+	Conveyor_activ : INT;
+	I : INT;
+	Name_recipe : STRING[80];
+	STR : STRING[4];
+	Name_recipe_adr1 : UINT;
+	Name_recipe_adr : UDINT;
+	BookletOnTimer : TP;
+	BookletOnLock : INT;
+END_VAR

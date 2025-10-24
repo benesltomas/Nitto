@@ -1,0 +1,64 @@
+/*
+--------------------------------------------------------------------------------
+ Versions-Information:
+--------------------------------------------------------------------------------
+  $HeadURL:$
+  $LastChangedDate:$
+  $LastChangedRevision:$
+-------------------------------------------------------------------------------- 
+*/
+
+/* Definitionen für NavBook */
+table.Nav {
+ background-color: #ffffff; }
+tr.Nav {
+ padding: 1pt; }
+tr.NavSep {
+ padding: 1pt;
+ height: 1px; }
+img.NavSep {
+ width: 100%;
+ height: 1px; }
+td.Nav {
+ background-color: #f0f0f0;
+ padding-right: 4px;
+ padding-left: 4px; }
+p.Nav {
+ font-size: 8pt; }
+p.NavCenter {
+ font-size: 8pt;
+ text-align: center; }
+p.NavRight {
+ font-size: 8pt;
+ text-align: right; }
+a.Nav {
+ font-size: 8pt;
+ text-decoration: none; }
+a.Nav:hover {
+ border-bottom: 1px solid #0000ff; }
+
+/* Definitionen für NavList */
+p.List {
+ font-size: 8pt;
+ margin-top: 1pt;
+ margin-bottom: 1pt;
+ margin-left: 40px;
+ text-indent: -20px; }
+p.ListItem {
+ font-size: 8pt;
+ margin-top: 1pt;
+ margin-bottom: 1pt;
+ margin-left: 60px;
+ text-indent: -20px; }
+a.ListItem {
+ font-size: 8pt;
+ text-decoration: none; }
+a.ListItem:hover {
+ border-bottom: 1px solid #0000ff; }
+
+/* ----------------------------------------
+  ... Formatdefinitionen zum Drucken ...
+---------------------------------------- */
+@media print {
+ .DoNotPrintNavItems { display: none; }
+}

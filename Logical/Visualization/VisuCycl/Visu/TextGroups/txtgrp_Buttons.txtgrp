@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_Buttons">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="3"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="87903" Value="activate"/>
+    <Text ID="87904" Value="del. recipe"/>
+    <Text ID="87905" Value="load from machine"/>
+    <Text ID="87906" Value="new recipe"/>
+    <Text ID="87907" Value="save"/>
+    <Text ID="87908" Value="save as"/>
+    <Text ID="88030" Value="read directory"/>
+    <Text ID="88031" Value="backup to USB"/>
+    <Text ID="88032" Value="button 9"/>
+    <Text ID="88037" Value="webbuffer homed"/>
+    <Text ID="97455" Value="del. tool"/>
+    <Text ID="97456" Value="new tool"/>
+    <Text ID="175126" Value="Reset"/>
+    <Text ID="201556" Value="Back"/>
+    <Text ID="201557" Value="jog forward"/>
+    <Text ID="201558" Value="jog backward"/>
+    <Text ID="201559" Value="reference"/>
+    <Text ID="201560" Value="synchronize"/>
+    <Text ID="201561" Value="RegMark reset"/>
+    <Text ID="201562" Value="Speed manual mode"/>
+    <Text ID="272719" Value="AxisReset"/>
+    <Text ID="276008" Value="inline mode"/>
+    <Text ID="276009" Value="offline mode"/>
+    <Text ID="277476" Value="couple"/>
+    <Text ID="277477" Value="move down"/>
+    <Text ID="277478" Value="move up"/>
+    <Text ID="278945" Value="fill up buffer"/>
+    <Text ID="278946" Value="buffer on"/>
+    <Text ID="281970" Value="antistatic on"/>
+    <Text ID="281971" Value="antistatic off"/>
+    <Text ID="283442" Value="CrossCut restart"/>
+    <Text ID="284916" Value="beep off"/>
+    <Text ID="286392" Value="beep on "/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="87903" Value="aktivieren"/>
+    <Text ID="87904" Value="Rezept löschen"/>
+    <Text ID="87905" Value="Laden aus Maschine"/>
+    <Text ID="87906" Value="neues Rezept"/>
+    <Text ID="87907" Value="speichern"/>
+    <Text ID="87908" Value="speichern unter"/>
+    <Text ID="88030" Value="Verzeichnis lesen"/>
+    <Text ID="88031" Value="Sichern auf USB"/>
+    <Text ID="88032" Value="Taste 9"/>
+    <Text ID="88037" Value="Bahnpuffer referenziert"/>
+    <Text ID="97455" Value="Werkzeug löschen"/>
+    <Text ID="97456" Value="neues Werkzeug"/>
+    <Text ID="175126" Value="Reset"/>
+    <Text ID="201556" Value="Zurück"/>
+    <Text ID="201557" Value="Jog vorwärts"/>
+    <Text ID="201558" Value="Jog rückwärts"/>
+    <Text ID="201559" Value="referenzieren"/>
+    <Text ID="201560" Value="synchronisieren"/>
+    <Text ID="201561" Value="RegMark reset"/>
+    <Text ID="201562" Value="Geschwindigkeit Handbetrieb"/>
+    <Text ID="272719" Value="AchsReset"/>
+    <Text ID="276008" Value="Inline Betrieb"/>
+    <Text ID="276009" Value="Offline Betrieb"/>
+    <Text ID="277476" Value="koppeln"/>
+    <Text ID="277477" Value="runterfahren"/>
+    <Text ID="277478" Value="hochfahren"/>
+    <Text ID="278945" Value="Bahnpuffer füllen"/>
+    <Text ID="278946" Value="Bahnpuffer EIN"/>
+    <Text ID="281970" Value="Antistatik EIN"/>
+    <Text ID="281971" Value="Antistatik AUS"/>
+    <Text ID="283442" Value="CrossCut restart"/>
+    <Text ID="284916" Value="Horn AUS"/>
+    <Text ID="286392" Value="Horn EIN"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="87903" Value="Activeren"/>
+    <Text ID="87904" Value="Recept wissen"/>
+    <Text ID="87905" Value="Laden uit machine"/>
+    <Text ID="87906" Value="Nieuw recept"/>
+    <Text ID="87907" Value="Opslaan"/>
+    <Text ID="87908" Value="Opslaan als"/>
+    <Text ID="88030" Value="Lees bronbestand"/>
+    <Text ID="88031" Value="Opslaan op USB"/>
+    <Text ID="88032" Value="Toets 9"/>
+    <Text ID="88037" Value="Dancer refereert"/>
+    <Text ID="97455" Value="Tool wissen"/>
+    <Text ID="97456" Value="Nieuwe tool"/>
+    <Text ID="175126" Value="Reset"/>
+    <Text ID="201556" Value="Terug"/>
+    <Text ID="201557" Value="Tip vooruit"/>
+    <Text ID="201558" Value="Tip achteruit"/>
+    <Text ID="201559" Value="Refereren"/>
+    <Text ID="201560" Value="Synchroniseren"/>
+    <Text ID="201561" Value="Productdetectie zoeken"/>
+    <Text ID="201562" Value="Snelheid handbediening"/>
+    <Text ID="272719" Value="Sturing reset"/>
+    <Text ID="276008" Value="Inline"/>
+    <Text ID="276009" Value="Offline"/>
+    <Text ID="277476" Value="Koppelen"/>
+    <Text ID="277477" Value="Omlaag sturen"/>
+    <Text ID="277478" Value="Omhoog sturen"/>
+    <Text ID="278945" Value="Dancer vullen"/>
+    <Text ID="278946" Value="Dancer aan"/>
+    <Text ID="281970" Value="Statische ontlading AAN"/>
+    <Text ID="281971" Value="Statische ontlading UIT"/>
+    <Text ID="283442" Value="Dwarsmes herstart"/>
+    <Text ID="284916" Value="Hoorn uit"/>
+    <Text ID="286392" Value="Hoorn aan"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="87903" Value="2"/>
+    <Index ID="87904" Value="3"/>
+    <Index ID="87905" Value="4"/>
+    <Index ID="87906" Value="5"/>
+    <Index ID="87907" Value="6"/>
+    <Index ID="87908" Value="7"/>
+    <Index ID="88030" Value="8"/>
+    <Index ID="88031" Value="9"/>
+    <Index ID="88032" Value="10"/>
+    <Index ID="88037" Value="12"/>
+    <Index ID="97455" Value="15"/>
+    <Index ID="97456" Value="16"/>
+    <Index ID="175126" Value="17"/>
+    <Index ID="201556" Value="18"/>
+    <Index ID="201557" Value="19"/>
+    <Index ID="201558" Value="20"/>
+    <Index ID="201559" Value="21"/>
+    <Index ID="201560" Value="22"/>
+    <Index ID="201561" Value="23"/>
+    <Index ID="201562" Value="24"/>
+    <Index ID="272719" Value="25"/>
+    <Index ID="276008" Value="26"/>
+    <Index ID="276009" Value="27"/>
+    <Index ID="277476" Value="28"/>
+    <Index ID="277477" Value="30"/>
+    <Index ID="277478" Value="29"/>
+    <Index ID="278945" Value="31"/>
+    <Index ID="278946" Value="32"/>
+    <Index ID="281970" Value="13"/>
+    <Index ID="281971" Value="14"/>
+    <Index ID="283442" Value="11"/>
+    <Index ID="284916" Value="33"/>
+    <Index ID="286392" Value="34"/>
+  </IndexMap>
+</TextGroup>

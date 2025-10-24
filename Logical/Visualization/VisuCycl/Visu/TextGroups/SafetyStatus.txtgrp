@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="SafetyStatus">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="18"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="172775" Value="Safety OK"/>
+    <Text ID="172776" Value="Safety limited speed active"/>
+    <Text ID="172777" Value="Emergency Stop active"/>
+    <Text ID="172778" Value="Safety status"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="172775" Value="Safety OK"/>
+    <Text ID="172776" Value="Geschwindigkeitsbegrenzung aktiv"/>
+    <Text ID="172777" Value="Notstopp aktiv"/>
+    <Text ID="172778" Value="Safety Status"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="172775" Value="Veiligheden OK"/>
+    <Text ID="172776" Value="Veiligheidssnelheid limiet actief"/>
+    <Text ID="172777" Value="Noodstop actief"/>
+    <Text ID="172778" Value="Status veiligheden"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="172775" Value="1"/>
+    <Index ID="172776" Value="2"/>
+    <Index ID="172777" Value="3"/>
+    <Index ID="172778" Value="0"/>
+  </IndexMap>
+</TextGroup>

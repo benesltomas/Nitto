@@ -1,0 +1,43 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: HlpStr
+ * File: LTRIM.ab
+ * Author: beutert
+ * Created: March 25, 2011
+ ********************************************************************
+ * Implementation of library HlpStr
+ ********************************************************************
+ Function: delete blanks at beginning of string
+ 	
+    input:  pointer to string (UDINT)
+   output:  status
+ ********************************************************************) 
+
+
+FUNCTION LTRIM
+	if (enable = true) then
+		wStrLenHlp = UINT(sizeof(szHlpStr1) - 1);
+		wStrLen = UINT(brsstrlen(pString));
+		if (wStrLen > wStrLenHlp) then
+			status = 50000;	//string too long
+		else
+			status = 65535;
+			brsstrcpy(adr(szHlpStr1),pString);
+			loop
+				pByte access adr(szHlpStr1);
+				if (pByte = ' ') then
+					szHlpStr1 = RIGHT(szHlpStr1, INT(wStrLen) - 1);
+					wStrLen = wStrLen - 1;
+				else
+					exitif (1=1);
+				endif;	
+			endloop;
+			brsstrcpy(pString,adr(szHlpStr1));
+			status = 0;
+		endif;
+	else
+		status = 65534;
+	endif;
+	LTRIM = status;
+END_FUNCTION

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library Version="2.37.0" Description="Add-on library to ACP10_MC for registration mark handling" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MC_RegMa.typ</File>
+    <File>MC_RegMa.fun</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="Acp10_mc" FromVersion="2.37.0" ToVersion="2.37.0" />
+  </Dependencies>
+</Library>

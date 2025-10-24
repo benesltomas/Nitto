@@ -1,0 +1,52 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: HlpStr
+ * File: findchar.ab
+ * Author: beutert
+ * Created: March 25, 2011
+ ********************************************************************
+ * Implementation of library HlpStr
+ ********************************************************************
+ Function: find a specified character in a given string
+ 	
+    input:  enable (BOOL)
+						pointer to string (UDINT)
+            character (USINT)
+            starting position (UINT)
+   output:  position of character in string (UINT)
+            status (UINT)
+ ********************************************************************) 
+
+FUNCTION_BLOCK findchar
+
+	if (enable = true) then	
+		ptByte_a access pString;
+		wStrLen = UINT(brsstrlen(pString));
+	  CharPos = 0;
+	
+		if (wStrLen > UINT(sizeof(ptByte_a))) then
+			status = 50000;	//string too long
+		else if ((StartPos > wStrLen) or (StartPos = 0)) then	
+			status = 50001;	//starting position invalid
+		else
+			status = 65535;	//busy
+			CharFound = false;
+			loop CharPos = StartPos-1 to wStrLen - 1 do
+				if (ptByte_a[CharPos] = Char) then
+					CharPos = CharPos + 1;
+					CharFound = true;
+					status = 0;	//everything fine
+					exitif (1=1);
+				endif;
+			endloop;
+			if (CharFound = false) then
+				CharPos = 0;
+				status = 50002;	//character not found
+			endif;
+		endif;	//wStrLen > UINT(sizeof(ptByte_a))
+	else
+		status = 65534;
+	endif;	//enable = true
+
+END_FUNCTION_BLOCK

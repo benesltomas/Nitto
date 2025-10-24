@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Stanze">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="0"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="139199" Value="cut up"/>
+    <Text ID="139200" Value="cut down"/>
+    <Text ID="184304" Value="registration mark counter:"/>
+    <Text ID="184305" Value="missed trigger counter"/>
+    <Text ID="184306" Value="actual position error:"/>
+    <Text ID="207252" Value="max. correction"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="139199" Value="Stanze senken"/>
+    <Text ID="139200" Value="Stanze heben"/>
+    <Text ID="184304" Value="Zähler Registermarken:"/>
+    <Text ID="184305" Value="Zähler fehlende Registermarken:"/>
+    <Text ID="184306" Value="Aktueller Positionsfehler:"/>
+    <Text ID="207252" Value="Maximale Korrektur:"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="139199" Value="Stans omhoog"/>
+    <Text ID="139200" Value="Stans omlaag"/>
+    <Text ID="184304" Value="Teller productdetectie OK"/>
+    <Text ID="184305" Value="Teller productdetectie NOK"/>
+    <Text ID="184306" Value="Actuele positie fout"/>
+    <Text ID="207252" Value="Maximale correctie"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="139199" Value="0"/>
+    <Index ID="139200" Value="1"/>
+    <Index ID="184304" Value="2"/>
+    <Index ID="184305" Value="3"/>
+    <Index ID="184306" Value="4"/>
+    <Index ID="207252" Value="5"/>
+  </IndexMap>
+</TextGroup>

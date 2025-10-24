@@ -1,0 +1,19 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: al_hndl
+ * File: al_hndl.var
+ * Author: beutert
+ * Created: August 28, 2012
+ ********************************************************************
+ * Local variables of program al_hndl
+ ********************************************************************)
+VAR CONSTANT
+	MAX_ALARMS : UINT := 200;
+	MAX_WARNINGS : UINT := 200;
+END_VAR
+VAR
+	AlarmBit_a : ARRAY[0..MAX_ALARMS] OF BOOL;
+	QuitBit_a : ARRAY[0..MAX_ALARMS] OF BOOL;
+	WarningBit_a : ARRAY[0..MAX_WARNINGS] OF BOOL;
+END_VAR

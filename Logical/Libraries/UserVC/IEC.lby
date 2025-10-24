@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library Version="3.00.0" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>UserVC.var</File>
+    <File>UserVC.fun</File>
+    <File>Sort.st</File>
+    <File>ConvertHex.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsString" />
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

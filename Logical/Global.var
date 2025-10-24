@@ -1,0 +1,102 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Datei: Global.var
+ * Autor: okrebs
+ * Erstellt: 22. Mai 2014
+ ********************************************************************
+ * Globale Variablen des Projekts Nitto_40
+ ********************************************************************)
+(*Global Machine structure*)
+VAR
+	gNewOutputBrake : BOOL;
+	gMachine : Machine_Type;
+	CONST : FB_CONST_MASCHINE;
+END_VAR
+VAR RETAIN
+	gPaperCounter : UDINT;
+	gProductCounter : UDINT; (*total amount of produced products*)
+	gMeterCounter : UDINT; (*total travelled distance of master axis [0.01m]*)
+	gMeterCounterTotal : UDINT; (*total travelled distance of master axis [0.01m]*)
+	gMachRecipe : rcp_machine_typ;
+	gApplRecipe : rcp_prog_typ;
+	gCuttinRecipe : rcp_cutting_typ;
+	gPermValid : UDINT;
+	gWinderRecipeData : FB_WinderRecipeData; (*TODO: Bitte Kommentar hier einzufügen*)
+END_VAR
+(*Variables from Visu*)
+VAR
+	gVisu : Visu_Type;
+END_VAR
+(*Drive variables and constants*)
+VAR
+	gUnwinder : ACP10AXIS_typ;
+	gMaster1 : ACP10AXIS_typ; (*Virtueller Master*)
+	gCut1 : ACP10AXIS_typ; (*Stanzstation 1*)
+	gCut2 : ACP10AXIS_typ; (*Stanzstation 2*)
+	gGridLeft : ACP10AXIS_typ; (*Gitteraufwickler 1*)
+	gGridRight : ACP10AXIS_typ; (*Gitteraufwickler 2*)
+	gPBS1 : ACP10AXIS_typ; (*Zugstation 1*)
+	gPBS2 : ACP10AXIS_typ; (*Zugstation 1*)
+	gCatchBelt : ACP10AXIS_typ; (*Fangband*)
+	gConvBelt : ACP10AXIS_typ; (*Auslageband*)
+	gUnwOp : ACP10AXIS_typ; (*Abwickler Operatorseite*)
+	gUnwDrv : ACP10AXIS_typ; (*Abwickler Antriebsseite*)
+	gBuffer : ACP10AXIS_typ; (*Bahnspeicher*)
+	gGridFeeder : ACP10AXIS_typ; (*Drehvorrichtung Gitterturm*)
+	gLongCut : ACP10AXIS_typ; (*Drehvorrichtung Gitterturm*)
+	gUnwFeeder : ACP10AXIS_typ;
+	gUnwFeeder_HW : SdcHwCfg_typ := (0);
+	gUnwFeeder_DrvIf : SdcDrvIf16_typ := (0);
+	gUnwFeeder_DiDoIf : SdcDiDoIf_typ := (0);
+	gUnwFeeder_ModuleOk : BOOL := 0; (* 	gLamPB : ACP10AXIS_typ; ZUgstation der Lamieniereinheit 08.01.14
+	gPower : ACP10AXIS_typ;
+	gCut3 : ACP10AXIS_typ;
+	gTWindTop : ACP10AXIS_typ;
+	gTWindBot : ACP10AXIS_typ;
+	gPBU : ACP10AXIS_typ;
+	gLabelVax : ACP10VAXIS_typ;
+	gLabelPBS : ACP10AXIS_typ;
+	gConvB : ACP10AXIS_typ;
+	gTopBelt : ACP10AXIS_typ;
+	gLaminator : ACP10AXIS_typ;
+	gLaminator_HW : SdcHwCfg_typ := (0);
+	gLaminator_DrvIf : SdcDrvIf16_typ := (0);
+	gLaminator_DiDoIf : SdcDiDoIf_typ := (0);
+	gLaminator_ModuleOk : BOOL := 0;
+	gSpender : ACP10AXIS_typ;
+	gSpender_HW : SdcHwCfg_typ := (0);
+	gSpender_DrvIf : SdcDrvIf16_typ := (0);
+	gSpender_DiDoIf : SdcDiDoIf_typ := (0);
+	gSpender_ModuleOk : BOOL := 0;
+	Flash_400 : BOOL;
+	Cut_unit2_ready_to_ref : BOOL;
+	Cut_unit1_ready_to_ref : BOOL;
+	Flash_200 : BOOL;
+	gLamAufw : ACP10AXIS_typ;
+	gLamAufw_HW : SdcHwCfg_typ := (0);
+	gLamAufw_DrvIf : SdcDrvIf16_typ := (0);
+	gLamAufw_DiDoIf : SdcDiDoIf_typ := (0);
+	gLamAufw_ModuleOk : BOOL := 0;
+	gAxis01 : ACP10AXIS_typ;
+	gAxis02 : ACP10AXIS_typ;*)
+END_VAR
+(*CONST_MACHINE_MODES_STR : CONST_MACHINE_MODES;*)
+VAR
+	gAxis03 : ACP10AXIS_typ;
+	gAxis03_HW : SdcHwCfg_typ := (0);
+	gAxis03_DrvIf : SdcDrvIf16_typ := (0);
+	gAxis03_DiDoIf : SdcDiDoIf_typ := (0);
+	gAxis03_ModuleOk : BOOL := 0;
+	RegMarkControl : ARRAY[0..MAX_RM_AXIS_INDEX] OF reg_mark_typ; (*control structure*)
+	AxisRmRef : ARRAY[0..MAX_RM_AXIS_INDEX] OF UDINT; (*array that contains pointer to axis data structure*)
+	AxisRmMasterRef : ARRAY[0..MAX_RM_AXIS_INDEX] OF UDINT; (*array that contains pointer to the data structure of the master for the axis*)
+	AxisRmCorrRef : ARRAY[0..MAX_RM_AXIS_INDEX] OF UDINT; (*array that contains pointer to axis data structure for correction movement*)
+	CutUnit1 : Cut_Type;
+	RegMarkIf : RmIf_Type;
+	gPackBelt : ACP10AXIS_typ;
+	gPackBelt_HW : SdcHwCfg_typ := (0);
+	gPackBelt_DrvIf : SdcDrvIf16_typ := (0);
+	gPackBelt_DiDoIf : SdcDiDoIf_typ := (0);
+	gPackBelt_ModuleOk : BOOL := 0;
+END_VAR

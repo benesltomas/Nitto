@@ -1,0 +1,59 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: USB_Test
+ * File: USB_Test.var
+ * Author: beutert
+ * Created: February 10, 2012
+ ********************************************************************
+ * Local variables of program USB_Test
+ ********************************************************************)
+VAR
+	szDeviceParam : STRING[80];
+	UsbDescriptorGet_0 : UsbDescriptorGet;
+	UsbDataBuffer : ARRAY[0..4] OF usbNode_typ;
+	UsbNodeListGet_0 : UsbNodeListGet;
+	bStep : USINT;
+	szDeviceName : STRING[80];
+	lNodeIdBuffer : ARRAY[0..4] OF UDINT;
+	bStepOld : USINT;
+	bNode : USINT;
+	UsbNodeGet_0 : UsbNodeGet;
+	DevLink_0 : DevLink;
+	DeviceDescriptor : ARRAY[0..4] OF usbDeviceDescr_typ;
+	DevUnlink_0 : DevUnlink;
+	wStatus : UINT;
+	StartBackup2USB : BOOL;
+	BackupRecipes2USB : BOOL;
+	BackupTools2USB : BOOL;
+	DirInfo_0 : DirInfo;
+	DirCopy_0 : DirCopy;
+	DirCreate_0 : DirCreate;
+END_VAR
+VAR CONSTANT
+	ST_WAIT : USINT := 0;
+	CREATE_NODE_ID_LIST : USINT := 5;
+	READ_DEVICE_DATA : USINT := 10;
+	GET_DESCRIPTOR : USINT := 15;
+	CREATE_FILE_DEVICE : USINT := 20;
+	DIRECTORY_INFO : USINT := 25;
+	DIRECTORY_CREATE : USINT := 30;
+	DIRECTORY_COPY : USINT := 35;
+	UNLINK_DEVICE : USINT := 45;
+	FINISH : USINT := 250;
+	ERROR_STEP : USINT := 255;
+END_VAR
+VAR
+	xDevLinkDone : BOOL;
+	LayerMessageBoxErrorUSB : USINT;
+END_VAR
+VAR CONSTANT
+	INVISIBLE : USINT := 1;
+	VISIBLE : USINT := 0;
+END_VAR
+VAR
+	LayerMessageBoxCopyOkUSB : USINT;
+	szRecipeDirName : STRING[80];
+	szToolDirName : STRING[80];
+	szDirName : STRING[80];
+END_VAR

@@ -1,0 +1,571 @@
+PROGRAM _INIT
+(* init program *)
+wPageAct := wPageAct;
+wPageOld := 255;
+//wPageNew := wPageNew;
+// 2012-09-11 /schoenefeldr/
+wPageNew := 2;
+wPageNo  := 255;
+
+wLanguageAct := wLanguageAct;
+wLanguageNew := wLanguageNew;
+
+//-------------------------------
+//access to local structures
+strcpy(ADR(szPvName), "csv_hdl:CSV_Hndl");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrCSV_Hndl),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptCSV_Hndl ACCESS lAdrCSV_Hndl;
+ENDIF;
+
+strcpy(ADR(szPvName), "tool_hdl:TOOL_Hndl");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrTool_Hndl),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptTool_Hndl ACCESS lAdrTool_Hndl;
+ENDIF;
+
+strcpy(ADR(szPvName), "save2USB:BackupRecipes2USB");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrBackupRecipes2USB),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptBackupRecipes2USB ACCESS lAdrBackupRecipes2USB;
+ENDIF;
+
+strcpy(ADR(szPvName), "save2USB:BackupTools2USB");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrBackupTools2USB),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptBackupTools2USB ACCESS lAdrBackupTools2USB;
+ENDIF;
+
+strcpy(ADR(szPvName), "tool_hdl:szFileDevice");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrFileDeviceTool),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptFileDeviceTool ACCESS lAdrFileDeviceTool;
+ENDIF;
+	
+strcpy(ADR(szPvName), "tool_hdl:tmpTool");
+wStatus := PV_xgetadr(ADR(szPvName),ADR(lAdrTmpTool),ADR(lDataLen));
+IF (wStatus = 0) THEN
+	ptTmpTool ACCESS lAdrTmpTool;
+ENDIF;
+
+	HWInfo_0.enable := TRUE;
+	HWInfo_0.first := TRUE;
+	HWInfo_0.pName := ADR(HWString); 
+	HWInfo_0 FUB HWInfo();
+	
+	AssignFirstListboxIdx		:= TRUE;
+	FirstListboxIdxValid		:= FALSE;
+
+END_PROGRAM
+
+PROGRAM _CYCLIC
+(* cyclic program *)
+	TON_Cal.IN	:= (gVisu.Cmd.pageSel.actPage = 100)
+	TON_Cal.PT	:= T#10s
+	TON_Cal FUB TON();
+	
+	strcpy(ADR(HWString), "AR000");	//OKrebs 17.06.2014
+	
+	IF (HWString = "AR000") THEN
+		IF (gVisu.Cmd.pageSel.actPage = 100) THEN
+			gVisu.Cmd.pageSel.newPage := 2; 
+		ENDIF
+	ELSE
+		IF (CalibrationState = 1) AND (TON_Cal.Q) THEN
+			gVisu.Cmd.pageSel.newPage := 2; 
+		ENDIF;
+	ENDIF;
+	
+	wPageAct:=	gVisu.Cmd.pageSel.actPage
+	
+	;Blinker
+TP_10ms_01.IN := NOT (TP_10ms_02.Q);
+TP_10ms_01 FUB TP_10ms();
+TP_10ms_02.IN := NOT (TP_10ms_01.Q);
+TP_10ms_02 FUB TP_10ms();
+ 
+		;-------------------------------------
+;Bildwechsel erfassen
+IF ((wPageAct <> wPageOld) AND (wPageNo = wPageOld)) THEN
+	xPageExit := TRUE;
+	wPageOld := wPageAct;
+ELSE IF ((wPageNo <> wPageOld) AND (wPageNo <> wPageAct)) THEN
+	xPageExit := FALSE;
+	xPageInit := TRUE;
+	wPageNo := wPageAct;
+ELSE
+	xPageInit := FALSE;
+ENDIF;
+
+
+;-------------------------------------
+;Auswertung der Tasten in den einzelnen Bildern
+CASE wPageNo OF
+
+	ACTION P001_Recipe:				;//0,
+		IF (xPageInit = TRUE) THEN
+			LOOP ii := 0 TO 12 DO
+			//	Button.Status[ii] := 1; //alle Tasten ausblenden
+				Button.Status[ii] := 0; //alle Tasten anzeigen
+			ENDLOOP;
+			
+			//strcpy(ADR(RecipeEdit.header.name), ADR(ptCSV_Hndl.FileNameSelected) );	
+			// 2012-12-06 /schoenefeldr/
+			// Temporary solution with memcopy
+			memcpy(ADR(RecipeEdit.header.name), ADR(ptCSV_Hndl.FileNameSelected), SIZEOF(RecipeEdit.header.name));
+			RecipeEdit.header.name[RCP_PROG_TEXT_FILENAME_MAX] := 0;
+				
+			Button.Status[1] := 0;	//Taste anzeigen
+			Button.Status[2] := 0;
+			Button.Status[4] := 0;
+			Button.Status[5] := 0;
+			Button.Status[6] := 0;
+			Button.Status[7] := 0;
+			Button.Status[8] := 0;
+			Button.Status[11] := 0;
+			
+				// 2013-04-18 /schoenefeldr/
+				// Look for the filename in the directory and compare it to the name in the
+				// Application recipe in order to restore the Listbos Index
+				IF AssignFirstListboxIdx THEN
+					// Search and set the index only once after warm start:
+					AssignFirstListboxIdx		:= FALSE;
+					// Copy the name from the recipe header into a string for comparison
+					strcpy(ADR(NameFromApplRecipe), ADR(gApplRecipe.header.name) );
+			
+					// loop through the found filenames from the listbox
+					LOOP ii:=0 TO USINT(ptCSV_Hndl.ListboxMaxLines) DO
+						IF (strcmp(ADR(NameFromApplRecipe), ADR(ptCSV_Hndl.ListboxFileNames[ii])) = 0) THEN
+							// Filename found in listbox, assign listbox index
+							ptCSV_Hndl.ListboxIdx = ii;
+							// Store the result, this may be evaluated later (future option)
+							FirstListboxIdxValid		:= TRUE;
+							// terminate loop
+							EXITIF(1=1);
+							ENDIF;
+						ENDLOOP;
+				ENDIF	
+				
+				
+		ENDIF;	//xPageInit
+
+		//button pressed?
+		IF (Button.F1 = 1) THEN
+			// 2012-09-18 /schoenefeldr/
+			// Immediately copy recipe data from edit recipe into application recipe
+			Button.F1 := 0;
+			memcpy(ADR(gApplRecipe),ADR(RecipeEdit),SIZEOF(gApplRecipe));
+			// Request for updating recipe parameters
+			gMachine.Command.UpdateRecipe		:= TRUE;
+		ENDIF;
+
+		IF (Button.F2 = 1) THEN
+			Button.F2 := 0;
+			ptCSV_Hndl.ReqDelRecipe = 1;	//start action in task csv_hdl
+		ENDIF;
+		
+		IF (Button.F3 = 1) THEN
+			Button.F3 := 0;
+			// 2012-12-19 /schoenefeldr/
+			// Copy recipe data from application recipe (actually active in the machine) into the selected recipe
+			// memcpy(ADR(RecipeEdit),ADR(gApplRecipe),SIZEOF(RecipeEdit));
+		ENDIF;
+		
+		IF (Button.F4 = 1) THEN
+			Button.F4 := 0;
+			ptCSV_Hndl.ReqNewRecipe := 1;
+			ptCSV_Hndl.BtnNew := 1;
+			ptCSV_Hndl.BtnSaveAs := 0;
+		ENDIF;
+		
+		IF (Button.F5 = 1) THEN
+			Button.F5 := 0;
+			ptCSV_Hndl.ReqParaWrite := 1;
+			ptCSV_Hndl.ValueChanged := 0;
+		ENDIF;
+		
+		IF (Button.F6 = 1) THEN
+			Button.F6 := 0;
+			ptCSV_Hndl.ReqSaveAs := 1;
+			ptCSV_Hndl.BtnSaveAs := 1;
+			ptCSV_Hndl.BtnNew := 0;
+		ENDIF;
+		
+		IF (Button.F7 = 1) THEN
+			Button.F7 := 0;
+			ptCSV_Hndl.ReqDirRead := 1;
+		ENDIF;
+		
+		IF (Button.F8 = 1) THEN
+			Button.F8 := 0;
+			ptBackupRecipes2USB := TRUE;
+		ENDIF;
+		
+		IF (Button.F9 = 1) THEN
+			Button.F9 := 0;
+		ENDIF;
+		
+		IF (Button.F10 = 1) THEN
+			Button.F10 := 0;
+		ENDIF;
+		
+		IF (Button.F11 = 1) THEN
+			Button.F11 := 0;
+			gVisu.Cmd.pageSel.newPage := P002_Tool;
+		ENDIF;
+		
+		IF (Button.F12 = 1) THEN
+			Button.F12 := 0;
+			gVisu.Cmd.pageSel.newPage := _002_MASCHINEN_ANSICHT;
+		ENDIF;
+		
+		//messagebox handling
+		IF (ptCSV_Hndl.SaveFileYes = 1) THEN
+			ptCSV_Hndl.SaveFileYes := 0;
+			ptCSV_Hndl.ReqParaWriteAfterValueChanged := 1;
+			ptCSV_Hndl.LayerMessageBoxSaveFile := 1;
+		ENDIF;
+		IF (ptCSV_Hndl.SaveFileNo = 1) THEN
+			ptCSV_Hndl.SaveFileNo := 0;
+			ptCSV_Hndl.ReqParaWriteAfterValueChanged := 0;
+			ptCSV_Hndl.LayerMessageBoxSaveFile := 1;
+		ENDIF;
+		
+		IF (ptCSV_Hndl.OverwriteFileYes = 1) THEN
+			ptCSV_Hndl.OverwriteFileYes := 0;
+			ptCSV_Hndl.FileOverWrite := 1;
+			ptCSV_Hndl.LayerMessageBoxOverwrite := 1;
+		ENDIF;
+		IF (ptCSV_Hndl.OverwriteFileNo = 1) THEN
+			ptCSV_Hndl.OverwriteFileNo := 0;
+			ptCSV_Hndl.FileOverWrite := 0;
+			ptCSV_Hndl.LayerMessageBoxOverwrite := 1;
+		ENDIF;
+		
+		IF (ptCSV_Hndl.DeleteFileYes = 1) THEN
+			ptCSV_Hndl.DeleteFileYes := 0;
+			ptCSV_Hndl.FileDelete = 1;
+			ptCSV_Hndl.LayerMessageBoxDeleteFile := 1;
+		ENDIF;
+		IF (ptCSV_Hndl.DeleteFileNo = 1) THEN
+			ptCSV_Hndl.DeleteFileNo := 0;
+			ptCSV_Hndl.FileDelete = 0;
+			ptCSV_Hndl.LayerMessageBoxDeleteFile := 1;
+		ENDIF;
+			
+		//---------------------------------
+		//was another recipe selected in list ?
+		IF (ptCSV_Hndl.ListBoxRecipeChanged = TRUE) THEN
+			//strcpy(ADR(RecipeEdit.header.name), ADR(ptCSV_Hndl.FileNameSelected) );		
+			// 2012-12-06 /schoenefeldr/
+			// Temporary solution with memcopy
+			memcpy(ADR(RecipeEdit.header.name), ADR(ptCSV_Hndl.FileNameSelected), SIZEOF(RecipeEdit.header.name));
+			RecipeEdit.header.name[RCP_PROG_TEXT_FILENAME_MAX] := 0;
+			ptCSV_Hndl.ListBoxRecipeChanged := FALSE;
+			
+			ptCSV_Hndl.StatusBmpFoundFileCutU1 = VISIBLE;	//show bmp
+			ptCSV_Hndl.StatusBtnRefreshCutU1 := INVISIBLE;	//but don't show text and button
+			LOOP ii:=0 TO USINT(ptTool_Hndl.ListboxMaxLines) DO
+				IF (strcmp(ADR(RecipeEdit.cutUnit1.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[ii])) = 0) THEN
+					RecipeEdit.cutUnit1.toolNumber = ii;
+					ptCSV_Hndl.StatusBmpFoundFileCutU1 = INVISIBLE;	//don't show bmp
+					ptCSV_Hndl.StatusBtnRefreshCutU1 := VISIBLE;	//but show text and button
+					EXITIF(1=1);
+				ENDIF;
+			ENDLOOP;
+			
+			ptCSV_Hndl.StatusBmpFoundFileCutU2 = VISIBLE;	//show bmp
+			ptCSV_Hndl.StatusBtnRefreshCutU2 := INVISIBLE;	//but don't show text and button
+			LOOP ii:=0 TO USINT(ptTool_Hndl.ListboxMaxLines) DO
+				IF (strcmp(ADR(RecipeEdit.cutUnit2.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[ii])) = 0) THEN
+					RecipeEdit.cutUnit2.toolNumber = ii;
+					ptCSV_Hndl.StatusBmpFoundFileCutU2 := INVISIBLE;	//don't show bmp
+					ptCSV_Hndl.StatusBtnRefreshCutU2 := VISIBLE;	//but show text and button
+					EXITIF(1=1);
+				ENDIF;
+			ENDLOOP;
+			
+;			ptCSV_Hndl.StatusBmpFoundFileCutU3 = VISIBLE;	//show bmp
+;			ptCSV_Hndl.StatusBtnRefreshCutU3 := INVISIBLE;	//but don't show text and button
+;			LOOP ii:=0 TO USINT(ptTool_Hndl.ListboxMaxLines) DO
+;				IF (strcmp(ADR(RecipeEdit.cutUnit3.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[ii])) = 0) THEN
+;					RecipeEdit.cutUnit3.toolNumber = ii;
+;					ptCSV_Hndl.StatusBmpFoundFileCutU3 := INVISIBLE;	//don't show bmp
+;					ptCSV_Hndl.StatusBtnRefreshCutU3 := VISIBLE;	//but show text and button
+;					EXITIF(1=1);
+;				ENDIF;
+;			ENDLOOP;	
+				
+		ENDIF;
+
+			
+		//---------------------------------
+		//tool file was changed in cut unit 1
+		IF (ptCSV_Hndl.ToolSelectedCutU1 = TRUE) THEN
+			ptCSV_Hndl.ToolSelectedCutU1 := FALSE;
+			ptCSV_Hndl.ValueChanged := TRUE;
+			strcpy(ADR(RecipeEdit.cutUnit1.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[RecipeEdit.cutUnit1.toolNumber]));
+			strcpy(ADR(szToolFileName), ADR(RecipeEdit.cutUnit1.toolfilename));
+			lAdrDestination := ADR(RecipeEdit.cutUnit1.tool);  //where to copy the data
+			xReadToolFile := TRUE;
+		ENDIF;
+		
+		//---------------------------------
+		//tool file was changed in cut unit 2
+		IF (ptCSV_Hndl.ToolSelectedCutU2 = TRUE) THEN
+			ptCSV_Hndl.ToolSelectedCutU2 := FALSE;
+			ptCSV_Hndl.ValueChanged := TRUE;
+			strcpy(ADR(RecipeEdit.cutUnit2.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[RecipeEdit.cutUnit2.toolNumber]));
+			strcpy(ADR(szToolFileName), ADR(RecipeEdit.cutUnit2.toolfilename));
+			lAdrDestination := ADR(RecipeEdit.cutUnit2.tool);   //where to copy the data
+			xReadToolFile := TRUE;
+		ENDIF;
+	
+		//---------------------------------
+		//tool file was changed in cut unit 3
+		IF (ptCSV_Hndl.ToolSelectedCutU3 = TRUE) THEN
+			ptCSV_Hndl.ToolSelectedCutU3 := FALSE;
+			ptCSV_Hndl.ValueChanged := TRUE;
+			strcpy(ADR(RecipeEdit.cutUnit3.toolfilename), ADR(ptTool_Hndl.ListboxFileNames[RecipeEdit.cutUnit3.toolNumber]));
+			strcpy(ADR(szToolFileName), ADR(RecipeEdit.cutUnit3.toolfilename));
+			lAdrDestination := ADR(RecipeEdit.cutUnit3.tool);   //where to copy the data
+			xReadToolFile := TRUE;
+		ENDIF;		
+		//---------------------------------	
+
+		IF (xPageExit = TRUE) THEN
+
+		ENDIF;
+
+	ENDACTION;
+
+	;-----------------------------------
+	ACTION P002_Tool:				;//1,
+		IF (xPageInit = TRUE) THEN
+			LOOP ii := 0 TO 12 DO
+//				Button.Status[ii] := 1; //alle Tasten ausblenden
+				Button.Status[ii] := 0; //alle Tasten anzeigen
+			ENDLOOP;
+			Button.Status[2] := 0;	//Taste anzeigen
+			Button.Status[4] := 0;
+			Button.Status[5] := 0;
+			Button.Status[6] := 0;
+			Button.Status[7] := 0;
+			Button.Status[8] := 0;
+			Button.Status[11] := 0;
+		ENDIF;
+
+		//button pressed?
+		IF (Button.F1 = 1) THEN
+			Button.F1 := 0;
+		ENDIF;
+
+		IF (Button.F2 = 1) THEN
+			Button.F2 := 0;
+			ptTool_Hndl.ReqDelRecipe = 1;	//start action in task csv_hdl
+		ENDIF;
+		
+		IF (Button.F3 = 1) THEN
+			Button.F3 := 0;
+		ENDIF;
+		
+		IF (Button.F4 = 1) THEN
+			Button.F4 := 0;
+			ptTool_Hndl.ReqNewRecipe := 1;
+			ptTool_Hndl.BtnNew := 1;
+			ptTool_Hndl.BtnSaveAs := 0;
+		ENDIF;
+		
+		IF (Button.F5 = 1) THEN
+			Button.F5 := 0;
+			ptTool_Hndl.ReqParaWrite := 1;
+			ptTool_Hndl.ValueChanged := 0;
+		ENDIF;
+		
+		IF (Button.F6 = 1) THEN
+			Button.F6 := 0;
+			ptTool_Hndl.ReqSaveAs := 1;
+			ptTool_Hndl.BtnSaveAs := 1;
+			ptTool_Hndl.BtnNew := 0;
+		ENDIF;
+		
+		IF (Button.F7 = 1) THEN
+			Button.F7 := 0;
+			ptTool_Hndl.ReqDirRead := 1;
+		ENDIF;
+		
+		IF (Button.F8 = 1) THEN
+			Button.F8 := 0;
+			ptBackupTools2USB := TRUE;
+		ENDIF;
+		
+		IF (Button.F9 = 1) THEN
+			Button.F9 := 0;
+		ENDIF;
+		
+		IF (Button.F10 = 1) THEN
+			Button.F10 := 0;
+		ENDIF;
+		
+		IF (Button.F11 = 1) THEN
+			Button.F11 := 0;
+		ENDIF;
+		
+		IF (Button.F12 = 1) THEN
+			Button.F12 := 0;
+			gVisu.Cmd.pageSel.newPage := _002_MASCHINEN_ANSICHT;
+		ENDIF;
+		
+		//messagebox handling
+		IF (ptTool_Hndl.SaveFileYes = 1) THEN
+			ptTool_Hndl.SaveFileYes := 0;
+			ptTool_Hndl.ReqParaWriteAfterValueChanged := 1;
+			ptTool_Hndl.LayerMessageBoxSaveFile := 1;
+		ENDIF;
+		IF (ptTool_Hndl.SaveFileNo = 1) THEN
+			ptTool_Hndl.SaveFileNo := 0;
+			ptTool_Hndl.ReqParaWriteAfterValueChanged := 0;
+			ptTool_Hndl.LayerMessageBoxSaveFile := 1;
+		ENDIF;
+
+		IF (ptTool_Hndl.OverwriteFileYes = 1) THEN
+			ptTool_Hndl.OverwriteFileYes := 0;
+			ptTool_Hndl.FileOverWrite := 1;
+			ptTool_Hndl.LayerMessageBoxOverwrite := 1;
+		ENDIF;
+		IF (ptTool_Hndl.OverwriteFileNo = 1) THEN
+			ptTool_Hndl.OverwriteFileNo := 0;
+			ptTool_Hndl.FileOverWrite := 0;
+			ptTool_Hndl.LayerMessageBoxOverwrite := 1;
+		ENDIF;
+
+		IF (ptTool_Hndl.DeleteFileYes = 1) THEN
+			ptTool_Hndl.DeleteFileYes := 0;
+			ptTool_Hndl.FileDelete = 1;
+			ptTool_Hndl.LayerMessageBoxDeleteFile := 1;
+		ENDIF;
+		IF (ptTool_Hndl.DeleteFileNo = 1) THEN
+			ptTool_Hndl.DeleteFileNo := 0;
+			ptTool_Hndl.FileDelete = 0;
+			ptTool_Hndl.LayerMessageBoxDeleteFile := 1;
+		ENDIF;
+		
+			
+		IF (xPageExit = TRUE) THEN
+
+		ENDIF;
+	ENDACTION;
+
+	;-----------------------------------
+	ACTION P003_AlarmCurrent:				;//2,
+		if (xPageInit = TRUE) then
+			LOOP ii := 0 TO 12 DO
+//				Button.Status[ii] := 1; //alle Tasten ausblenden
+				Button.Status[ii] := 0; //alle Tasten anzeigen
+			ENDLOOP;
+			
+			Button.Status[11] := 0;	//Taste anzeigen
+		ENDIF;
+
+		//button pressed?
+		IF (Button.F1 = 1) THEN
+			Button.F1 := 0;
+		ENDIF;
+
+		IF (Button.F2 = 1) THEN
+			Button.F2 := 0;
+		ENDIF;
+		
+		IF (Button.F3 = 1) THEN
+			Button.F3 := 0;
+		ENDIF;
+		
+		IF (Button.F4 = 1) THEN
+			Button.F4 := 0;
+		ENDIF;
+		
+		IF (Button.F5 = 1) THEN
+			Button.F5 := 0;
+		ENDIF;
+		
+		IF (Button.F6 = 1) THEN
+			Button.F6 := 0;
+		ENDIF;
+		
+		IF (Button.F7 = 1) THEN
+			Button.F7 := 0;
+		ENDIF;
+		
+		IF (Button.F8 = 1) THEN
+			Button.F8 := 0;
+		ENDIF;
+		
+		IF (Button.F9 = 1) THEN
+			Button.F9 := 0;
+		ENDIF;
+		
+		IF (Button.F10 = 1) THEN
+			Button.F10 := 0;
+		ENDIF;
+		
+		IF (Button.F11 = 1) THEN
+			Button.F11 := 0;
+		ENDIF;
+		
+		IF (Button.F12 = 1) THEN
+			Button.F12 := 0;
+			gVisu.Cmd.pageSel.newPage := _002_MASCHINEN_ANSICHT;
+		ENDIF;
+		
+		IF (xPageExit = TRUE) THEN
+
+		ENDIF;
+	ENDACTION;
+
+	;-----------------------------------
+	ACTION P004_AlarmHistory:			;//3
+		IF (xPageInit = TRUE) THEN
+		
+		ENDIF;
+
+		IF (xPageExit = TRUE) THEN
+
+		ENDIF;
+	ENDACTION;
+
+ENDCASE;	//of wPageNr
+
+CASE bStepCmd OF
+	ACTION ST_WAIT:
+		IF (xReadToolFile = TRUE) THEN
+			xReadToolFile := FALSE;
+			bStepCmd := READ_TOOL_FILE;
+		ENDIF;
+	ENDACTION;
+	
+	ACTION READ_TOOL_FILE:
+		CSV_ReadToolFile.pFileName := ADR(szToolFileName);	//ADR(RecipeEdit.cutUnit1.toolfilename);
+		CSV_ReadToolFile.pDevice :=  ADR(ptFileDeviceTool);	//  "DIR_TOOL";
+		CSV_ReadToolFile.No_DatatypControl := 1;
+		CSV_ReadToolFile.Separator := 59;
+		CSV_ReadToolFile.IgnoreError := 1;
+		
+		CSV_ReadToolFile FUB CSV_ReadFile();
+		
+		retval := CSV_ReadToolFile.status;
+		IF (retval = 0) THEN
+			//after reading the file, the values are in 'tool_hdl:tmpTool'
+			memcpy(lAdrDestination, ADR(ptTmpTool), SIZEOF(ptTmpTool));
+			bStepCmd := ST_WAIT;
+		ELSE IF (retval = ERR_FUB_BUSY) THEN
+			;
+		ELSE
+			bStepCmd := ST_WAIT;
+		ENDIF;
+	ENDACTION;
+		ENDCASE;	//of bStepCmd
+	
+
+		
+END_PROGRAM
+

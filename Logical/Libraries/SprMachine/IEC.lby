@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library Version="1.00.0" Description="Control and monitoring of the whole machine" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">SprMachine.typ</File>
+    <File Description="Exported constants">SprMachine.var</File>
+    <File Description="Exported functions and function blocks">SprMachine.fun</File>
+    <File Description="Indicates status of machine control voltage">SPR_MachinePower.st</File>
+    <File Description="Selects the machine mode">SPR_MachineMode.st</File>
+    <File Description="Triggers a reduction of the master velocity and stop of master when the end of a batch is reached">SPR_BatchProduction.st</File>
+  </Files>
+</Library>

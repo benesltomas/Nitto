@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library Version="1.00.0" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">HlpStr.typ</File>
+    <File Description="Exported constants">HlpStr.var</File>
+    <File Description="Exported functions and function blocks">HlpStr.fun</File>
+    <File>findstr.ab</File>
+    <File>findchar.ab</File>
+    <File>LTRIM.ab</File>
+    <File>l2str.ab</File>
+    <File>RTRIM.ab</File>
+    <File>TRIM.ab</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="AsBrStr" />
+    <Dependency ObjectName="AsBrMath" />
+  </Dependencies>
+</Library>

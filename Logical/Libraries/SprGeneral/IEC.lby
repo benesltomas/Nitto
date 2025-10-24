@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.14.208?>
+<Library xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">SprGeneral.typ</File>
+    <File Description="Exported constants">SprGeneral.var</File>
+    <File Description="Exported functions and function blocks">SprGeneral.fun</File>
+    <File Description="Multiplexes pointers of any datatype">SPR_Mux.st</File>
+    <File Description="Implementation of a DINT Fifo">SPR_Fifo.st</File>
+  </Files>
+</Library>

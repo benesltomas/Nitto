@@ -1,0 +1,39 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Library: HlpStr
+ * File: l2str.ab
+ * Author: beutert
+ * Created: March 25, 2011
+ ********************************************************************
+ * Implementation of library HlpStr
+ ********************************************************************
+ Function: convert an UDINT value to string
+ 	
+    input:  value (UDINT)
+						pointer to string (UDINT)
+   output:  strlen (UINT)
+ ********************************************************************) 
+
+FUNCTION l2str
+	brsstrcpy(pString,"");
+
+	lRest = value;
+
+	if (value > 0) then
+		loop ii=9 downto 0 do
+			lDivisor = UDINT(brmpow(10,ii));
+			lQuot = lRest / lDivisor;
+			lRest = lRest MOD lDivisor;
+			if (lRest <> value) then
+				brsitoa(lQuot, adr(szQuot));
+				brsstrcat(pString, adr(szQuot));
+			endif
+		endloop;
+	else
+		brsstrcpy(pString,"0");
+	endif;
+	
+	l2str = UINT(brsstrlen(pString));
+
+END_FUNCTION

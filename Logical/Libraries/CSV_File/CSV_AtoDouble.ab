@@ -1,0 +1,190 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: CSV_File
+ * File: CSV_AtoDouble.ab
+ * Author: diermayrd
+ * Created: August 10, 2010
+ ********************************************************************
+ * Implementation of library CSV_File
+ ********************************************************************) 
+
+(* Converts an ASCII-String to a LREAL-Value *)
+FUNCTION CSV_AtoDouble
+	
+	;get Lenght of the String
+	intStrLeng	= strlen(pString)
+	
+	if (intStrLeng > 0) then
+		;String is not empty -> start of conversion
+		;------------------------------------------		
+		
+		;==========================================
+		;check if value is negative -> search "-"
+		;==========================================
+		
+		;reset String which would be used to conversion and copy Symbol
+		memset(adr(tempString),0,sizeof(tempString))
+		memcpy(adr(tempString),pString,sizeof(tempString))
+		
+		if (tempString = '-') then
+			;Value is negativ
+			negativeValue		= TRUE
+			startIndexIntPart	= 1
+		else
+			;Value is positiv
+			negativeValue		= FALSE
+			startIndexIntPart	= 0
+		endif
+		
+		;==========================================
+		;convert Integer Part
+		;==========================================
+		
+		;reset internal Values
+		lRealIntegerPart	= 0
+		startIndexDecPart	= 0
+		anzExponent			= 0
+		decimalPlaces		= FALSE
+		
+		loop i=startIndexIntPart to (intStrLeng-1) do
+			
+			;reset String which would be used to conversion and copy Symbol
+			memset(adr(tempString),0,sizeof(tempString))
+			memcpy(adr(tempString),pString+i,sizeof(tempString))
+			
+			if ( (tempString = 'e') or (tempString = 'E') ) then
+				;start of Exponent -> copy Value
+				;-----------------------------------
+				;sign
+				memset(adr(tempString),0,sizeof(tempString))
+				memcpy(adr(tempString),pString+i+1,sizeof(tempString))
+				if (tempString = '-') then
+					;negativ
+					positivExponent	= FALSE
+					;exponent
+					anzExponent	= atoi(pString+i+2)
+					exitif(1=1)
+				else
+					;positiv
+					positivExponent	= TRUE
+					;exponent
+					anzExponent	= atoi(pString+i+1)
+					exitif(1=1)
+				endif
+				;-----------------------------------
+				
+			else if ((tempString = '.') or (tempString = ',')) then
+				;Decimalpoint found -> end of Integer Part
+				;exit loop;
+				decimalPlaces		= TRUE
+				startIndexDecPart	= i+1
+				exitif (1=1)
+			else
+				;convert AscII to Integer
+				tempInt	= atoi(adr(tempString))
+				;convert Inteegr to LREAL and add to lRealIntPart
+				lRealIntegerPart	= lRealIntegerPart*10+lreal(tempInt)
+			endif
+		
+		endloop
+		
+		;==========================================
+		;convert Decimal Part
+		;==========================================
+		
+		;reset internal Values
+		lRealDecimalPart	= 0
+		anzDecimalPlaces	= 0
+		
+		if (decimalPlaces = TRUE) then
+			;Decimal Places existing -> start conversion
+			anzExponent	= 0
+			
+			loop i=startIndexDecPart to (intStrLeng-1) do
+			
+				;reset String which would be used to conversion and copy Symbol
+				memset(adr(tempString),0,sizeof(tempString))
+				memcpy(adr(tempString),pString+i,sizeof(tempString))
+			
+				if ( (tempString = 'e') or (tempString = 'E') ) then
+					;start of Exponent -> copy Value
+					;-----------------------------------
+					;sign
+					memset(adr(tempString),0,sizeof(tempString))
+					memcpy(adr(tempString),pString+i+1,sizeof(tempString))
+					if (tempString = '-') then
+						;negativ
+						positivExponent	= FALSE
+						;exponent
+						anzExponent	= atoi(pString+i+2)
+						exitif(1=1)
+					else
+						;positiv
+						positivExponent	= TRUE
+						;exponent
+						anzExponent	= atoi(pString+i+1)
+						exitif(1=1)
+					endif
+					;-----------------------------------
+					
+					
+				else
+					;convert AscII to Integer
+					tempInt	= atoi(adr(tempString))
+					;convert Inteegr to LREAL and add to lRealIntPart
+					lRealDecimalPart	= lRealDecimalPart*10+lreal(tempInt)
+					anzDecimalPlaces	= anzDecimalPlaces+1
+				endif
+
+			endloop
+			
+			;divide Value to get from 456123 -> 0.456123
+			;-------------------------------------------
+			loop i=1 to anzDecimalPlaces do
+				;divide by 10;
+				lRealDecimalPart	= lRealDecimalPart/10
+			endloop
+		else
+			lRealDecimalPart	= 0.0	
+		endif
+		
+		;==========================================
+		;add Integer Part and Decimal Part
+		;==========================================
+				
+		if (negativeValue = TRUE) then
+			;Value is negativ -> muliplicate with (-1)
+			CSV_AtoDouble = (lRealIntegerPart+lRealDecimalPart)*(-1)
+		else
+			;Value is positiv
+			CSV_AtoDouble	= lRealIntegerPart+lRealDecimalPart
+		endif
+		
+		;==========================================
+		;calculate exponential-faktor
+		;==========================================
+		
+		if (positivExponent = TRUE) then
+			;multiplie Value
+			;-------------------------------------------
+			loop i=1 to uint(anzExponent) do
+				;multiplie by 10;
+				CSV_AtoDouble	= CSV_AtoDouble*10
+			endloop
+		else
+			;divide Value
+			;-------------------------------------------
+			loop i=1 to uint(anzExponent) do
+				;divide by 10;
+				CSV_AtoDouble	= CSV_AtoDouble/10
+			endloop
+		endif
+		
+	else
+		;String is empty -> write 0.0 to value
+		;------------------------------------------
+		CSV_AtoDouble	= 0.0
+	endif
+	
+END_FUNCTION

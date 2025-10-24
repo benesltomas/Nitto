@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="DataObject" Language="Ax">gunwfeedi</Object>
+    <Object Type="DataObject" Language="Ax">ggrid1i</Object>
+    <Object Type="DataObject" Language="Ax">ggrid2i</Object>
+    <Object Type="DataObject" Language="Ax">gcut1i</Object>
+    <Object Type="DataObject" Language="Ax">gcut2i</Object>
+    <Object Type="DataObject" Language="Vax">gmasteri</Object>
+    <Object Type="DataObject" Language="Ax">gpbs1i</Object>
+    <Object Type="DataObject" Language="Ax">gpbs2i</Object>
+    <Object Type="DataObject" Language="Ax">gunwopi</Object>
+    <Object Type="DataObject" Language="Ax">gunwdrvi</Object>
+    <Object Type="DataObject" Language="Ax">gcatchbi</Object>
+    <Object Type="DataObject" Language="Ax">gconvbi</Object>
+    <Object Type="DataObject" Language="Ax">glongcuti</Object>
+    <Object Type="DataObject" Language="Ax" Description="ACP10: Achse Datenobjekt.">ggridfeedi</Object>
+    <Object Type="DataObject" Language="Ax" Description="ACP10: Achse Datenobjekt.">gbufferi</Object>
+    <Object Type="DataObject" Language="Ax">gPackBelti</Object>
+    <Object Type="DataObject" Language="Apt">gconvbelta</Object>
+    <Object Type="DataObject" Language="Apt">gpbs2a</Object>
+    <Object Type="DataObject" Language="Apt">gpbs1a</Object>
+    <Object Type="DataObject" Language="Apt">gunwa</Object>
+    <Object Type="DataObject" Language="Apt">ggrida</Object>
+    <Object Type="DataObject" Language="Apt">gbuffera</Object>
+    <Object Type="DataObject" Language="Apt">gcatchba</Object>
+    <Object Type="DataObject" Language="Apt">gunwfeeda</Object>
+    <Object Type="DataObject" Language="Apt">gsafetya</Object>
+    <Object Type="DataObject" Language="Apt">gPackBelta</Object>
+  </Objects>
+</Package>

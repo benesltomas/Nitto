@@ -1,0 +1,178 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: CSV_File
+ * File: CSV_DoubleToA.ab
+ * Author: diermayrd
+ * Created: August 12, 2010
+ ********************************************************************
+ * Implementation of library CSV_File
+ ********************************************************************) 
+
+(* Function to convert a LREAL-Value to an ASCII-String *)
+FUNCTION CSV_DoubleToA
+	
+;copy lReal-Value to temp Variable
+tempLREALvalue	= lRealValue
+intStringLen	= strlen(pString)
+memset(pString,0,intStringLen)
+
+if (tempLREALvalue <> 0.0) then
+
+	;==========================================
+	;check value of sign
+	;==========================================
+
+	tempInt	= 0
+	memcpy(adr(tempInt),adr(tempLREALvalue)+7,sizeof(tempInt))
+	negativeValue	= bit_tst(tempInt,7) ;highest BIT is for sign
+
+	if (negativeValue = TRUE) then
+		;multiple value with *(-1) -> to get positiv value
+		tempLREALvalue	= tempLREALvalue*(-1)
+	endif
+
+	;==========================================
+	;get exponent and sign of exponent
+	;==========================================
+
+	if (tempLREALvalue < 1.0) then
+		;Value smaller than 1 -> multiplicate Value till bigger than 1  
+		loop i=1 to 400 do
+			;Exponent can be maximal 380 -> loop till 400 because before 400 will be EXIT
+			tempLREALvalue	= tempLREALvalue*10
+		
+			if (tempLREALvalue >= 1.0) then
+				;Value in correct Range -> save exponent + get IntPart + EXIT loop
+				exponent		= i*(-1)
+				IntPartLReal	= trunc(tempLREALvalue)
+				exitif(1=1)
+			endif
+		endloop
+	
+	else if (tempLREALvalue >= 10.0) then
+		;Value bigger or equal 10 -> divide Value till smaller than 10  
+		loop i=1 to 400 do
+			;Exponent can be maximal 380 -> loop till 400 because before 400 will be EXIT
+			tempLREALvalue	= tempLREALvalue/10
+		
+			if (tempLREALvalue < 10.0) then
+				;Value in correct Range -> save exponent + get IntPart + EXIT loop
+				exponent		= i
+				IntPartLReal	= trunc(tempLREALvalue)
+				exitif(1=1)
+			endif
+		endloop
+	else
+		;Value in range 1 <= value < 10
+		exponent		= 0
+		IntPartLReal	= trunc(tempLREALvalue)
+	endif
+
+	;==========================================
+	;get decimal part 
+	;==========================================
+
+	;detach calculated decimal part and multiplie with 10 to get next decimal Part
+	;1.2345 -> 0.2345 -> 2.345 -> //  and so on
+	tempLREALvalue	= tempLREALvalue-lreal(IntPartLReal)
+	tempLREALvalue	= tempLREALvalue*10
+	;reset decimalPart-Array
+	memset(adr(DecPartLReal),0,sizeof(DecPartLReal))
+
+	loop i=0 to 13 do
+		;maximum 14 decimal places accuracy for LREAL
+		DecPartLReal[i]	= trunc(tempLREALvalue)
+	
+		;detach calculated decimal part and multiplie with 10 to get next decimal Part
+		;1.2345 -> 0.2345 -> 2.345 -> //  and so on
+		tempLREALvalue	= tempLREALvalue-lreal(DecPartLReal[i])
+		tempLREALvalue	= tempLREALvalue*10
+	endloop
+
+	;==========================================
+	;create String with all components 
+	;==========================================
+
+	;sign
+	;------------------------------------------
+	if (negativeValue = TRUE) then
+		;write "-"
+		strcpy(pString,"-")
+	endif
+	
+	;Integer Part
+	;------------------------------------------
+	memset(adr(tempString),0,sizeof(tempString))
+	itoa(IntPartLReal,adr(tempString))
+	if (negativeValue = TRUE) then		
+		strcat(pString,adr(tempString))
+	else
+		strcpy(pString,adr(tempString))
+	endif
+	
+	;"."
+	;------------------------------------------
+	strcat(pString,".")
+	
+	;Decimal Places
+	;------------------------------------------
+	firstEntry	= FALSE
+	memset(adr(tempDecString),0,sizeof(tempDecString))
+	
+	loop i=13 downto 0 do
+		exitif(i<0)
+		memset(adr(tempString),0,sizeof(tempString))
+		itoa(DecPartLReal[i],adr(tempString))
+		if ((DecPartLReal[i] = 0) and (firstEntry = FALSE) ) then
+			;when decimalpart is 0 and it will be the first entry -> don't write it
+		else		
+			if (firstEntry = FALSE) then
+				;first write process to string -> strcpy instead of strcat
+				strcpy(adr(tempDecString),adr(tempString))
+				firstEntry	= TRUE
+			else
+				strcat(adr(tempDecString),adr(tempString))
+			endif
+		endif
+	endloop
+	
+	;swop content of Decimal Places
+	intStringLen	= strlen(adr(tempDecString))
+	memset(adr(tempString),0,sizeof(tempString))
+	
+	if (intStringLen > 0) then
+		intStringLen	= intStringLen-1
+		loop i=0 to intStringLen do
+		memcpy((adr(tempString)+i),(adr(tempDecString)+(intStringLen-i)),1)
+		endloop
+	else
+		strcpy(adr(tempString),"0");
+	endif
+	strcat(pString,adr(tempString))
+	
+	;"e"
+	;------------------------------------------
+	strcat(pString,"e")
+	
+	;sign of exponent
+	;------------------------------------------
+	if (exponent >= 0) then
+		;positiv -> add + befor exponent
+		strcat(pString,"+")	
+	endif
+	
+	;exponent
+	;------------------------------------------
+	memset(adr(tempString),0,sizeof(tempString))
+	itoa(exponent,adr(tempString))
+	strcat(pString,adr(tempString))
+
+
+else
+	strcpy(pString,"0.0")
+endif
+
+CSV_DoubleToA = strlen(pString)
+
+END_FUNCTION

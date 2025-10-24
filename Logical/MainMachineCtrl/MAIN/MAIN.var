@@ -1,0 +1,35 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Programm: MAIN
+ * Datei: MAIN.var
+ * Autor: Awalz
+ * Erstellt: 25. März 2014
+ ********************************************************************
+ * Lokale Variablen des Programms MAIN
+ ********************************************************************)
+(*CONST : 	CONST_MACHINE_MODES:= (0);*)
+(*CONST : CONST_MACHINE_MODES_Type:=(MANUAL:=0,AUTOMATIC:=1,PRODUCTION:=2,SAFETYSTOP:=7,RESET:=8,EMERGENCYSTOP:=9);*)
+(*CONST : CONST_MACHINE_MODES_Type := MANUAL;*)
+VAR CONSTANT
+	ST_IDLE : INT := 0;
+	ST_SAFETYSTOP : INT := 1;
+	ST_MANUAL : INT := 2;
+	ST_AUTO : INT := 3;
+	ST_PRODUCTION : INT := 4;
+	SCALE_MM_TO_DRIVE_UNITS : REAL := 1000.0; (*mm to micrometer (drive units)*)
+END_VAR
+VAR
+	machine : FB_Machine;
+	LayerStatus : INT := 0; (*refSwitchDevNameCut1 : STRING[80]; (*Device name for reference switch input (X20)*) (*refSwitchChNameCut1 : STRING[80];*)
+	SaveMachData : BOOL;
+	CONST : FB_CONST_MASCHINE;
+	R_TRIG_0 : R_TRIG;
+	UnwinderOPModeTrig : R_TRIG;
+	UnwinderDRVModeTrig : R_TRIG;
+	OutputGrinderON : BOOL;
+	TOF_OutputGrinderON : TOF;
+	endif : BOOL;
+	NewoBrake : BOOL;
+	LocalNewOutputBrake : BOOL;
+END_VAR

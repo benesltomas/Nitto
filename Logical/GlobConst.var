@@ -1,0 +1,201 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * File: GlobConst.var
+ * Author: schoenefeldr
+ * Created: July 18, 2012
+ *
+ * History:
+ *
+ * 2012-09-11 /schoenefeldr/
+ *    - Renamed additional winder to spender 3
+ ********************************************************************
+ * Global variables of project 120706_hp_001
+ ********************************************************************)
+(*======================================================================================================================================*)
+(*Recipe constants, e.g. operating modes*)
+(*======================================================================================================================================*)
+(*Unwinding operating modes*)
+VAR CONSTANT
+	OPM_UNWINDING_OFF : USINT := 0;
+	OPM_UNWINDING_ON : USINT := 1;
+END_VAR
+VAR CONSTANT
+	STATE_READY 		: USINT := 10;
+	STATE_POWER_ON	 	: USINT := 1;
+	STATE_MOVE_VELOCITY : USINT := 16;
+	STATE_MOVE_ABSOLUTE : USINT := 14;
+	STATE_WAIT 			: USINT := 0;
+	STATE_STOP 			: USINT := 11;
+	STATE_MOVE_ADDITIVE : USINT := 15;
+	STATE_HOME 			: USINT := 2;
+	STATE_ERROR_RESET 	: USINT := 102;
+	STATE_ERROR_AXIS 	: USINT := 100;
+	STATE_ERROR 		: USINT := 101;
+	STATE_JOG_POSITIVE 	: USINT := 12;
+	STATE_JOG_NEGATIVE 	: USINT := 13;
+	STATE_HALT 			: USINT := 17;
+END_VAR
+(*Long cut unit operating modes*)
+VAR CONSTANT
+	OPM_LONG_CUT_DISABLED : UDINT := 10; (*Long cut enabled*)
+	OPM_LONG_CUT_ENABLED : UDINT := 11; (*active braking*)
+END_VAR
+(*Winder operating modes*)
+VAR CONSTANT
+	OPM_WIND_DISABLED : UDINT := 35; (*Winder disabled*)
+	OPM_WIND_WINDER : UDINT := 36; (*Machine ready for operation*)
+	OPM_WIND_BRAKE : UDINT := 37; (*Brake functionality*)
+END_VAR
+(*Web tension unit operating mode*)
+VAR CONSTANT
+	OPM_WEB_TENSION_DISABLED : UDINT := 5; (*Web tension control disabled*)
+	OPM_WEB_TENSION_ENABLED : UDINT := 6; (*Web tension control enabled*)
+END_VAR
+(*End module operating mode*)
+VAR CONSTANT
+	OPM_END_MODULE_DISABLED : UDINT := 40; (*No end module selected, disable winder and belts*)
+	OPM_END_MODULE_TOP_WINDER : UDINT := 41; (*Select top winder*)
+	OPM_END_MODULE_BOT_WINDER : UDINT := 42; (*Select bottom winder*)
+	OPM_END_MODULE_TANDEM_WINDER : UDINT := 43; (*Select tandem winder*)
+	OPM_END_MODULE_BELTS : UDINT := 44; (*Select upper belt and conveyor belt*)
+END_VAR
+(*Markpoint operating mode*)
+VAR CONSTANT
+	OPM_RM_DISABLED : UDINT := 30; (*deactivated*)
+	OPM_RM_SENSOR_CONTROL : UDINT := 31; (*Use sensor*)
+	OPM_RM_PERIOD_CONTROL : UDINT := 32; (*use period*)
+END_VAR
+(*Other constants*)
+VAR CONSTANT
+	MAX_SYNC_PERIODS_INDEX : USINT := 3; (*Highest index on index for sync periods*)
+END_VAR
+(*======================================================================================================================================*)
+(*Axis constants, with attribute comments*)
+(*======================================================================================================================================*)
+VAR CONSTANT
+	AXIS_CUTTING_UNIT1 : USINT := 0; (*Cutting unit 1 (SafeMC, CAM)*)
+	AXIS_CUTTING_UNIT2 : USINT := 1; (*Cutting unit 2 (SafeMC, CAM)*)
+	AXIS_CUTTING_UNIT3 : USINT := 2; (*Cutting unit 2 (SafeMC, CAM)*)
+	AXIS_PULL_BRAKE_ST1 : USINT := 3; (*Pull brake station 1 (CAM)*)
+	AXIS_PULL_BRAKE_UNIT : USINT := 4; (*Pull brake unit (CAM)*)
+	AXIS_LABEL_PBS : USINT := 5; (*Pull brake station 2 (CAM)*)
+	AXIS_LONG_CUT : USINT := 6; (*Long cut unit (SafeMC, CAM)*)
+	AXIS_GRID_WINDER1 : USINT := 7; (*Grid winder 1 (CAM)*)
+	AXIS_GRID_WINDER2 : USINT := 8; (*Grid winder 2 (CAM)*)
+	AXIS_CONVEYOR_BELT : USINT := 9; (*Conveyor belt (CAM)*)
+	AXIS_TOP_BELT : USINT := 10; (*Upper belt (CAM)*)
+	AXIS_TOP_TANDEM_WIND : USINT := 11; (*Top tandem winder*)
+	AXIS_BOT_TANDEM_WIND : USINT := 12; (*Bottom tandem winder*)
+	AXIS_LABEL_PBS_VAX : USINT := 13; (*Pull brake station labeler VAX*)
+	AXIS_LAMINATOR : USINT := 14; (*Spender 3 (additional winder)*)
+	AXIS_MASTER1 : USINT := 15; (*Global virtual master*)
+	AXIS_UNWINDER : USINT := 16; (*Global virtual master*)
+	AXIS_SPENDER_WINDER : USINT := 17; (*Spender Aufwickler*)
+	AXIS_LAMINATORUNIT : USINT := 18; (* Laminator Unit Zugachse der Laminator Einheit*)
+	AXIS_UNDEFINED : USINT := 255; (*Undefined axis index*)
+END_VAR
+(*Power supply module constants*)
+VAR CONSTANT
+	PSM_MAIN : USINT := 0; (*Main power supply module*)
+END_VAR
+(*General axis constants*)
+VAR CONSTANT
+	NUM_OF_AXES : USINT := 19; (*Total number of servo drives, virtual axes and inverter axes*)
+	MAX_AXIS_INDEX : USINT := NUM_OF_AXES-1;
+	NUM_OF_SAFEMC_AXES : USINT := 3; (*Number of SafeMC servo drives*)
+	MAX_SAFEMC_AXIS_INDEX : USINT := NUM_OF_SAFEMC_AXES-1;
+	NUM_OF_CAM_AXES : USINT := 10; (*Number of servo drives with CAM automat functions*)
+	MAX_CAM_AXIS_INDEX : USINT := NUM_OF_CAM_AXES-1;
+	NUM_OF_PSM : USINT := 1; (*Number of power supply modules*)
+	MAX_PSM_INDEX : USINT := NUM_OF_PSM-1; (*Last index entry*)
+	AXIS_NAME_LENGTH : USINT := 14; (*String length for axis short names*)
+END_VAR
+(*======================================================================================================================================*)
+(*Global drive attribute definitions*)
+(*======================================================================================================================================*)
+VAR CONSTANT
+	IS_SAFE_AXIS : USINT := 0; (*ACOPOS SafeMC*)
+	IS_STD_AXIS : USINT := 1; (*ACOPOS servo drive*)
+	IS_ASM_AXIS : USINT := 2; (*ACOPOS with ASM*)
+	IS_INVERTER_AXIS : USINT := 3; (*ACOPOSinverter*)
+	IS_VIRTUAL_AXIS : USINT := 4; (*ACOPOS virtual axis*)
+	RETURNS_MTEMP : USINT := 16; (*Returns a motor temperature*)
+	RETURNS_TORQUE : USINT := 17; (*Returns a torque value*)
+	NEEDS_DIRECT_ERR_ACK : USINT := 18; (*Needs explicit error acknoledge (ACOPOSinverter)*)
+	USES_CAM_AUTOMAT : USINT := 19; (*Uses cam automat instead of simple gear functions*)
+	USES_CAM_ADD_ELEMENT : USINT := 20; (*Uses cam automat with additive element*)
+	HAS_SETPOINT_HZ : USINT := 21; (*Axis with setpoint in user unit Hz (not in µm/s)*)
+	HAS_RM_INPUT : USINT := 22; (*Axis with registration mark sensor at trigger input*)
+	USES_RM_CONTROL : USINT := 23; (*Uses registration mark control functionality*)
+END_VAR
+(*Global configuration definitions*)
+VAR CONSTANT
+	IS_AVAIL : USINT := 0; (*Axis (of any type) is available, i.e. the motor is physically available*)
+	IS_ACTIVE : USINT := 1; (*Axis (of any type) is active, i.e. will be enabled*)
+	SET_INACTIVE : USINT := 2; (*Axis (of any type) is active yet and must be disabled*)
+	SET_ACTIVE : USINT := 3; (*Axis (of any type) is not active yet and must be enabled*)
+	IS_MOUNTED : USINT := 4; (*Axis (of any type) is mounted, i.e. the ACOPOS is physically available*)
+END_VAR
+(*Validation of permanently stored data*)
+VAR CONSTANT
+	END_OF_PERM_DATA : UDINT := 2769156954; (*Constant for ckeck validity of permanent memory range*)
+END_VAR
+(*======================================================================================================================================*)
+(*Registration mark control*)
+(*======================================================================================================================================*)
+VAR CONSTANT
+	AXIS_RM_CUTTING_UNIT1 : USINT := 0; (*Registration mark at cutting unit 1 *)
+	AXIS_RM_CUTTING_UNIT2 : USINT := 1; (*Registration mark at cutting unit 2*)
+	NUM_OF_RM_AXES : USINT := 2; (*Total number of servo drives with registration mark control functionalty*)
+	MAX_RM_AXIS_INDEX : USINT := NUM_OF_RM_AXES-1;
+	NUM_OF_RM_SENSORS : USINT := 2; (*Total number registration mark sensors, may differ from number of regsitration mark axes*)
+	MAX_RM_SENSORS_INDEX : USINT := NUM_OF_RM_SENSORS-1;
+	SIZE_OF_RM_DATA_ARRAY : USINT := 20; (*Total number of entries for RM data (lines)*)
+	MAX_RM_DATA_ARRAY_INDEX : USINT := SIZE_OF_RM_DATA_ARRAY-1;
+END_VAR
+(*======================================================================================================================================*)
+(*Other constants*)
+VAR CONSTANT
+		CTRL_FIRST_START: 		INT := 0;
+		CTRL_GETMODE: 			INT := 1;
+		CTRL_SETMODE: 			INT := 2;
+		CTRL_SETSTATEAFTER: 	INT := 3;
+		CTRL_MANUAL_BEFORE:		INT := 10;
+		CTRL_MANUAL:			INT := 11;
+		CTRL_MANUAL_AFTER: 		INT := 12;
+		CTRL_AUTO_BEFORE: 		INT := 20;
+		CTRL_AUTO: 				INT := 22;
+		CTRL_AUTO_AFTER: 		INT := 23;
+		CTRL_PRODUCTION_BEFORE: INT := 30;
+		CTRL_PRODUCTION: 		INT := 32;
+		CTRL_PRODUCTION_AFTER: 	INT := 33;
+		CTRL_STOP_BEFORE:		INT := 50;
+		CTRL_STOP:				INT := 51;
+		CTRL_STOP_AFTER:		INT := 52;
+		CTRL_RESET_START: 		INT := 75;
+		CTRL_RESET: 			INT := 76;
+		CTRL_RESET_AFTER: 		INT := 77;
+		CTRL_SAFETYSTOP_BEFORE: INT := 82;
+		CTRL_SAFETYSTOP: 		INT := 85;
+		CTRL_SAFETYSTOP_AFTER: 	INT := 86;
+		CTRL_EMERGENCYSTOP_BEFORE: 	INT := 90;
+		CTRL_EMERGENCYSTOP_BEFORE1: INT := 91;
+		CTRL_EMERGENCYSTOP: 		INT := 92;
+		CTRL_EMERGENCYSTOP_AFTER: 	INT := 93; (* Machine modes*)
+		
+END_VAR
+(*======================================================================================================================================*)
+(*Constants for page selection in visualisation*)
+VAR CONSTANT
+	CHANGE_PAGE_COMPLETE : UINT := 65535;
+END_VAR
+(*Scaling constants*)
+VAR CONSTANT
+	SCALE_10V_TO_PERCENT : REAL := (100.0/32767.0); (*10.0 V = 100 %; 10.0 V = 32767*)
+	SCALE_DMS_TO_N : REAL := (36.2/33500.0); (*input value of 100.000 corresponds to 100 N with an error of 1.5 % due to 19° angle*)
+	SCALE_10V_TO_KN : REAL := (10.0/32767.0); (*10.0 V = 10 kN; 10.0 V = 32767*)
+	SCALE_10V_TO_MM : REAL := (1000.0/32767.0); (*10.0 V = 1000 mm; 10.0 V = 32767*)
+	SCALE_10V_TO_NM : REAL := (10.0/32767.0); (*10.0 V = 10.0 Nm; 10.0 V = 32767*)
+	SCALE_10V_TO_INT : REAL := (32767.0/10.0); (*32767 = 10.0 V, used for min/max calculation*)
+END_VAR

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">ac_manualbufferCtrl.st</Object>
+    <Object Type="File">acSetModeAfterBuffer.st</Object>
+    <Object Type="File">acBuffercyclic.st</Object>
+    <Object Type="File">FB_WebbufferCtrl.st</Object>
+    <Object Type="File">FB_WEBBUFFER.st</Object>
+    <Object Type="File">FB_Bufferaxis.st</Object>
+    <Object Type="File">FB_BufferConfig.st</Object>
+    <Object Type="File">FB_TorqueAxis.st</Object>
+    <Object Type="File">FB_BufferTensionCtrl.st</Object>
+    <Object Type="File">FB_BUFFER_RECIPE_DATA.st</Object>
+    <Object Type="File">FB_BUFFER_DATA.st</Object>
+  </Objects>
+</Package>

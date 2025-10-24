@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.00.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package" Description="Paket">Documentation</Object>
+    <Object Type="File">434_Nitto_ Zähnezahlen &amp; Übersetzungen.pdf</Object>
+    <Object Type="File" Description="Globale Variablen">Global.var</Object>
+    <Object Type="File" Description="Package variables">GlobConst.var</Object>
+    <Object Type="File" Description="Package variables">GlobMachConst.var</Object>
+    <Object Type="File" Description="Global data types">Global.typ</Object>
+    <Object Type="Package" Description="Globale Bibliotheken">Libraries</Object>
+    <Object Type="DataObject" Language="Ett">acp10etxde</Object>
+    <Object Type="Package" Description="Paket">AxisObj</Object>
+    <Object Type="File" Description="Package data types">RCP_Tool.typ</Object>
+    <Object Type="File" Description="Package data types">RCP_Prog.typ</Object>
+    <Object Type="File" Description="Package data types">RCP_Glob.typ</Object>
+    <Object Type="File" Description="Package variables">RCP_glob.var</Object>
+    <Object Type="File" Description="Package data types">Glob_IO.typ</Object>
+    <Object Type="Library" Language="IEC" Description="Eine neue Quellbibliothek">Bibliothek</Object>
+    <Object Type="Package" Description="General Machine Functions and Master axis">MainMachineCtrl</Object>
+    <Object Type="Package">Visualization</Object>
+    <Object Type="Package" Description="recipe handling">pkgRecipe</Object>
+    <Object Type="Package" Description="Alarme erzeugen für alle BG">Alarme</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Status_Machine_parts">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="28"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="101402" Value="UNWINDING OFF"/>
+    <Text ID="101403" Value="FREE CUTTING"/>
+    <Text ID="101404" Value="UNWINDING ON"/>
+    <Text ID="101405" Value="AUTOMATIC"/>
+    <Text ID="101406" Value=""/>
+    <Text ID="101407" Value=""/>
+    <Text ID="101408" Value="DISABLE"/>
+    <Text ID="101409" Value="ENABLE"/>
+    <Text ID="101410" Value=""/>
+    <Text ID="101411" Value=""/>
+    <Text ID="101412" Value=""/>
+    <Text ID="101413" Value="DISABLE"/>
+    <Text ID="101414" Value="ENABLE"/>
+    <Text ID="101415" Value=""/>
+    <Text ID="101416" Value=""/>
+    <Text ID="101417" Value=""/>
+    <Text ID="101418" Value="DISABLE"/>
+    <Text ID="102863" Value="SYNCH. CUTTING"/>
+    <Text ID="102864" Value=""/>
+    <Text ID="102865" Value=""/>
+    <Text ID="102866" Value="DISABLE"/>
+    <Text ID="102867" Value="FREE CUTTING"/>
+    <Text ID="102868" Value="PHYS. REG MARK"/>
+    <Text ID="102869" Value="VIRT. REG MARK"/>
+    <Text ID="102898" Value=""/>
+    <Text ID="102899" Value="DISABLE"/>
+    <Text ID="102900" Value="ENABLE"/>
+    <Text ID="102903" Value=""/>
+    <Text ID="102904" Value=""/>
+    <Text ID="102905" Value=""/>
+    <Text ID="102906" Value="DISABLE"/>
+    <Text ID="102907" Value=""/>
+    <Text ID="104613" Value=""/>
+    <Text ID="104614" Value=""/>
+    <Text ID="104615" Value=""/>
+    <Text ID="104616" Value="BRAKE"/>
+    <Text ID="104617" Value="WINDER"/>
+    <Text ID="104619" Value="DISABLE"/>
+    <Text ID="106752" Value=""/>
+    <Text ID="106753" Value=""/>
+    <Text ID="106754" Value=""/>
+    <Text ID="106755" Value=""/>
+    <Text ID="106756" Value=""/>
+    <Text ID="106757" Value=""/>
+    <Text ID="106758" Value=""/>
+    <Text ID="106759" Value=""/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="101402" Value="ABWICKLUNG AUS"/>
+    <Text ID="101403" Value="FREISTANZEN"/>
+    <Text ID="101404" Value="ABWICKLUNG EIN"/>
+    <Text ID="101405" Value="AUTOMATIK"/>
+    <Text ID="101406" Value=""/>
+    <Text ID="101407" Value=""/>
+    <Text ID="101408" Value="OHNE BAHNSPANNUNG"/>
+    <Text ID="101409" Value="MIT BAHNSPANNUNG"/>
+    <Text ID="101410" Value=""/>
+    <Text ID="101411" Value=""/>
+    <Text ID="101412" Value=""/>
+    <Text ID="101413" Value="ABGEWÄHLT"/>
+    <Text ID="101414" Value="ANGEWÄHLT"/>
+    <Text ID="101415" Value=""/>
+    <Text ID="101416" Value=""/>
+    <Text ID="101417" Value=""/>
+    <Text ID="101418" Value="ABGEWÄHLT"/>
+    <Text ID="102863" Value="SYNCH.STANZEN"/>
+    <Text ID="102864" Value=""/>
+    <Text ID="102865" Value=""/>
+    <Text ID="102866" Value="ABGEWÄHLT"/>
+    <Text ID="102867" Value="FREILAUF"/>
+    <Text ID="102868" Value="PHYS. REG MARKE"/>
+    <Text ID="102869" Value="VIRT. REG MARKE"/>
+    <Text ID="102898" Value=""/>
+    <Text ID="102899" Value="ABGEWÄHLT"/>
+    <Text ID="102900" Value="ANGEWÄHLT"/>
+    <Text ID="102903" Value=""/>
+    <Text ID="102904" Value=""/>
+    <Text ID="102905" Value=""/>
+    <Text ID="102906" Value="ABGEWÄHLT"/>
+    <Text ID="102907" Value="SENSOR REGELUNG"/>
+    <Text ID="104613" Value=""/>
+    <Text ID="104614" Value="PERIOD REGELUNG"/>
+    <Text ID="104615" Value=""/>
+    <Text ID="104616" Value="BREMSE"/>
+    <Text ID="104617" Value="WICKLER"/>
+    <Text ID="104619" Value="ABGEWÄHLT"/>
+    <Text ID="106752" Value=""/>
+    <Text ID="106753" Value=""/>
+    <Text ID="106754" Value="ABGEWÄHLT"/>
+    <Text ID="106755" Value="WICKLER OBEN"/>
+    <Text ID="106756" Value="WICKLER UNTEN"/>
+    <Text ID="106757" Value="TANDEMWICKLER"/>
+    <Text ID="106758" Value="AUSTRAGEBAND"/>
+    <Text ID="106759" Value=""/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="101402" Value="Afwikkelaar uit"/>
+    <Text ID="101403" Value="Vrij stanzen"/>
+    <Text ID="101404" Value="Afwikkelaar aan "/>
+    <Text ID="101405" Value="Automatisch"/>
+    <Text ID="101406" Value=""/>
+    <Text ID="101407" Value=""/>
+    <Text ID="101408" Value="Zonder Baanspanning"/>
+    <Text ID="101409" Value="Met Baanspanning"/>
+    <Text ID="101410" Value=""/>
+    <Text ID="101411" Value=""/>
+    <Text ID="101412" Value=""/>
+    <Text ID="101413" Value="Uitgeschakeld"/>
+    <Text ID="101414" Value="Ingeschakeld"/>
+    <Text ID="101415" Value=""/>
+    <Text ID="101416" Value=""/>
+    <Text ID="101417" Value=""/>
+    <Text ID="101418" Value="Uitgeschakeld"/>
+    <Text ID="102863" Value="Gesynchroniseerd stanzen"/>
+    <Text ID="102864" Value=""/>
+    <Text ID="102865" Value=""/>
+    <Text ID="102866" Value="Uitgeschakeld"/>
+    <Text ID="102867" Value="Vrij stanzen"/>
+    <Text ID="102868" Value="Fys. Productdetectie"/>
+    <Text ID="102869" Value="Virtuele Productdetectie"/>
+    <Text ID="102898" Value=""/>
+    <Text ID="102899" Value="Uitgeschakeld"/>
+    <Text ID="102900" Value="Ingeschakeld"/>
+    <Text ID="102903" Value=""/>
+    <Text ID="102904" Value=""/>
+    <Text ID="102905" Value=""/>
+    <Text ID="102906" Value="Uitgeschakeld"/>
+    <Text ID="102907" Value="Sensor regeling"/>
+    <Text ID="104613" Value=""/>
+    <Text ID="104614" Value="Periodieke regeling"/>
+    <Text ID="104615" Value=""/>
+    <Text ID="104616" Value="Rem"/>
+    <Text ID="104617" Value="Ingeschakeld"/>
+    <Text ID="104619" Value="Uitgeschakeld"/>
+    <Text ID="106752" Value=""/>
+    <Text ID="106753" Value=""/>
+    <Text ID="106754" Value="Uitgeschakeld"/>
+    <Text ID="106755" Value="Wikkelaar boven"/>
+    <Text ID="106756" Value="Wikkelaar onder"/>
+    <Text ID="106757" Value="Tandemwikkelaar"/>
+    <Text ID="106758" Value="Uitvoerband"/>
+    <Text ID="106759" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="101402" Value="0"/>
+    <Index ID="101403" Value="16"/>
+    <Index ID="101404" Value="1"/>
+    <Index ID="101405" Value="2"/>
+    <Index ID="101406" Value="3"/>
+    <Index ID="101407" Value="4"/>
+    <Index ID="101408" Value="5"/>
+    <Index ID="101409" Value="6"/>
+    <Index ID="101410" Value="7"/>
+    <Index ID="101411" Value="8"/>
+    <Index ID="101412" Value="9"/>
+    <Index ID="101413" Value="10"/>
+    <Index ID="101414" Value="11"/>
+    <Index ID="101415" Value="12"/>
+    <Index ID="101416" Value="13"/>
+    <Index ID="101417" Value="14"/>
+    <Index ID="101418" Value="15"/>
+    <Index ID="102863" Value="17"/>
+    <Index ID="102864" Value="18"/>
+    <Index ID="102865" Value="19"/>
+    <Index ID="102866" Value="20"/>
+    <Index ID="102867" Value="21"/>
+    <Index ID="102868" Value="22"/>
+    <Index ID="102869" Value="23"/>
+    <Index ID="102898" Value="27"/>
+    <Index ID="102899" Value="25"/>
+    <Index ID="102900" Value="26"/>
+    <Index ID="102903" Value="24"/>
+    <Index ID="102904" Value="28"/>
+    <Index ID="102905" Value="29"/>
+    <Index ID="102906" Value="30"/>
+    <Index ID="102907" Value="31"/>
+    <Index ID="104613" Value="33"/>
+    <Index ID="104614" Value="32"/>
+    <Index ID="104615" Value="34"/>
+    <Index ID="104616" Value="37"/>
+    <Index ID="104617" Value="36"/>
+    <Index ID="104619" Value="35"/>
+    <Index ID="106752" Value="38"/>
+    <Index ID="106753" Value="39"/>
+    <Index ID="106754" Value="40"/>
+    <Index ID="106755" Value="41"/>
+    <Index ID="106756" Value="42"/>
+    <Index ID="106757" Value="43"/>
+    <Index ID="106758" Value="44"/>
+    <Index ID="106759" Value="45"/>
+  </IndexMap>
+</TextGroup>

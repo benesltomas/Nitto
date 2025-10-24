@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">ac_setMode.st</Object>
+    <Object Type="File">ac_getMode.st</Object>
+    <Object Type="File">ac_init.st</Object>
+    <Object Type="File">ac_cyclic.st</Object>
+    <Object Type="File">ac_setStateAfter.st</Object>
+    <Object Type="File">FB_MachineCtrl.st</Object>
+    <Object Type="File">FB_MachineSetModeCtrl.st</Object>
+    <Object Type="File">FB_MACHINE_MODE.st</Object>
+    <Object Type="File" Description="TODO: Beinhaltet aller Baugrupen der Maschine">FB_Machine.st</Object>
+    <Object Type="File">FB_MachineIOs.st</Object>
+  </Objects>
+</Package>

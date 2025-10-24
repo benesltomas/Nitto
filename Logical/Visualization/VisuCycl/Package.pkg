@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC" Description="Ranging access">VisuRange</Object>
+    <Object Type="Program" Language="IEC" Description="Page selection etc.">VisuPages</Object>
+    <Object Type="Program" Language="IEC" Description="Additional Tasks">VisuTasks</Object>
+    <Object Type="File" Description="Package variables">Visu.var</Object>
+    <Object Type="File" Description="Package data types">Visu.typ</Object>
+    <Object Type="DataObject" Language="Vc" Description="1280x1024 (SXGA)">Visu</Object>
+    <Object Type="DataObject" Language="Vc" Description="640x480 (VGA)">Visu1</Object>
+    <Object Type="DataObject" Language="Vc" Description="640x480 (VGA)">Visu2</Object>
+  </Objects>
+</Package>

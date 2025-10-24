@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">ac_manualUnwinderCtrl.st</Object>
+    <Object Type="File" Description="TODO: hier wird der Betriebmodus umgeschalten">FB_UnwinderAxis.st</Object>
+    <Object Type="File">ac_automUnwinderCtrl.st</Object>
+    <Object Type="File">FB_UnwinderCtrl.st</Object>
+    <Object Type="File">FB_Dancer.st</Object>
+  </Objects>
+</Package>

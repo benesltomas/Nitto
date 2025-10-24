@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_GetCuttingMark.st</Object>
+    <Object Type="File">FB_SyncData.st</Object>
+    <Object Type="File">FB_CuttingCamCtrl.st</Object>
+    <Object Type="File">FB_WriteEncoder.st</Object>
+    <Object Type="File">FB_CuttingModeCtrl.st</Object>
+    <Object Type="File">FB_GetNextCuttingSynPos.st</Object>
+    <Object Type="File">FB_CreateCamTable.st</Object>
+    <Object Type="File">FB_MARK_POSITION.st</Object>
+  </Objects>
+</Package>

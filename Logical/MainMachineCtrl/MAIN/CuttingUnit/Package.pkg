@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_CrossCutter.st</Object>
+    <Object Type="File">ac_manualCU.st</Object>
+    <Object Type="File">ac_cyclicCuttingCtrl.st</Object>
+    <Object Type="File">FB_CuttingCtrl.st</Object>
+    <Object Type="File">FB_CuttingConfig.st</Object>
+    <Object Type="File">FB_CutterAxis.st</Object>
+    <Object Type="File">FB_CuttingUnit.st</Object>
+    <Object Type="File">FB_CuttingCheckData.st</Object>
+    <Object Type="File">FB_CUTTINGUNIT_DATA.st</Object>
+    <Object Type="File">FB_CUTTINGUNIT_TMPDATA.st</Object>
+    <Object Type="Package" Description="Paket">Functions</Object>
+  </Objects>
+</Package>

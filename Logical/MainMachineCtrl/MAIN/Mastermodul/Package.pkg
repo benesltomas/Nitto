@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_SpeedCtlrPid.st</Object>
+    <Object Type="File">FB_MASTERMODUL.st</Object>
+    <Object Type="File">ac_automaticMaster.st</Object>
+    <Object Type="File">ac_manualMaster.st</Object>
+    <Object Type="File">ac_setStateAfterMaster.st</Object>
+    <Object Type="File">ac_inline.st</Object>
+    <Object Type="File">FB_MasterModulCtrl.st</Object>
+  </Objects>
+</Package>

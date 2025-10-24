@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="Anlagenstatus">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="27"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="95055" Value="Machine is running"/>
+    <Text ID="95056" Value="Machine ready"/>
+    <Text ID="95057" Value="Jog mode activ"/>
+    <Text ID="95058" Value="Fault activ"/>
+    <Text ID="95059" Value="Mauel operation"/>
+    <Text ID="95060" Value=""/>
+    <Text ID="95054" Value="Machine not ready"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="95055" Value="Automatikbetrieb"/>
+    <Text ID="95056" Value="Maschine bereit"/>
+    <Text ID="95057" Value="Tippbetrieb aktiv"/>
+    <Text ID="95058" Value="Störung aktiv"/>
+    <Text ID="95059" Value="Handbetrieb aktiv"/>
+    <Text ID="95060" Value=""/>
+    <Text ID="95054" Value="Maschine nicht bereit"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="95055" Value="Machine draait"/>
+    <Text ID="95056" Value="Machine klaar"/>
+    <Text ID="95057" Value="Jog bedrijf actief"/>
+    <Text ID="95058" Value="Storing actief"/>
+    <Text ID="95059" Value="Handbediening actief"/>
+    <Text ID="95060" Value=""/>
+    <Text ID="95054" Value="Machine niet klaar"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="95055" Value="3"/>
+    <Index ID="95056" Value="2"/>
+    <Index ID="95057" Value="4"/>
+    <Index ID="95058" Value="6"/>
+    <Index ID="95059" Value="5"/>
+    <Index ID="95060" Value="0"/>
+    <Index ID="95054" Value="1"/>
+  </IndexMap>
+</TextGroup>

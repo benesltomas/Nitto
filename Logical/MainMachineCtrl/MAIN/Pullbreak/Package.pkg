@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.0.18.71 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">FB_PullBreakUnitConfig.st</Object>
+    <Object Type="File">ac_setStateAfterPB.st</Object>
+    <Object Type="File">FB_PullbreakUnitCtrl.st</Object>
+    <Object Type="File">ac_manualPB.st</Object>
+    <Object Type="File">FB_PULLBRAEKUNIT.st</Object>
+    <Object Type="File">FB_PULLBREAK_AXIS.st</Object>
+  </Objects>
+</Package>

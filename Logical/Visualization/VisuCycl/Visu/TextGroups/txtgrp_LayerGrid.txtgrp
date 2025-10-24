@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_LayerGrid">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="9"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="97818" Value="mode:"/>
+    <Text ID="97819" Value="reverse:"/>
+    <Text ID="97820" Value="min. diameter:"/>
+    <Text ID="97821" Value="max. diameter:"/>
+    <Text ID="97839" Value="mode 1"/>
+    <Text ID="97840" Value="mode 2"/>
+    <Text ID="97841" Value="mode 3"/>
+    <Text ID="97842" Value="mode 4"/>
+    <Text ID="97843" Value="mode 5"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="97818" Value="Betriebsart:"/>
+    <Text ID="97819" Value="Drehrichtungsumkehr:"/>
+    <Text ID="97820" Value="Moment bei min. Ø:"/>
+    <Text ID="97821" Value="Moment bei max Ø:"/>
+    <Text ID="97839" Value="Betriebsart 1"/>
+    <Text ID="97840" Value="Betriebsart 2"/>
+    <Text ID="97841" Value="Betriebsart 3"/>
+    <Text ID="97842" Value="Betriebsart 4"/>
+    <Text ID="97843" Value="Betriebsart 5"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="97818" Value="Mode"/>
+    <Text ID="97819" Value="Inverkeren draairichting"/>
+    <Text ID="97820" Value="Kracht bei min. Ø:"/>
+    <Text ID="97821" Value="Kracht bei max. Ø:"/>
+    <Text ID="97839" Value="Mode 1"/>
+    <Text ID="97840" Value="Mode 2"/>
+    <Text ID="97841" Value="Mode 3"/>
+    <Text ID="97842" Value="Mode 4"/>
+    <Text ID="97843" Value="Mode 5"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="97818" Value="0"/>
+    <Index ID="97819" Value="1"/>
+    <Index ID="97820" Value="2"/>
+    <Index ID="97821" Value="3"/>
+    <Index ID="97839" Value="10"/>
+    <Index ID="97840" Value="11"/>
+    <Index ID="97841" Value="12"/>
+    <Index ID="97842" Value="13"/>
+    <Index ID="97843" Value="14"/>
+  </IndexMap>
+</TextGroup>

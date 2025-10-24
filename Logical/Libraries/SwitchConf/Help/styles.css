@@ -1,0 +1,125 @@
+/*==================================================
+  Allgemeine Definitionen von Absatz-Tags
+*/
+body {
+    background-color: #ffffff;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;  }
+p, li, ul, ol, td, th { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; }
+h1, h2, h3, h4, h5 { font-family: Arial, Helvetica, sans-serif; }
+h1 { font-size: 14pt; border-bottom: 1pt solid; }
+h2 { font-size: 13pt; }
+h3 { font-size: 12pt; }
+h4 { font-size: 11pt; }
+h5 { font-size: 10pt; }
+
+pre { font-family: Courier New, monospace; font-size: 10pt; }
+
+/*==================================================
+  Formate für das Inhaltsverzeichnis, das mit dem Skript toc_script.js erzeugt wird.
+  Das toc_script.js verwendet <li>-Tags für das IHV. Die Schriftart für
+  die <li>-Tags wurde bereits oben definiert.
+*/
+#myTOC, #toc { cursor: hand; }
+.tocH1 { margin-left:  0pt; font-size: 10pt; font-weight: bold; }
+.tocH2 { margin-left: 10pt; font-size: 10pt; }
+.tocH3 { margin-left: 20pt; font-size:  9pt; font-style: italic; }
+.tocH4 { margin-left: 15pt; }
+.tocH5 { margin-left: 40pt; }
+.tocH6 { margin-left: 50pt; }
+
+/*==================================================
+  Style für SourceCode Beispiele mit ...
+     ... nicht-proportionaler Schrift => pre.SourceCode
+     ... proportionaler Schrift       => p.SourceCode
+  Schriftart und Schriftgröße sind bereits in den p bzw. pre Definitionen festgelegt.
+*/
+pre.SourceCode, p.pSourceCode {
+    margin: 8px; padding: 8px;
+    background-color:#EEEEEE;
+}
+
+/*==================================================
+  Style-Definitionen für Tipps, Tricks, Hinweise und wichtige Texte
+
+  Zuerst die Defintion von seitlichem Abstand und Hintergrund
+  für .tips und .important:
+*/
+p.tips, p.important, p.demo {
+    margin:8px; padding:8px;
+    background-color:#eeeeee;
+}
+/* Blauer Rahmen für Hinweise und Tricks  */
+p.tips      { border: 3px solid #6699ff; }
+/* Roter Rahmen für wichtige Textpassagen  */
+p.important { border: 3px solid #ff0000; }
+/* Grüner Rahmen für Hinweis auf Demo-Programm  */
+p.demo      { border: 3px solid #08f21d; }
+
+/* Style für Syntax-Aufrufe  */
+span.syntax { background-color: #eeeeee; }
+
+
+/*==================================================
+  Formate für Tabellen !
+
+  Zuerst allgemeine Definitionen,
+  die für alle Tabellen gleich sind:
+*/
+table.parameter_tab, table.num_tab {
+    border: 1px outset;
+    margin-top: 8pt;
+    width: 100%;
+}
+th.parameter_tab, th.num_tab, td.parameter_tab, td.num_tab {
+    padding-left: 6px; padding-right:  6px;
+    padding-top:  4px; padding-bottom: 4px;
+    text-align: left;
+    vertical-align: top;
+    border: 0px solid #ffffff;
+}
+th.parameter_tab, th.num_tab {
+    background-color:#EEEEEE;
+}
+td.parameter_tab, td.num_tab {}
+
+/* Tabelle für Parameterbeschreibung */
+.parameter_tab {}
+table.parameter_tab { background-color: #f7f7f7; }
+th.parameter_tab    { border: 1px solid #000000; }
+td.parameter_tab    {
+    border: 1px solid #000000; border-top:0px solid #000000;
+    background-color:#FFFFFF;
+}
+
+/* Tabelle für Aufzählungen */
+.num_tab {}
+table.num_tab { background-color:#f7f7f7; }
+th.num_tab    { border-right:1px solid #c0c0c0; }
+td.num_tab    {
+    border-top: 1px solid #c0c0c0; border-right:1px solid #c0c0c0;
+    background-color:#EEEEEE;
+}
+
+
+
+/* Informationen für das AS-Help-Tools Plugin:
+==================================================================
+
+AddIn_Name="AS-Help-Tools"
+AddIn_Version="1.6"
+
+text_de="<b>Hinweis:</b><br>Zum Starten eines Demos bitte folgende Schaltfläche betätigen:&nbsp; "
+text_en="<b>Note:</b><br>Please click on the following button to start a demo:&nbsp; "
+text_fr="<b>Hinweis:</b><br>Zum Starten eines Demos bitte folgende Schaltfläche betätigen:&nbsp; "
+
+btn_de="Bitmap:shortcut"
+btn_en="Bitmap:shortcut"
+btn_fr="Bitmap:shortcut"
+
+demo_dir_de="../AsDemo/"
+demo_dir_en="../AsDemo/"
+demo_dir_fr="../AsDemo/"
+
+==================================================================
+*/

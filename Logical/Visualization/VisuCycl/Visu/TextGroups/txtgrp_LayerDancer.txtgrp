@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.0.18.71 SP"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="txtgrp_LayerDancer">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="8"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="127632" Value="radius control on:"/>
+    <Text ID="127633" Value="tension on:"/>
+    <Text ID="127634" Value="Pressure:"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="127632" Value="min. Ø Kontrolle ein:"/>
+    <Text ID="127633" Value=" Tänzergewicht  ein:"/>
+    <Text ID="127634" Value="Kraft:"/>
+  </TextLayer>
+  <TextLayer LanguageId="nl-NL">
+    <Text ID="127632" Value="min. Ø vrijgave:"/>
+    <Text ID="127633" Value="Dancergewicht ingeschakeld:"/>
+    <Text ID="127634" Value="Druk/Kracht:"/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="127632" Value="0"/>
+    <Index ID="127633" Value="1"/>
+    <Index ID="127634" Value="2"/>
+  </IndexMap>
+</TextGroup>
